@@ -72,3 +72,4 @@ Die mitgelieferte XML-Datei (`.dlx`) definiert das visuelle Erscheinungsbild des
 * **Fehler beim Starten (Dialog wird nicht gefunden):** Standardmäßig sucht das C#-Skript nach der Datei `C:\Users\XXXX\XXXXX\add_PartID.dlx` (wie im Code definiert). Wenn die Datei verschoben wurde, muss der Pfad in der Variable `theDlxFileName` im C#-Code angepasst werden, oder die `.dlx`-Datei muss in einen standardisierten NX-Ordner (`$UGII_USER_DIR/application/`) gelegt werden, sodass NX sie automatisch findet.
 * **Meldung "Kein aktives Bauteil vorhanden":**
   Das Skript wurde ausgeführt, ohne dass ein Bauteil geöffnet ist, oder das angezeigte Bauteil ist nicht das "Work Part" (Arbeitsteil). Mache das Bauteil per Rechtsklick im Baugruppen-Navigator zum Work Part und versuche es erneut.
+  und so weiter
