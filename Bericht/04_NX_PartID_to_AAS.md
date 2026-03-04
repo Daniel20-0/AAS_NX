@@ -1,5 +1,4 @@
-# NX PartID to AAS Attribute Tool
-
+# NX PartID to AAS
 Dieses Projekt beinhaltet eine Siemens NX Open Anwendung (C#), die über den NX Block UI Styler erstellt wurde. Das Tool ermöglicht es Konstrukteuren, über eine einfache grafische Benutzeroberfläche eine eindeutige ID (Part ID) in ein aktives NX-Bauteil einzutragen. 
 
 Diese ID wird als Part-Attribut (`PART_ID`) gespeichert und dient zur Verknüpfung des 3D-Modells mit der **Asset Administration Shell (AAS / Verwaltungsschale)** für digitale Zwillinge.
