@@ -79,12 +79,9 @@ Kernlogik des Tools:
 - Prüft das Suchverzeichnis
 - Führt rekursive Dateisuche durch
 - Öffnet die Datei mit:
-
 ```csharp
 theSession.Parts.OpenBaseDisplay(...)
 ```
-geladen und als Display Part angezeigt.
-
 - Fehlermeldung: Falls keine Datei gefunden wird, erscheint eine Warnmeldung.
 
 ---
