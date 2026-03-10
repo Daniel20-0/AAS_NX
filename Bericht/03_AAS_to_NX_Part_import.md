@@ -1,10 +1,9 @@
-# NX Part Loader  
-### Automatisches Öffnen von NX-Part-Dateien über Block UI Styler
+# NX AASX to STEP Import Tool
 
-Dieses Projekt beinhaltet eine Siemens NX Open Anwendung (C#), die über den NX Block UI Styler erstellt wurde.
+Dieses Projekt beinhaltet ein Python-Skript, das über die **NX Open Python API** ausgeführt wird.  
+Das Tool dient dazu, eine **AASX-Datei (Asset Administration Shell)** auszuwählen, daraus automatisch ein enthaltenes **STEP-Modell** zu extrahieren und dieses anschließend in **Siemens NX** zu importieren.
 
-Das Tool ermöglicht es Konstrukteuren, über eine einfache grafische Benutzeroberfläche einen Dateinamen einzugeben.  
-Die Anwendung sucht rekursiv in einem definierten Verzeichnis nach einer passenden `.prt`-Datei und öffnet diese automatisch in Siemens NX.
+Die Anwendung verbindet damit eine **Asset Administration Shell (AAS)** mit einem CAD-System, indem sie ein in der AAS referenziertes STEP-Modell direkt in NX öffnet.
 
 ---
 
@@ -23,114 +22,196 @@ Funktionen:
 
 ---
 
-## Grundlegende Funktionsweise
+# Grundlegende Funktionsweise (Import eines STEP-Modells aus einer AASX)
 
-Das Tool führt folgenden Ablauf aus:
+Um digitale Zwillinge oder Industrie-4.0-Modelle in CAD-Systeme zu integrieren, müssen CAD-Daten aus der Verwaltungsschale extrahiert und in die CAD-Umgebung geladen werden.
 
-1. **Work-Part-Sicherung**  
-   Beim Start wird geprüft, ob ein aktives Work Part existiert.  
-   Falls nicht, wird automatisch ein neues Part erzeugt.
+Dieses Skript automatisiert diesen Workflow:
 
-2. **Benutzereingabe**  
-   Ein Block UI Styler Dialog wird geöffnet.  
-   Der Benutzer gibt den gewünschten Dateinamen ein.
+1. **Start des NX-Skripts**
 
-3. **Validierung**
-   - Prüft, ob eine Eingabe erfolgt ist
-   - Ergänzt automatisch `.prt`, falls nötig
-   - Prüft, ob das Suchverzeichnis existiert
+   Der Benutzer startet das Skript direkt in Siemens NX.  
+   Das Skript fungiert als **Launcher** und startet ein externes Python-Skript.
 
-4. **Dateisuche**  
-   Das definierte Verzeichnis wird rekursiv durchsucht.
+2. **Auswahl einer AASX-Datei**
 
-5. **Öffnen des Parts**  
-   Die erste gefundene Datei wird mit der NX Open API geöffnet.
+   Das externe Skript öffnet einen Dateiauswahldialog.  
+   Der Benutzer wählt eine `.aasx` Datei aus.
 
----
+3. **Extraktion des STEP-Modells**
 
-## Code-Struktur
+   Das externe Skript durchsucht die AAS nach referenzierten Modellen und extrahiert eine enthaltene STEP-Datei.
 
-Der Code basiert auf dem Standard-Template des NX Block UI Stylers.
+4. **Zwischenspeicherung**
 
-### `Main()`
+   Die STEP-Datei wird temporär gespeichert.
 
-- Initialisiert NX Session und UI
-- Prüft, ob ein Work Part existiert
-- Erstellt ggf. automatisch ein neues Part
-- Startet den Dialog
+5. **Import in Siemens NX**
+
+   Das NX-Skript erkennt die erzeugte STEP-Datei und importiert sie automatisch in NX.
 
 ---
 
-### `initialize_cb()`
+# Code-Struktur und die einzelnen Funktionen
 
-- Verbindet UI-Elemente aus der `.dlx`-Datei mit dem C#-Code
-- Sucht das Texteingabefeld (`string0`)
-- Speichert die Referenz für spätere Nutzung
+Der Code besteht aus zwei Skripten:
 
----
-
-### `apply_cb()`
-
-Kernlogik des Tools:
-
-- Liest Benutzereingabe
-- Validiert Eingabe
-- Ergänzt `.prt` falls notwendig
-- Prüft das Suchverzeichnis
-- Führt rekursive Dateisuche durch
-- Öffnet die Datei mit:
-```csharp
-theSession.Parts.OpenBaseDisplay(...)
-```
-- Fehlermeldung: Falls keine Datei gefunden wird, erscheint eine Warnmeldung.
+- **NX Launcher Skript** (führt den Import in NX aus)
+- **Externes AAS-Skript** (extrahiert das STEP-Modell aus der AASX)
 
 ---
 
-### `ok_cb()`
+# NX Launcher Skript
 
-Wird ausgeführt, wenn der Nutzer auf "OK" klickt.
-
-Funktion:
-- Ruft intern apply_cb() auf
-- Führt also dieselbe Logik wie "Anwenden" aus
-- Schließt danach das Dialogfenster
-
-Damit wird doppelter Code vermieden.
+Dieses Skript wird direkt in Siemens NX ausgeführt und steuert den gesamten Workflow.
 
 ---
 
-### `update_cb()`
-Wird bei Änderung an UI-Element ausgelöst.
+## `main()`
 
-Aktuell:
-- Ohne implementierte Logik
-- Dient als Erweiterungspunkt für zukünftige UI-Validierung
+Der Einstiegspunkt des NX-Skripts.
+
+Funktionen:
+
+- Öffnet das NX Listing Window zur Ausgabe von Statusmeldungen
+- Startet das externe Python-Skript über `subprocess`
+- Prüft, ob die STEP-Datei erzeugt wurde
+- Stellt sicher, dass ein aktives NX-Part existiert
+- Importiert die STEP-Datei in NX
+
+---
+## `ensure_work_part()`
+
+Diese Funktion stellt sicher, dass ein aktives NX-Part vorhanden ist.
+
+Falls kein Work Part existiert:
+
+- wird ein neues Part erstellt
+- ein eventuell vorhandenes altes Part wird gelöscht
+- das neue Part wird als **Work Part** gesetzt
+
+Dadurch wird verhindert, dass NXOpen-Funktionen ohne gültiges Zielpart ausgeführt werden.
 
 ---
 
-## Die Benutzeroberfläche (`open:Part.dlx`)
-Die .dlx-Datei definiert das visuelle Erscheinungsbild des Dialogs
+## `import_step_into_nx()`
 
-Sie beinhaltetL:
+Diese Funktion übernimmt den Import der STEP-Datei in NX.
 
-- Einen Fenstertitel
-- Eine Gruppe (group0) zur Strukturierung
-- Ein Texteingabefeld (string0) zur Eingabe des Dateinamens
-- Apply- und OK-Button
+Dafür wird der **NX Step242Importer** verwendet.
 
-Die grafische Oberfläche wird vollständig durch den NX Block UI Styler erzeugt.
+Konfiguration des Importers:
+
+- Geometrieoptimierung aktiviert
+- Kurven, Flächen und Volumenkörper werden importiert
+- PMI-Daten werden ebenfalls übernommen
+- Import erfolgt direkt aus dem Dateisystem
+
+Der Import wird anschließend automatisch ausgeführt.
+---
+# Externes Skript (AAS_TO_NX.py)
+
+Dieses Skript extrahiert ein STEP-Modell aus einer AASX-Datei.
 
 ---
 
-### Installation & Asuführung in NX
+## `main()`
 
-1. Lade die Dateien `open_Part.cs` und `open_Part.dlx` herunter.
-2. Stelle sicher, dass beide Dateien idealerweise im selben Verzeichnis liegen oder entsprechend der NX-Umgebungsvariablen platziert sind (z.B. im Ordner `application` unter `UGII_USER_DIR`).
-4. Führe die C#-Datei über `Datei -> Ausführen -> NX Open` (File -> Execute -> NX Open) aus oder binde sie als Button in deine NX-Benutzeroberfläche (Ribbon) ein.
+Der Einstiegspunkt des externen Skripts.
+
+Ablauf:
+
+1. Öffnet einen Dateiauswahldialog
+2. Benutzer wählt eine `.aasx` Datei
+3. Die Datei wird analysiert
+4. Ein STEP-Modell wird extrahiert
+5. Die STEP-Datei wird lokal gespeichert
 
 ---
 
-## Troubleshooting (Fehlerbehebung)
+## `select_aasx_file()`
 
-* **Fehler beim Starten (Dialog wird nicht gefunden):** Standardmäßig sucht das C#-Skript nach der Datei `C:\Users\XXXX\XXXXX\open_Part.dlx` (wie im Code definiert). Wenn die Datei verschoben wurde, muss der Pfad in der Variable `theDlxFileName` im C#-Code angepasst werden, oder die `.dlx`-Datei muss in einen standardisierten NX-Ordner (`$UGII_USER_DIR/application/`) gelegt werden, sodass NX sie automatisch findet.
+Diese Funktion öffnet einen Dateidialog über **Tkinter**.
+
+Der Benutzer kann eine `.aasx` Datei auswählen.
+
+Falls keine Datei ausgewählt wird, wird der Prozess beendet.
+
+---
+
+## `extract_step_from_aasx()`
+
+Diese Funktion durchsucht die AASX-Datei nach enthaltenen CAD-Modellen.
+
+Ablauf:
+
+1. Import der AASX-Datei
+2. Suche nach Asset Administration Shells
+3. Durchsuchen der Modelle
+4. Prüfen der Dateiformate
+5. Finden einer STEP-Datei
+6. Extraktion der STEP-Datei aus dem File Store
+7. Schreiben der Datei in das temporäre Verzeichnis
+
+---
+
+# Installation & Ausführung in NX
+
+1. Stelle sicher, dass Python installiert ist.
+2. Stelle sicher, dass die NX Python API verfügbar ist.
+3. Lege beide Skripte in dein Projektverzeichnis.
+
+Benötigte Skripte:
+
+- NX Launcher Skript
+- `AAS_TO_NX.py`
+
+4. Öffne Siemens NX.
+5. Starte das NX-Skript über
+
+Das Skript startet anschließend automatisch den vollständigen Workflow.
+
+---
+
+# Konfiguration
+
+Aktuell sind mehrere Pfade im Code fest definiert.
+
+Beispiele:
+
+script_path = C:\Users\chris\AAS-Creo-Bridge\src\AAS_TO_NX.py
+
+step_path = C:\Users\chris\AAS-Creo-Bridge\temp_model.step
+
+---
+
+# Troubleshooting (Fehlerbehebung)
+
+## STEP-Datei wird nicht erzeugt
+Mögliche Ursachen:
+
+- Die AASX-Datei enthält kein STEP-Modell
+- Das Modellformat ist nicht STEP
+- Der Zugriff auf den File Store ist fehlgeschlagen
+
+---
+
+## Externes Skript startet nicht
+
+Mögliche Ursachen:
+
+- Falscher Python-Pfad
+- Skriptpfad falsch
+- Python-Abhängigkeiten fehlen
+
+---
+
+## Import in NX schlägt fehl
+
+Mögliche Ursachen:
+
+- STEP-Datei beschädigt
+- NX Step Importer nicht korrekt initialisiert
+- Kein Work Part vorhanden
+
 
