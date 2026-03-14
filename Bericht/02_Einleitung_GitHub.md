@@ -21,7 +21,7 @@ Wir konzentrieren uns auf vier grundlegende Funktionen, um die Interaktion zwisc
 | **1** | **Import von 3D-Daten aus der AAS** <br>*(Das Modell aus dem digitalen Zwilling ins CAD laden)* | [NX Part Loader](03_AAS_to_NX_Part_import.md) | [Creo Doku](CREO_DATEINAME.md) | 🚧 In Arbeit |
 | **2** | **Zuweisung einer Asset-ID an ein Bauteil** <br>*(Die grundlegende Verknüpfung von 3D-Modell und AAS-Instanz)* | [NX Asset-ID assign](04_NX_PartID_to_AAS.md) | [Creo Doku](CREO_DATEINAME.md) | 🚧 In Arbeit |
 | **3** | **Eigenschaften synchronisieren** <br>*(Materialdaten, Metadaten etc. austauschen)* | [NX Sync Properties with AAS](05_NX_Sync_Properties_with_AAS.md) | [Creo Doku](CREO_DATEINAME.md) | 🚧 In Arbeit |
-| **4** | **Daten aus dem CAD in die AAS exportieren** <br>*(Aktualisierte Daten zurück in die Schale schreiben)* | [NX to AAS Export](06_NX_to_AAS_Export.md) | [Creo Doku](CREO_DATEINAME.md) | 🚧 In Arbeit |
+| **4** | **Daten-Export aus dem CAD** <br>*(vorerst als CSV)*  | [NX to AAS Export](06_NX_to_AAS_Export.md) | [Creo Doku](CREO_DATEINAME.md) | 🚧 In Arbeit |
 
 ## Detaillierte Beschreibung der Funktionen
 
@@ -30,8 +30,7 @@ Wie genau diese vier Funktionen im Detail funktionieren und wie sie systemseitig
 ---
 
 ## Mitmachen
-Wir freuen uns immer über Unterstützung. Wenn du eigene Skripte beisteuern möchtest, eine Lösung für ein anderes CAD-System wie SolidWorks hast oder Fehler findest, erstelle gerne einen Pull Request. Halte dich dabei einfach grob an die Struktur dieses Dokuments.
-
+Wir freuen uns immer über Unterstützung. Wenn du eigene Skripte beisteuern möchtest, eine Lösung für ein anderes CAD-System wie SolidWorks hast oder Fehler findest, erstelle gerne einen Pull Request.
 
 ## Lizenz
 
