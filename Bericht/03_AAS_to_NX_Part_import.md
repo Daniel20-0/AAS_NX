@@ -1,4 +1,4 @@
-# NX AASX to STEP Import Tool
+# 03 NX AASX to STEP Import Tool
 
 Dieses Projekt beinhaltet ein Python-Skript, das über die **NX Open Python API** ausgeführt wird.  
 Das Tool dient dazu, eine **AASX-Datei (Asset Administration Shell)** auszuwählen, daraus automatisch ein enthaltenes **STEP-Modell** zu extrahieren und dieses anschließend in **Siemens NX** zu importieren.
