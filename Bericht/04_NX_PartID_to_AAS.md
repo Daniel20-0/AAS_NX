@@ -1,74 +1,76 @@
 # NX PartID to AAS
-Dieses Projekt beinhaltet eine Siemens NX Open Anwendung (C#), die über den NX Block UI Styler erstellt wurde. Das Tool ermöglicht es Konstrukteuren, über eine einfache grafische Benutzeroberfläche eine eindeutige ID (Part ID) in ein aktives NX-Bauteil einzutragen. 
+This project includes a Siemens NX Open application (C#) created using the NX Block UI Styler. The tool enables designers to assign a unique ID (Part ID) to an active NX part via a simple graphical user interface.
 
-Diese ID wird als Part-Attribut (`PART_ID`) gespeichert und dient zur Verknüpfung des 3D-Modells mit der **Asset Administration Shell (AAS / Verwaltungsschale)** für digitale Zwillinge.
-
----
-
-## Grundlegende Funktionsweise (Das Hinzufügen der PartID für die AAS)
-
-Um ein 3D-Modell in Industrie 4.0-Szenarien nutzbar zu machen, muss es eindeutig identifizierbar sein. Dieses Skript löst das Problem, indem es einen definierten Workflow in NX bereitstellt:
-
-1. **Benutzereingabe:** Der Anwender startet das Skript in NX. Es öffnet sich ein Dialogfeld (definiert durch die `.dlx`-Datei), in dem die gewünschte ID für die Verwaltungsschale eingegeben wird.
-
-2. **Validierung:** Das Tool prüft, ob eine ID eingegeben wurde und ob überhaupt ein Bauteil in NX geöffnet und aktiv (WorkPart) ist.
-3. **Attribut-Zuweisung:** Die eingegebene Zeichenfolge wird über die NX Open API direkt in die Metadaten des Bauteils geschrieben. Es wird das Attribut **`PART_ID`** erzeugt bzw. überschrieben.
-
-Sobald das Bauteil gespeichert und beispielsweise als STEP exportiert wird (inklusive Metadaten), kann die AAS diese `PART_ID` auslesen und das Bauteil einem digitalen Zwilling zuordnen.
+This ID is stored as a part attribute (`PART_ID`) and is used to link the 3D model with the **Asset Administration Shell (AAS)** for digital twins.
 
 ---
 
-## Code-Struktur und die einzelnen Funktionen
+## Basic functionality (Adding the Part ID for the AAS)
 
-Der Code basiert auf dem Standard-Template des NX Block UI Stylers. Hier ist die detaillierte Beschreibung der wichtigsten Funktionen in der `add_PartID.cs`:
+To make a 3D model usable in Industry 4.0 scenarios, it must be uniquely identifiable. This script addresses this requirement by providing a defined workflow in NX:
+
+1. **User input:** The user starts the script in NX. A dialog box (defined by the `.dlx`file) opens, in which the desired ID for the Asset Administration Shell is entered.
+
+2. **Valdiation:** The tool verifies whether an ID has been entered and whether a part is opened and active (Work Part) in NX.
+
+3. **Attribute assignment:** The entered string is written directly into the part metadata via the NX Open API. The attribute **`PART_ID`** is created or overwritten.
+
+Once the part is saved and, for example, exported as a STEP file (including metadata), the AAS can read this `PART_ID` and associate the part with a digital twin.
+
+---
+
+## Code structure and the individual functions
+
+The code is based on the standard template of the NX Block UI Styler. Below is a detailed description of the key functions in `add_PartID.cs`:
 
 ### `Main()`
-Der Einstiegspunkt der Anwendung. Hier wird eine neue Instanz der Klasse `add_PartID` erstellt und der Dialog über die Methode `Show()` auf dem Bildschirm des Anwenders aufgerufen. 
+The entry point of the application. A new instance of the `add_PartID` class is created, and the dialog is displayed on the user’s screen via the `Show()` method. 
 
 ### `initialize_cb()`
 *(Initialize Callback)*
-Diese Methode wird direkt beim Laden des Dialogs ausgeführt. Sie stellt die Verbindung zwischen der C#-Logik und der grafischen Oberfläche (der `.dlx`-Datei) her. Hier wird das Eingabefeld (Blocktyp: String) aus der UI gesucht und der Variablen `string0` zugewiesen, damit im späteren Verlauf darauf zugegriffen werden kann.
+This method is executed immediately when the dialog is loaded. It establishes the connection between the C# logic and the graphical user interface (the `.dlx`file). Here, the input field (block type: String) is located in the UI and assigned to the variable `string0` , so it can be accessed later in the process.
 
 ### `apply_cb()`
 *(Apply Callback)*
-Diese Funktion wird ausgelöst, wenn der Nutzer auf "Anwenden" klickt:
-* **Werte auslesen:** Zieht den Text aus dem Eingabefeld (`string0.Value`).
-* **Sicherheitsabfragen (If-Statements):**
-  * Prüft, ob das Feld leer ist. Wenn ja, erscheint eine Info-Meldung und der Prozess stoppt.
-  * Prüft, ob ein aktives Arbeits-Bauteil (`workPart`) existiert. Ohne Bauteil kann kein Attribut gesetzt werden.
-* **Schreibvorgang:** Mit dem Befehl `workPart.SetAttribute("PART_ID", eingegebeneID);` wird das eigentliche Attribut in das NX-Bauteil geschrieben.
-* **Session Undo:** Setzt einen sichtbaren Rückgängig-Schritt ("Part ID gesetzt"), um die NX-Sitzung sauber zu halten.
+This function is triggered when the user clicks **"Apply"**:
+
+* **Read values:** Retrieves the text from the input field(`string0.Value`).
+* **Validation checks (If-Statements):**
+  * Checks whether the field is empty. If so, an informational message is displayed and the process is stopped.
+  * Checks whether an active work part (`workPart`) exists. Without a part, no attribute can be assigned.
+* **Write operation:** The command `workPart.SetAttribute("PART_ID", eingegebeneID);` writes the actual attribute to the NX part.
+* **Session Undo:** Creates a visible undo step ("Part ID set"), to keep the NX session clean.
 
 ### `ok_cb()`
 *(OK Callback)*
-Wird ausgeführt, wenn der Nutzer auf den "OK"-Button klickt. Diese Funktion ruft intern lediglich die `apply_cb()` auf, führt also das Speichern des Attributes aus und schließt danach das Dialogfenster.
+Executed when the user clicks the "OK" button. This function internally calls `apply_cb()`, thereby performing the attribute assignment and then closing the dialog window.
 
 ### `GetUnloadOption()`
-Definiert, wie das Programm nach der Ausführung im Speicher von NX behandelt wird. Hier ist `Session.LibraryUnloadOption.Immediately` gesetzt. Das bedeutet, dass der Arbeitsspeicher sofort nach Ausführung des Skripts wieder freigegeben wird. Das verhindert Speicherlecks während einer NX-Sitzung.
+Defines how the program is handled in NX memory after execution. Here, `Session.LibraryUnloadOption.Immediately` is set. This means that memory is released immediately after the script has been executed. This prevents memory leaks during an NX session.
 
 ---
 
-## Die Benutzeroberfläche (`add_PartID.dlx`)
+## The Userinterface (`add_PartID.dlx`)
 
-Die mitgelieferte XML-Datei (`.dlx`) definiert das visuelle Erscheinungsbild des NX-Dialogs. Sie beinhaltet:
-* Den Titel des Fensters: **"Hinzufügen einer PartID"**
-* Eine Gruppe (`group0`) zur visuellen Strukturierung.
-* Das essenzielle Texteingabefeld (`string0`) mit dem Label **"PartID eingeben"**.
-
----
-
-## Installation & Ausführung in NX
-
-1. Lade die Dateien `add_PartID.cs` und `add_PartID.dlx` herunter.
-2. Stelle sicher, dass beide Dateien idealerweise im selben Verzeichnis liegen oder entsprechend der NX-Umgebungsvariablen platziert sind (z.B. im Ordner `application` unter `UGII_USER_DIR`).
-3. Öffne ein Bauteil in Siemens NX.
-4. Führe die C#-Datei über `Datei -> Ausführen -> NX Open` (File -> Execute -> NX Open) aus oder binde sie als Button in deine NX-Benutzeroberfläche (Ribbon) ein.
+The included XML file (`.dlx`) defines the visual appearance of the NX dialog. It includes:
+* The window title:: **"Add Part ID"**
+* A group (`group0`) for visual structuring
+* The essential text input field (`string0`) labeled **"Enter Part ID"**.
 
 ---
 
-## Troubleshooting (Fehlerbehebung)
+## Installation & Execution in NX
 
-* **Fehler beim Starten (Dialog wird nicht gefunden):** Standardmäßig sucht das C#-Skript nach der Datei `C:\Users\XXXX\XXXXX\add_PartID.dlx` (wie im Code definiert). Wenn die Datei verschoben wurde, muss der Pfad in der Variable `theDlxFileName` im C#-Code angepasst werden, oder die `.dlx`-Datei muss in einen standardisierten NX-Ordner (`$UGII_USER_DIR/application/`) gelegt werden, sodass NX sie automatisch findet.
-* **Meldung "Kein aktives Bauteil vorhanden":**
-  Das Skript wurde ausgeführt, ohne dass ein Bauteil geöffnet ist, oder das angezeigte Bauteil ist nicht das "Work Part" (Arbeitsteil). Mache das Bauteil per Rechtsklick im Baugruppen-Navigator zum Work Part und versuche es erneut.
-  und so weiter
+1. Download the files `add_PartID.cs` and `add_PartID.dlx`
+2. Ensure that both files are located in the same directory or placed according to the NX environment variables (e.g., in the `application` folder under `UGII_USER_DIR`)
+3. Open a part in Siemens NX.
+4. Execute the C# file via (File -> Execute -> NX Open) or integrate it as a button into your NX user interface (Ribbon).
+
+---
+
+## Troubleshooting
+
+* **Error during startup (dialog cannot be found):** By default, the C# script searches for the file`C:\Users\XXXX\XXXXX\add_PartID.dlx` (as defined in the code). If the file has been moved, the path in the variable `theDlxFileName` in the C# code must be adjusted, or the `.dlx`file must be placed in a standardized NX folder ($UGII_USER_DIR/application/) so that NX can find it automatically.
+* **Message "No active part available":**
+ The script was executed without a part being open, or the displayed part is not the "Work Part". Set the part as the Work Part by right-clicking it in the Assembly Navigator and try again.
+and so on
