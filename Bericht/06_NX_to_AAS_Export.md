@@ -1,14 +1,14 @@
 # 06 Attribute Export Skript
 
-Dieses Python-Skript nutzt die **NXOpen Python API**, um bestimmte Attribute eines geöffneten NX-Bauteils auszulesen und diese in eine **CSV-Datei** zu exportieren.
+This Python script uses the NXOpen Python API to read specific attributes of an open NX part and export them into a CSV file.
 
-Die CSV-Datei enthält ausgewählte **Masseneigenschaften** eines Parts, z.B.:
+The CSV file contains selected mass properties of a part, e.g.:
 
-- Volumen
-- Masse
-- Oberfläche
+- Volume
+- Mass
+- Surface area
 
-Die Datei wird automatisch im gleichen Verzeichnis wie das NX-Part gespeichert.
+The file is automatically saved in the same directory as the NX part.
 
 ---
 
@@ -16,12 +16,12 @@ Die Datei wird automatisch im gleichen Verzeichnis wie das NX-Part gespeichert.
 
 Das Skript führt folgenden Ablauf aus:
 
-1. Verbindung zur aktuellen **NX-Session** herstellen  
-2. Zugriff auf das **aktive Work Part**  
-3. Definition der auszulesenden Attribute  
-4. Durchsuchen aller Attribute des Parts  
-5. Extraktion der gewünschten Werte  
-6. Schreiben der Daten in eine **CSV-Datei**
+1. Establish a connection to the current NX session 
+2. Access the active work part 
+3. Define the attributes to be read
+4. Iterate over all attributes of the part 
+5. Extract the required values
+6. Write the data to a CSV file
 
 ---
 
@@ -29,20 +29,20 @@ Das Skript führt folgenden Ablauf aus:
 
 ## main()
 
-Der Einstiegspunkt des Skripts.
+The entry point of the script.
 
-Funktionen:
+Functions:
 
-- Zugriff auf die aktuelle NX-Session
-- Zugriff auf das aktive Work Part
-- Definition der gewünschten Attribute
-- Auslesen aller Part-Attribute
-- Filtern der relevanten Attribute
-- Export der Werte in eine CSV-Datei
+- Access the current NX session
+- Access the active work part
+- Define the required attributes
+- Read all part attributes
+- Filter the relevant attributes
+- Export the values to a CSV file
 
-## Definition der gewünschten Attribute
+## Definition of the required attributes
 
-Die folgenden Attribute werden exportiert:
+The following attributes are exported:
 
 wanted_attributes = [
     "MassPropVolume",
@@ -50,41 +50,39 @@ wanted_attributes = [
     "MassPropArea"
 ]
 
-Diese Attribute entsprechen Masseneigenschaften eines NX-Bauteils.
+These attributes correspond to mass properties of an NX part.
 
-| Attribut        | Bedeutung                |
+| Attribut        | Description                |
 |-----------------|--------------------------|
-| MassPropVolume  | Volumen des Bauteils     |
-| MassPropMass    | Masse des Bauteils       |
-| MassPropArea    | Oberfläche des Bauteils  |
+| MassPropVolume  | Volume of the part     |
+| MassPropMass    | Mass of the part     |
+| MassPropArea    | Surface area of the part |
 
-## Erstellen des Export-Dateipfades
+## Creation of the export file path
 
-Der Dateipfad der CSV-Datei wird automatisch erzeugt:
-
-filePath = workPart.FullPath.replace(".prt", "_selected_attributes.csv")
+The file path of the CSV file is generated automatically:
 
 ---
 
-## Installation & Ausführung in NX
+## Installation & Execution in NX
 
-Stelle sicher, dass Siemens NX mit NX Open Python API installiert ist. Speichere das Skript in einem NX-Skriptverzeichnis oder einem Projektordner. Öffne ein Bauteil in Siemens NX. Führe das Skript über folgendes Menü aus:
-- Datei → Ausführen → NX Open
-- Wähle das Python-Skript aus
-- Nach der Ausführung wird automatisch eine CSV-Datei erzeugt
+Ensure that Siemens NX with the NX Open Python API is installed. Save the script in an NX script directory or a project folder. Open a part in Siemens NX. Execute the script via the following menu:
+- File → Execute → NX Open
+- Select the Python script
+- After execution, a CSV file is automatically generated
 
 ---
 
 ## Troubleshooting (Fehlerbehebung)
-Keine CSV-Datei wird erstellt
-Mögliche Ursachen:
-- Kein aktives Work Part vorhanden
-- Das Bauteil besitzt keine entsprechenden Attribute
-- Schreibrechte im Zielverzeichnis fehlen
+No CSV file is generated
+Possible causes:
+- No active work part is available
+- The part does not contain the required attributes
+- Missing write permissions in the target directory (CSV File already open)
 
-Attribute werden nicht gefunden
-Mögliche Ursachen:
+Attributes are not found
+Possible causes:
 
-- Attribute besitzen andere Namen
-- Attribute sind nicht als User Attributes gespeichert
-- Alias und Titel unterscheiden sich
+- Attributes have different names
+- Attributes are not stored as user attributes
+- Alias and title differ
