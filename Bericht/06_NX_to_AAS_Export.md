@@ -1,3 +1,88 @@
-# 06 NX to AAS Export
+# 06 Attribute Export Skript
 
-Text
+This Python script uses the NXOpen Python API to read specific attributes of an open NX part and export them into a CSV file.
+
+The CSV file contains selected mass properties of a part, e.g.:
+
+- Volume
+- Mass
+- Surface area
+
+The file is automatically saved in the same directory as the NX part.
+
+---
+
+# Grundlegende Funktionsweise
+
+Das Skript führt folgenden Ablauf aus:
+
+1. Establish a connection to the current NX session 
+2. Access the active work part 
+3. Define the attributes to be read
+4. Iterate over all attributes of the part 
+5. Extract the required values
+6. Write the data to a CSV file
+
+---
+
+# Code-Struktur und Funktionen
+
+## main()
+
+The entry point of the script.
+
+Functions:
+
+- Access the current NX session
+- Access the active work part
+- Define the required attributes
+- Read all part attributes
+- Filter the relevant attributes
+- Export the values to a CSV file
+
+## Definition of the required attributes
+
+The following attributes are exported:
+
+wanted_attributes = [
+    "MassPropVolume",
+    "MassPropMass",
+    "MassPropArea"
+]
+
+These attributes correspond to mass properties of an NX part.
+
+| Attribut        | Description                |
+|-----------------|--------------------------|
+| MassPropVolume  | Volume of the part     |
+| MassPropMass    | Mass of the part     |
+| MassPropArea    | Surface area of the part |
+
+## Creation of the export file path
+
+The file path of the CSV file is generated automatically:
+
+---
+
+## Installation & Execution in NX
+
+Ensure that Siemens NX with the NX Open Python API is installed. Save the script in an NX script directory or a project folder. Open a part in Siemens NX. Execute the script via the following menu:
+- File → Execute → NX Open
+- Select the Python script
+- After execution, a CSV file is automatically generated
+
+---
+
+## Troubleshooting (Fehlerbehebung)
+No CSV file is generated
+Possible causes:
+- No active work part is available
+- The part does not contain the required attributes
+- Missing write permissions in the target directory (CSV File already open)
+
+Attributes are not found
+Possible causes:
+
+- Attributes have different names
+- Attributes are not stored as user attributes
+- Alias and title differ

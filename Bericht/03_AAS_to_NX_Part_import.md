@@ -1,183 +1,183 @@
-# 03 NX AASX to STEP Import Tool
+# NX AASX to STEP Import Tool
 
 Dieses Projekt beinhaltet ein Python-Skript, das über die **NX Open Python API** ausgeführt wird.  
 Das Tool dient dazu, eine **AASX-Datei (Asset Administration Shell)** auszuwählen, daraus automatisch ein enthaltenes **STEP-Modell** zu extrahieren und dieses anschließend in **Siemens NX** zu importieren.
 
-Die Anwendung verbindet damit eine **Asset Administration Shell (AAS)** mit einem CAD-System, indem sie ein in der AAS referenziertes STEP-Modell direkt in NX öffnet.
-
+The application thus connects an **Asset Administration Shell (AAS)** with a CAD system by directly opening a STEP model referenced within the AAS in NX.
 ---
 
 ## Überblick
 
-Der **NX Part Loader** stellt einen vereinfachten Workflow zum schnellen Auffinden und Öffnen von Bauteilen bereit.
+The **NX Part Loader** provides a simplified workflow for quickly locating and opening parts.
 
-Funktionen:
+Features:
 
-- Automatische Prüfung auf vorhandenes Work Part
-- Erstellung eines neuen Parts, falls keines existiert
-- Dialogbasierte Dateinameneingabe
-- Rekursive Suche nach `.prt` Dateien
-- Automatisches Öffnen der ersten gefundenen Datei
-- Fehlerausgabe über NX MessageBox
-
----
-
-# Grundlegende Funktionsweise (Import eines STEP-Modells aus einer AASX)
-
-Um digitale Zwillinge oder Industrie-4.0-Modelle in CAD-Systeme zu integrieren, müssen CAD-Daten aus der Verwaltungsschale extrahiert und in die CAD-Umgebung geladen werden.
-
-Dieses Skript automatisiert diesen Workflow:
-
-1. **Start des NX-Skripts**
-
-   Der Benutzer startet das Skript direkt in Siemens NX.  
-   Das Skript fungiert als **Launcher** und startet ein externes Python-Skript.
-
-2. **Auswahl einer AASX-Datei**
-
-   Das externe Skript öffnet einen Dateiauswahldialog.  
-   Der Benutzer wählt eine `.aasx` Datei aus.
-
-3. **Extraktion des STEP-Modells**
-
-   Das externe Skript durchsucht die AAS nach referenzierten Modellen und extrahiert eine enthaltene STEP-Datei.
-
-4. **Zwischenspeicherung**
-
-   Die STEP-Datei wird temporär gespeichert.
-
-5. **Import in Siemens NX**
-
-   Das NX-Skript erkennt die erzeugte STEP-Datei und importiert sie automatisch in NX.
+- Automatically checks for an existing work part
+- Creates a new part if none exists
+- Dialog-based file name input
+- Recursive search for `.prt` files
+- Automatically opens the first matching file found
+- Displays errors via the NX MessageBox
 
 ---
 
-# Code-Struktur und die einzelnen Funktionen
+# Basic functionality (importing a STEP model from an AASX file)
 
-Der Code besteht aus zwei Skripten:
+To integrate digital twins or Industry 4.0 models into CAD systems, CAD data must be extracted from the Asset Administration Shell and loaded into the CAD environment.
 
-- **NX Launcher Skript** (führt den Import in NX aus)
-- **Externes AAS-Skript** (extrahiert das STEP-Modell aus der AASX)
+This script automates this workflow:
+
+1. **Start of the NX script**
+
+The user starts the script directly in Siemens NX.
+The script acts as a launcher and starts an external Python script.
+
+2. **Selection of an AASX file**
+
+The external script opens a file selection dialog.
+The user selects an .aasx file.
+
+3. **Extraction of the STEP model**
+
+The external script searches the AAS for referenced models and extracts a contained STEP file.
+
+4. **Temporary storage**
+
+The STEP file is stored temporarily.
+
+5. **Import into Siemens NX**
+
+The NX script detects the generated STEP file and automatically imports it into NX.
 
 ---
 
-# NX Launcher Skript
+# Code structure and individual functions
 
-Dieses Skript wird direkt in Siemens NX ausgeführt und steuert den gesamten Workflow.
+The code consists of two scripts:
+
+- **NX launcher script** (performs the import in NX)
+- **External AAS script** (extracts the STEP model from the AASX)
+
+---
+
+# NX launcher script
+
+This script is executed directly in Siemens NX and controls the entire workflow.
 
 ---
 
 ## `main()`
 
-Der Einstiegspunkt des NX-Skripts.
+The entry point of the NX script.
 
-Funktionen:
+Functions:
 
-- Öffnet das NX Listing Window zur Ausgabe von Statusmeldungen
-- Startet das externe Python-Skript über `subprocess`
-- Prüft, ob die STEP-Datei erzeugt wurde
-- Stellt sicher, dass ein aktives NX-Part existiert
-- Importiert die STEP-Datei in NX
+- Opens the NX Listing Window to display status messages
+- Starts the external Python script via subprocess
+- Checks whether the STEP file was created
+- Ensures that an active NX part exists
+- Imports the STEP file into NX
 
 ---
 ## `ensure_work_part()`
 
-Diese Funktion stellt sicher, dass ein aktives NX-Part vorhanden ist.
+This function ensures that an active NX part exists.
 
-Falls kein Work Part existiert:
+If no work part is available:
 
-- wird ein neues Part erstellt
-- ein eventuell vorhandenes altes Part wird gelöscht
-- das neue Part wird als **Work Part** gesetzt
+- a new part is created
+- any existing old part is deleted
+- the new part is set as the work part
 
-Dadurch wird verhindert, dass NXOpen-Funktionen ohne gültiges Zielpart ausgeführt werden.
+This prevents NXOpen functions from being executed without a valid target part.
 
 ---
 
 ## `import_step_into_nx()`
 
-Diese Funktion übernimmt den Import der STEP-Datei in NX.
+This function handles the import of the STEP file into NX.
 
-Dafür wird der **NX Step242Importer** verwendet.
+For this purpose, the NX Step242Importer is used.
 
-Konfiguration des Importers:
+Importer configuration:
 
-- Geometrieoptimierung aktiviert
-- Kurven, Flächen und Volumenkörper werden importiert
-- PMI-Daten werden ebenfalls übernommen
-- Import erfolgt direkt aus dem Dateisystem
+- Geometry optimization is enabled
+- Curves, surfaces, and solids are imported
+- PMI data is also included
+- Import is performed directly from the file system
 
-Der Import wird anschließend automatisch ausgeführt.
+The import is then executed automatically.
 ---
-# Externes Skript (AAS_TO_NX.py)
+# External script (AAS_TO_NX.py)
 
-Dieses Skript extrahiert ein STEP-Modell aus einer AASX-Datei.
+This script extracts a STEP model from an AASX file.
 
 ---
 
 ## `main()`
 
-Der Einstiegspunkt des externen Skripts.
+The entry point of the external script.
 
-Ablauf:
+Process:
 
-1. Öffnet einen Dateiauswahldialog
-2. Benutzer wählt eine `.aasx` Datei
-3. Die Datei wird analysiert
-4. Ein STEP-Modell wird extrahiert
-5. Die STEP-Datei wird lokal gespeichert
+1. Opens a file selection dialog
+2. The user selects an .aasx file
+3. The file is analyzed
+4. A STEP model is extracted
+5. The STEP file is saved locally
 
 ---
 
 ## `select_aasx_file()`
 
-Diese Funktion öffnet einen Dateidialog über **Tkinter**.
+This function opens a file dialog using Tkinter.
 
-Der Benutzer kann eine `.aasx` Datei auswählen.
+The user can select an .aasx file.
 
-Falls keine Datei ausgewählt wird, wird der Prozess beendet.
+If no file is selected, the process is terminated.
 
 ---
 
 ## `extract_step_from_aasx()`
 
-Diese Funktion durchsucht die AASX-Datei nach enthaltenen CAD-Modellen.
+This function searches the AASX file for contained CAD models.
 
-Ablauf:
+Process:
 
-1. Import der AASX-Datei
-2. Suche nach Asset Administration Shells
-3. Durchsuchen der Modelle
-4. Prüfen der Dateiformate
-5. Finden einer STEP-Datei
-6. Extraktion der STEP-Datei aus dem File Store
-7. Schreiben der Datei in das temporäre Verzeichnis
-
----
-
-# Installation & Ausführung in NX
-
-1. Stelle sicher, dass Python installiert ist.
-2. Stelle sicher, dass die NX Python API verfügbar ist.
-3. Lege beide Skripte in dein Projektverzeichnis.
-
-Benötigte Skripte:
-
-- NX Launcher Skript
-- `AAS_TO_NX.py`
-
-4. Öffne Siemens NX.
-5. Starte das NX-Skript über
-
-Das Skript startet anschließend automatisch den vollständigen Workflow.
+1. Import of the AASX file
+2. Search for Asset Administration Shells
+3. Iteration through the models
+4. Checking file formats
+5. Detection of a STEP file
+6. Extraction of the STEP file from the file store
+7. Writing the file to the temporary directory
 
 ---
 
-# Konfiguration
+# Installation & execution in NX
 
-Aktuell sind mehrere Pfade im Code fest definiert.
+1. Ensure that Python is installed.
+2. Ensure that the NX Python API is available.
+3. Place both scripts in your project directory.
 
-Beispiele:
+Required scripts:
+
+- NX launcher script:
+  AAS_TO_NX.py
+
+
+4. Open Siemens NX.
+5. Start the NX script
+
+The script will then automatically start the complete workflow.
+
+---
+
+# Configuration
+
+Currently, several paths are hardcoded in the code.
+
+Examples:
 
 script_path = C:\Users\chris\AAS-Creo-Bridge\src\AAS_TO_NX.py
 
@@ -185,33 +185,35 @@ step_path = C:\Users\chris\AAS-Creo-Bridge\temp_model.step
 
 ---
 
-# Troubleshooting (Fehlerbehebung)
+# Troubleshooting (Error handling)
 
-## STEP-Datei wird nicht erzeugt
-Mögliche Ursachen:
+## STEP file is not created
+Possible causes:
 
-- Die AASX-Datei enthält kein STEP-Modell
-- Das Modellformat ist nicht STEP
-- Der Zugriff auf den File Store ist fehlgeschlagen
-
----
-
-## Externes Skript startet nicht
-
-Mögliche Ursachen:
-
-- Falscher Python-Pfad
-- Skriptpfad falsch
-- Python-Abhängigkeiten fehlen
+- The AASX file does not contain a STEP model
+- The model format is not STEP
+- Access to the file store has failed
 
 ---
 
-## Import in NX schlägt fehl
+## External script does not start
 
-Mögliche Ursachen:
+Possible causes:
 
-- STEP-Datei beschädigt
-- NX Step Importer nicht korrekt initialisiert
-- Kein Work Part vorhanden
+- Incorrect Python path
+- Wrong script path
+- Missing Python dependencies
 
+---
 
+## Import into NX fails
+
+Possible causes:
+
+- STEP file is corrupted
+- NX Step Importer not initialized correctly
+- No work part available
+
+# Possible improvements
+
+Currently, the script searches for all STP files within the AASX file. If multiple STP files are present, this can lead to issues. The script should be extended to select the correct STP file from the AASX based on a specific identifier or naming convention.
