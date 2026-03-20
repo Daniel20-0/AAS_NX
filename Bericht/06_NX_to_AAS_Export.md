@@ -11,10 +11,9 @@ The CSV file contains selected mass properties of a part, e.g.:
 The file is automatically saved in the same directory as the NX part.
 
 ---
+# Basic Functionality
 
-# Grundlegende Funktionsweise
-
-Das Skript führt folgenden Ablauf aus:
+The script executes the following process:
 
 1. Establish a connection to the current NX session 
 2. Access the active work part 
@@ -25,7 +24,8 @@ Das Skript führt folgenden Ablauf aus:
 
 ---
 
-# Code-Struktur und Funktionen
+# Code Structure and Functions
+
 
 ## main()
 

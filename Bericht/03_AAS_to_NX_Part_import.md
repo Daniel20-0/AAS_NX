@@ -1,13 +1,12 @@
 # NX AASX to STEP Import Tool
 
-Dieses Projekt beinhaltet ein Python-Skript, das über die **NX Open Python API** ausgeführt wird.  
-Das Tool dient dazu, eine **AASX-Datei (Asset Administration Shell)** auszuwählen, daraus automatisch ein enthaltenes **STEP-Modell** zu extrahieren und dieses anschließend in **Siemens NX** zu importieren.
+This project contains a Python script that is executed via the **NX Open Python API**.  
+The tool is used to select an **AASX file (Asset Administration Shell)**, automatically extract a contained **STEP model** from it, and then import it into **Siemens NX**.
 
 The application thus connects an **Asset Administration Shell (AAS)** with a CAD system by directly opening a STEP model referenced within the AAS in NX.
 ---
 
-## Überblick
-
+## Overview
 The **NX Part Loader** provides a simplified workflow for quickly locating and opening parts.
 
 Features:

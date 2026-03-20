@@ -1,158 +1,158 @@
-# 01 Einleitung HKA: Integration von Digitalen Zwillingen (AAS) und CAD (Siemens NX)
+# 01 Introduction HKA: Integration of Digital Twins (AAS) and CAD (Siemens NX)
 
-Im Rahmen dieses Entwicklungsprojekts wird die informationstechnische und konzeptionelle Brücke zwischen der Asset Administration Shell (AAS – Verwaltungsschale) und dem CAD-System Siemens NX geschlagen. Ziel ist es, das Arbeiten mit Digitalen Zwillingen über Systemgrenzen hinweg zu ermöglichen und eine durchgängige Datennutzung über den gesamten Produktlebenszyklus zu gewährleisten. 
+Within the scope of this development project, the informational and conceptual bridge between the Asset Administration Shell (AAS) and the CAD system Siemens NX is built. The goal is to enable working with Digital Twins across system boundaries and to ensure continuous data utilization throughout the entire product lifecycle. 
 
-Das Projekt gliedert sich methodisch in zwei aufeinander aufbauende Phasen:
+Methodologically, the project is divided into two consecutive phases:
 
-## Phase 1: Grundlagen und Anwendungsszenarien im Produktlebenszyklus
+## Phase 1: Fundamentals and Application Scenarios in the Product Lifecycle
 
-In der ersten Projektphase wurden die theoretischen Grundlagen der AAS erarbeitet und evaluiert, welche konkreten Mehrwerte und Anwendungsszenarien die Anbindung eines CAD-Systems an die Verwaltungsschale bietet. 
+In the first phase of the project, the theoretical fundamentals of the AAS were developed, and the specific added value and application scenarios offered by connecting a CAD system to the administration shell were evaluated. 
 
-Zur Veranschaulichung der Konzepte dient das praxisnahe Beispiel einer **Spülmaschine**. Entlang ihres Produktlebenszyklus entstehen in jeder Phase stark variierende Anforderungen an die Bereitstellung, Aktualisierung und Strukturierung von Daten aus dem Digitalen Zwilling. 
+A practical example of a **dishwasher** serves to illustrate the concepts. Along its product lifecycle, highly varying requirements arise in each phase regarding the provision, updating, and structuring of data from the Digital Twin. 
 
-Der betrachtete Lebenszyklus umfasst die folgenden sechs Phasen:
+The considered lifecycle encompasses the following six phases:
 
-1.  Entwicklung (CAD & Engineering)
-2.  Teilebeschaffung (Procurement)
-3.  **Produktion (Manufacturing)**
-4.  Sales (Vertrieb)
+1.  Development (CAD & Engineering)
+2.  Parts Procurement
+3.  **Production (Manufacturing)**
+4.  Sales
 5.  Service / After-Sales
 6.  **Recycling (End-of-Life)**
 
-*Wie im nachfolgenden Diagramm dargestellt, bilden diese Phasen einen fortlaufenden Kreislauf. Im Rahmen dieses Projekts wurden insbesondere die Phasen **Produktion** und **Recycling** tiefgehend ausgearbeitet. Die detaillierte Ausarbeitung dieser Use-Cases ist Gegenstand der nachfolgenden Kapitel.*
+*As shown in the following diagram, these phases form a continuous cycle. Within the scope of this project, the **Production** and **Recycling** phases, in particular, were elaborated in depth. The detailed elaboration of these use cases is the subject of the following chapters.*
 
-![Produktlebenszyklus einer Spülmaschine](bilder/Eng_AAS_CAD_Lifecycle.drawio.svg)
+![Product lifecycle of a dishwasher](bilder/Eng_AAS_CAD_Lifecycle.drawio.svg)
 
-## Phase 2: Technische Umsetzung und Schnittstellenfunktionen
+## Phase 2: Technical Implementation and Interface Functions
 
-Basierend auf den konzeptionellen Vorarbeiten der ersten Phase lag der Fokus der zweiten Projektphase auf der technischen Implementierung. Hierbei wurden die zentralen Kernfunktionen identifiziert und entwickelt, die für das praktische Arbeiten mit AASX-Datenpaketen und dem CAD-Programm Siemens NX zwingend erforderlich sind. 
-
----
-
-> **Hinweis zur Dokumentation ("Living Document"):**
-> Da an diesem Repository auch in Zukunft weitergeforscht und gearbeitet wird, ist diese Dokumentation direkt als Struktur für das GitHub-Repository (`README.md` und verknüpfte Markdown-Dateien) konzipiert. Auf eine redundante, separat geführte Dokumentation wurde bewusst verzichtet. Dies stellt sicher, dass Code-Änderungen und Dokumentation stets synchron, transparent versioniert und an einem zentralen Ort für nachfolgende Entwickler zugänglich bleiben.
+Based on the conceptual preliminary work of the first phase, the focus of the second project phase was on the technical implementation. Here, the central core functions required for practical work with AASX data packages and the CAD program Siemens NX were identified and developed. 
 
 ---
 
-## 3. Szenario: Produktion (Manufacturing)
+> **Documentation Note ("Living Document"):**
+> Since research and work on this repository will continue in the future, this documentation is designed directly as the structure for the GitHub repository (`README.md` and linked Markdown files). Redundant, separately maintained documentation was deliberately avoided. This ensures that code changes and documentation always remain synchronous, transparently versioned, and accessible in a central location for future developers.
+
+---
+
+## 3. Scenario: Production (Manufacturing)
 
 ### 3.1 Detailed description of the scenario
-Lena Müller arbeitet als Produktionsplanerin und Montageleiterin in der Endmontage. Sie ist verantwortlich für die korrekte Ausführung der Montageprozesse sowie für die Qualitätssicherung der montierten Baugruppen. Lena überprüft die Anzugsdrehmomente der einzelnen Verschraubungen und montiert die zugehörigen Blechbauteile. Dabei stellt sie sicher, dass alle Montagevorgaben exakt eingehalten werden, um Funktionsfähigkeit, Sicherheit und Qualität des Produkts zu gewährleisten. 
+Lena Müller works as a production planner and assembly manager in final assembly. She is responsible for the correct execution of the assembly processes as well as for the quality assurance of the assembled modules. Lena checks the tightening torques of the individual screw connections and assembles the corresponding sheet metal components. In doing so, she ensures that all assembly specifications are strictly adhered to in order to guarantee the functionality, safety, and quality of the product. 
 
-Die relevanten Montageinformationen werden Lena digital bereitgestellt. Eine Montagezeichnung, die über die Asset Administration Shell (AAS) mit dem jeweiligen physischen Asset verknüpft ist, ist im CAD-Modell hinterlegt. Über ein digitales Endgerät (z. B. Industrie-Tablet oder HMI) kann Lena kontextbezogen auf diese Informationen zugreifen.
+The relevant assembly information is provided to Lena digitally. An assembly drawing, linked to the respective physical asset via the Asset Administration Shell (AAS), is stored in the CAD model. Using a digital device (e.g., an industrial tablet or HMI), Lena can access this information in context.
 
 ### 3.2 Process flow description
 
-* **Identifikation des Produkts / Assets:** Lena identifiziert das zu montierende Produkt anhand einer Seriennummer oder eines QR-Codes.
-* **Aufruf der AAS:** Über das Fertigungssystem wird die zugehörige Asset Administration Shell geladen.
-* **Zugriff auf die Montageinformationen:** Die AAS verweist auf das verknüpfte CAD-Modell und die zugehörige Montagezeichnung.
-* **Anzeige der Montageschritte:** Die einzelnen Montageschritte werden sequenziell dargestellt, inklusive der benötigter Werkzeuge.
-* **Prüfung der Anzugsdrehmomente:** Für jede Schraubverbindung werden die Soll-Drehmomente angezeigt und mit dem eingesetzten Drehmomentwerkzeug überprüft.
-* **Montage der Blechbauteile:** Lena montiert die Blechkomponenten gemäß der Zeichnung und den definierten Prozessschritten.
-* **Dokumentation und Rückmeldung:** Die erfolgte Montage und die geprüften Drehmomente werden im System dokumentiert und ggf. an übergeordnete Systeme zurückgemeldet.
+* **Product / Asset Identification:** Lena identifies the product to be assembled using a serial number or a QR code.
+* **Calling up the AAS:** The corresponding Asset Administration Shell is loaded via the manufacturing system.
+* **Accessing assembly information:** The AAS points to the linked CAD model and the corresponding assembly drawing.
+* **Display of assembly steps:** The individual assembly steps are presented sequentially, including the required tools.
+* **Checking tightening torques:** The target torques for each screw connection are displayed and verified with the torque tool in use.
+* **Assembly of sheet metal components:** Lena assembles the sheet metal components according to the drawing and the defined process steps.
+* **Documentation and feedback:** The completed assembly and the verified torques are documented in the system and, if necessary, reported back to higher-level systems.
 
 ### 3.3 Required files and resources
-* **CAD-Modelle** (z. B. STEP, JT, native CAD-Formate)
-* **Montagezeichnungen** (2D/3D, z. B. PDF oder direkt im CAD)
-* **Drehmoment-Spezifikationen** (z. B. Tabellen oder Metadaten)
-* **Asset Administration Shell** (AAS-Modell im JSON- oder XML-Format)
-* **Digitale Endgeräte** (Tablet, Industrie-PC, HMI)
-* **Drehmomentwerkzeuge** (idealerweise mit digitaler Schnittstelle)
-* **MES-/PLM-Systeme** zur Datenverwaltung
+* **CAD models** (e.g., STEP, JT, native CAD formats)
+* **Assembly drawings** (2D/3D, e.g., PDF or directly in CAD)
+* **Torque specifications** (e.g., tables or metadata)
+* **Asset Administration Shell** (AAS model in JSON or XML format)
+* **Digital devices** (tablet, industrial PC, HMI)
+* **Torque tools** (ideally with a digital interface)
+* **MES/PLM systems** for data management
 
 ### 3.4 Technical implementation
 
 #### 3.4.1 Implementation in the Asset Administration Shell (AAS)
-Die Asset Administration Shell dient als zentraler Daten-Hub für montage- und qualitätsrelevante Informationen. Technisch erfolgt die Umsetzung über klar definierte `SubmodelElements`, die Montagewissen, CAD-Referenzen und Drehmomentvorgaben standardisiert abbilden.
+The Asset Administration Shell serves as a central data hub for assembly- and quality-relevant information. Technically, the implementation is carried out via clearly defined `SubmodelElements` that standardize assembly knowledge, CAD references, and torque specifications.
 
-**Montage- und Drehmomentdaten**
-* **Submodell „AssemblyInformation“:** Enthält die vollständige Beschreibung der Montageschritte als strukturierte `SubmodelElements` (z. B. `Operation`, `Sequence`, `StepNumber`).
-* **Anzugsdrehmomente:** Jede Schraubverbindung wird durch ein `Property`-Element beschrieben:
+**Assembly and torque data**
+* **Submodel "AssemblyInformation":** Contains the complete description of the assembly steps as structured `SubmodelElements` (e.g., `Operation`, `Sequence`, `StepNumber`).
+* **Tightening torques:** Each screw connection is described by a `Property` element:
     * `FastenerID`
-    * `TorqueNominal` (z. B. 12 Nm)
-    * `TorqueTolerance` (z. B. ±10 %)
-    * `ToolType` (z. B. elektronischer Drehmomentschlüssel)
+    * `TorqueNominal` (e.g., 12 Nm)
+    * `TorqueTolerance` (e.g., ±10%)
+    * `ToolType` (e.g., electronic torque wrench)
 
-> **Beispiel:** Die Verschraubung der Seitenwand besitzt das Attribut `TorqueNominal = 12 Nm`, `TorqueTolerance = ±1,2 Nm`.
+> **Example:** The screw connection of the side panel has the attribute `TorqueNominal = 12 Nm`, `TorqueTolerance = ±1.2 Nm`.
 
 #### 3.4.2 Implementation in the CAD environment
-Die CAD-Umgebung (Viewer oder Montage-Frontend an Lenas Arbeitsplatz) fungiert als visuelle und interaktive Schnittstelle zwischen Werkerin und digitalem Produktzwilling.
+The CAD environment (viewer or assembly frontend at Lena's workstation) acts as a visual and interactive interface between the worker and the digital product twin.
 
-* Jedes Bauteil und jede Schraubverbindung im CAD-Modell ist mit der `InstanceId` der entsprechenden AAS-Komponente verknüpft.
-* Klickt Lena auf eine Schraube im 3D-Modell, werden **Soll-Drehmoment**, **Toleranz** und **Werkzeugtyp** direkt aus der AAS geladen und angezeigt.
+* Each component and screw connection in the CAD model is linked to the `InstanceId` of the corresponding AAS component.
+* If Lena clicks on a screw in the 3D model, the **target torque**, **tolerance**, and **tool type** are loaded directly from the AAS and displayed.
 
-**Feedback- und Rückmeldekanal (As-Planned vs. As-Built)**
-Lena kann direkt im CAD-Interface Abweichungen melden, z. B.:
-* Schraube nicht zugänglich
-* Bauteil passt nicht spannungsfrei
-* Drehmoment konstruktiv nicht erreichbar
+**Feedback and reporting channel (As-Planned vs. As-Built)**
+Lena can report deviations directly in the CAD interface, e.g.:
+* Screw is inaccessible
+* Component does not fit stress-free
+* Torque cannot be achieved structurally
 
-Diese Rückmeldungen werden als `Event` oder `Annotation` direkt in der AAS gespeichert und stehen Konstruktion und Arbeitsvorbereitung zur Verfügung.
+These reports are stored as an `Event` or `Annotation` directly in the AAS and are made available to engineering and production planning.
 
 ---
 
-## 6. Szenario: Recycling (End-of-Life)
+## 6. Scenario: Recycling (End-of-Life)
 
 ### 6.1 Detailed description of the scenario
-Im Jahr 2026 ist die lineare Wirtschaft („Produzieren, Nutzen, Wegwerfen“) durch die *Ecodesign for Sustainable Products Regulation* (ESPR) gesetzlich beendet worden. Jede in der EU verkaufte Spülmaschine muss nun über einen Digitalen Produktpass (DPP) verfügen, der technisch als Verwaltungsschale (Asset Administration Shell, AAS) realisiert ist. 
+In 2026, the linear economy ("take, make, dispose") was legally ended by the *Ecodesign for Sustainable Products Regulation* (ESPR). Every dishwasher sold in the EU must now have a Digital Product Passport (DPP), which is technically implemented as an Asset Administration Shell (AAS). 
 
-Markus Mustermann, ein spezialisierter Mitarbeiter in einem zertifizierten Demontagezentrum, steht vor einer Herausforderung: Eine moderne Spülmaschine besteht aus über 150 verschiedenen Materialien, darunter wertvoller Edelstahl, kupferhaltige Motoren, Elektronik mit Seltenen Erden und problematische Bitumen-Dämmmatten.
+Markus Mustermann, a specialized employee in a certified dismantling center, faces a challenge: A modern dishwasher consists of over 150 different materials, including valuable stainless steel, copper-bearing motors, electronics with rare earths, and problematic bitumen insulation mats.
 
-Ohne die AAS wäre die Spülmaschine für Markus eine „Blackbox“. Er müsste sie schreddern, was die Materialreinheit extrem verschlechtert. Dank der AAS wird Markus zum Urban Miner: Er greift auf den digitalen Zwilling zu, der ihm nicht nur sagt, was verbaut ist, sondern auch, wie er es zerstörungsfrei trennen kann, um die Rückführungsgewinne zu maximieren.
+Without the AAS, the dishwasher would be a "black box" for Markus. He would have to shred it, which severely degrades material purity. Thanks to the AAS, Markus becomes an Urban Miner: He accesses the digital twin, which tells him not only what is installed but also how to separate it non-destructively to maximize recycling yields.
 
 ### 6.2 Process flow description
-Der Workflow ist in fünf Phasen unterteilt:
+The workflow is divided into five phases:
 
-1.  **Erfassung & Initialisierung:** Markus scannt den am Gehäuserahmen gelaserten QR-Code. Die AAS öffnet dazu das entsprechende Modell.
-2.  **Status- & Sicherheitsanalyse:** Bevor Markus das Werkzeug ansetzt, prüft das System das Submodell „Safety“. Es wird angezeigt, ob Kondensatoren entladen werden müssen oder ob chemische Rückstände (z. B. Klarspüler-Reste) in Schläuchen vorhanden sind.
-3.  **Virtuelle Exploration:** Markus bekommt in der AAS die Demontagezeichnungen und zerlegt basierend darauf die Maschine. Ihm wird angezeigt, welches Teil aus welchem Material ist. Am Ende trägt er ein, wie viel Masse er von welchem Material sortenrein getrennt hat.
-4.  **Geführte Demontage:** Markus folgt den in der AAS hinterlegten Schritten. Das System gibt vor:
-    * *Schritt 1:* Lösen der Torx-Schrauben (T15) an der Rückwand.
-    * *Schritt 2:* Abklemmen des Kabelbaums.
-    * *Schritt 3:* Entnahme der Isolierung.
+1.  **Capture & Initialization:** Markus scans the QR code lasered onto the housing frame. The AAS opens the corresponding model for this.
+2.  **Status & Safety Analysis:** Before Markus uses any tools, the system checks the "Safety" submodel. It displays whether capacitors need to be discharged or if chemical residues (e.g., rinse aid remnants) are present in the hoses.
+3.  **Virtual Exploration:** Markus receives the dismantling drawings in the AAS and disassembles the machine based on them. He is shown which part is made of which material. At the end, he enters how much mass of each material he has separated by type.
+4.  **Guided Dismantling:** Markus follows the steps stored in the AAS. The system dictates:
+    * *Step 1:* Loosen the Torx screws (T15) on the back panel.
+    * *Step 2:* Disconnect the wiring harness.
+    * *Step 3:* Remove the insulation.
 
 ### 6.3 Required files and resources
-Für die Implementierung werden folgende Punkte benötigt:
+The following items are required for the implementation:
 
-* **Das AASX-Container-File:** Beinhaltet die logische Struktur und alle Verweise.
-* **Identification:** Eindeutige ID.
-* **DigitalProductPassport (DPP):** Enthält die rechtlich geforderten Daten der ESPR (CO2-Fußabdruck, Rezyklatanteil).
-* **Bill of Materials (R-BOM):** Die hierarchische Liste sowie Eigenschaften für das Recycling aller Komponenten.
-* **TechnicalProperties:** Materialdatenblätter pro Komponente, von den jeweiligen Herstellern bereitgestellt und in der AAS der Spülmaschine zusammengeführt.
-* **CAD-Ressourcen:** Demontagezeichnungen und 3D-Modell zur Demontage.
+* **The AASX container file:** Contains the logical structure and all references.
+* **Identification:** Unique ID.
+* **Digital Product Passport (DPP):** Contains the legally required ESPR data (carbon footprint, recyclate content).
+* **Bill of Materials (R-BOM):** The hierarchical list as well as properties for recycling all components.
+* **TechnicalProperties:** Material data sheets per component, provided by the respective manufacturers and merged into the dishwasher's AAS.
+* **CAD resources:** Dismantling drawings and 3D model for disassembly.
 
 ### 6.4 Technical implementation
 
 #### 6.4.1 Implementation in the Asset Administration Shell (AAS)
-Die AAS dient als Daten-Hub. Alle verbauten Komponenten haben von den jeweiligen Herstellern die Eigenschaften hinterlegt und diese werden zu einer Spülmaschine zusammengebaut.
+The AAS serves as a data hub. All installed components have their properties stored by the respective manufacturers, and these are assembled into a dishwasher.
 
-* **Material-Identifikation:** Jedes Bauteil in der Spülmaschine erhält ein `Property`-Element mit der Material-ID.
-    * *Beispiel:* Die Verkleidungselemente erhalten das Attribut `Material: V2A (Edelstahl)`.
-* **API-Schnittstelle:** Die AAS stellt eine REST-API bereit, über die die Recycling-Software Abfragen stellt (z. B. `GET /submodels/MaterialComposition/submodel-elements/CopperWeight`).
+* **Material Identification:** Every component in the dishwasher receives a `Property` element with the material ID.
+    * *Example:* The cladding elements receive the attribute `Material: V2A (Stainless Steel)`.
+* **API Interface:** The AAS provides a REST API through which the recycling software makes queries (e.g., `GET /submodels/MaterialComposition/submodel-elements/CopperWeight`).
 
 #### 6.4.2 Implementation in the CAD environment
-Die CAD-Umgebung dient als zentrale Datenquelle für die Erstellung der Verwaltungsschale (AAS). Der Prozess gestaltet sich wie folgt:
+The CAD environment serves as the central data source for creating the Asset Administration Shell (AAS). The process is structured as follows:
 
-* **Bereitstellung von Dokumenten:** Direkt aus dem CAD-System werden Demontagezeichnungen im PDF-Format generiert und der AAS zur Verfügung gestellt.
-* **Stoffstromanalyse:** Es wird eine automatisierte Liste generiert, die alle Bauteile inklusive deren Volumina und Materialien erfasst. Daraus lassen sich die exakten Massen der verschiedenen Rohstoffe ableiten. 
-* **Soll-Ist-Vergleich im Recycling-Prozess:** Im Rahmen des Recycling-Prozesses werden diese Daten für jede Spülmaschinen-Variante berechnet und in der AAS als Soll-Werte hinterlegt.
-* **Nachweispflicht:** Nach der Zerlegung ist der Recycler verpflichtet, die tatsächlich gewonnenen Massen der unterschiedlichen Stoffe als Ist-Werte in die AAS einzutragen.
-* **Rückfluss zum Hersteller:** Diese Daten werden an den Hersteller zurückgeführt. Dieser erhält dadurch einen lückenlosen Nachweis darüber, zu wie viel Prozent die Maschine sortenrein zerlegt wurde.
-* **Visualisierung:** Bei hoher Komplexität der Anlage kann dem Recycler zusätzlich ein 3D-Modell zur Verfügung gestellt werden.
-* **Zusätzliche Visualisierung:** Das System berechnet die Recycling-Priorität auf Grundlage der hinterlegten Materialeigenschaften. Bauteile, die Schadstoffe enthalten, werden rot blinkend dargestellt.
+* **Provision of documents:** Dismantling drawings in PDF format are generated directly from the CAD system and made available to the AAS.
+* **Material flow analysis:** An automated list is generated that records all components, including their volumes and materials. From this, the exact masses of the different raw materials can be derived. 
+* **Target-actual comparison in the recycling process:** As part of the recycling process, this data is calculated for each dishwasher variant and stored in the AAS as target values.
+* **Proof of obligation:** After dismantling, the recycler is obliged to enter the actually recovered masses of the different materials as actual values into the AAS.
+* **Feedback loop to the manufacturer:** This data is fed back to the manufacturer. This gives the manufacturer seamless proof of the percentage to which the machine was sorted and dismantled.
+* **Visualization:** Given high system complexity, an additional 3D model can be provided to the recycler.
+* **Additional visualization:** The system calculates the recycling priority based on the stored material properties. Components containing pollutants are displayed flashing red.
 
-### 6.5 Vorgaben und gesetzliche Richtlinien (Additional Requirements)
+### 6.5 Regulations and Legal Guidelines (Additional Requirements)
 
 1.  **ESPR (Ecodesign for Sustainable Products Regulation)**
-    * **Standardwerkzeuge & Zerlegbarkeit:** Bereits die bestehende Verordnung (EU) 2019/2022 für Spülmaschinen legt fest, dass bestimmte Teile (wie Pumpen oder Motoren) mit „allgemein verfügbaren Werkzeugen“ und ohne dauerhafte Beschädigung des Geräts austauschbar sein müssen.
-    * **Demontagezeit:** Die neue ESPR (Verordnung (EU) 2024/1781) erlaubt es der EU, in produktspezifischen "Delegierten Rechtsakten" explizite Leistungsanforderungen zu stellen. Für die Überarbeitung der Spülmaschinen-Regeln (geplant ab 2026) wird diskutiert, die Demontagezeit als Metrik für die Recyclingfähigkeit aufzunehmen. *(Quelle: Verordnung (EU) 2019/2022, Anhang II, Punkt 3 sowie Verordnung (EU) 2024/1781 (ESPR), Artikel 5).*
-2.  **EU-Batterieverordnung (2023/1542)**
-    * **Entnehmbarkeit:** Ab dem 18. Februar 2027 müssen Gerätebatterien so konstruiert sein, dass sie vom Endnutzer oder Fachpersonal leicht entnommen und ausgetauscht werden können.
-    * **Batteriepass:** Während der volle „Batteriepass“ primär für Industrie- (>2 kWh) und Traktionsbatterien gilt, müssen Informationen zur chemischen Zusammensetzung und zum sicheren Ausbau bei kleinen Batterien im Digitalen Produktpass (DPP) des Hauptgeräts (hier die AAS der Spülmaschine) hinterlegt sein. *(Quelle: Verordnung (EU) 2023/1542, Artikel 11 und Artikel 77).*
-3.  **WEEE-Richtlinie (Waste Electrical and Electronic Equipment)**
-    * Die WEEE regelt den Umgang mit dem Elektroschrott nach der Nutzung. 
-    * **Sammel- und Verwertungsquoten:** Für Großgeräte (Kategorie 1), zu denen Spülmaschinen gehören, schreibt die Richtlinie eine Verwertungsquote von 85 % und eine Quote für Vorbereitung zur Wiederverwendung und Recycling von 80 % vor. 
-    * **Rolle der AAS:** Die AAS ist das Werkzeug, um die "Materialhygiene" zu garantieren. Nur durch sortenreine Trennung (z. B. Edelstahl der Güte 1.4301 statt Mischschrott) können diese hohen Quoten wirtschaftlich erreicht werden. *(Quelle: Richtlinie 2012/19/EU, Anhang V).*
+    * **Standard tools & dismantlability:** The existing Regulation (EU) 2019/2022 for dishwashers already stipulates that certain parts (such as pumps or motors) must be replaceable with "commonly available tools" and without causing permanent damage to the appliance.
+    * **Dismantling time:** The new ESPR (Regulation (EU) 2024/1781) allows the EU to set explicit performance requirements in product-specific "delegated acts". For the revision of the dishwasher rules (planned from 2026), discussions are underway to include dismantling time as a metric for recyclability. *(Source: Regulation (EU) 2019/2022, Annex II, Point 3 and Regulation (EU) 2024/1781 (ESPR), Article 5).*
+2.  **EU Battery Regulation (2023/1542)**
+    * **Removability:** From February 18, 2027, portable batteries must be designed so that they can be easily removed and replaced by the end user or qualified personnel.
+    * **Battery passport:** While the full "battery passport" primarily applies to industrial (>2 kWh) and traction batteries, information on chemical composition and safe removal for small batteries must be stored in the Digital Product Passport (DPP) of the main device (here, the dishwasher's AAS). *(Source: Regulation (EU) 2023/1542, Article 11 and Article 77).*
+3.  **WEEE Directive (Waste Electrical and Electronic Equipment)**
+    * WEEE regulates the handling of electronic waste after use. 
+    * **Collection and recovery targets:** For large appliances (Category 1), which include dishwashers, the directive prescribes a recovery target of 85% and a target for preparation for reuse and recycling of 80%. 
+    * **Role of the AAS:** The AAS is the tool to guarantee "material hygiene". These high targets can only be achieved economically through single-origin separation (e.g., grade 1.4301 stainless steel instead of mixed scrap). *(Source: Directive 2012/19/EU, Annex V).*
 4.  **Substances of Concern (REACH & SCIP)**
-    * **Informationspflicht:** Seit Januar 2021 müssen Hersteller Informationen über besonders besorgniserregende Stoffe (SVHC) in der SCIP-Datenbank der ECHA hinterlegen, wenn die Konzentration über 0,1 % liegt.
-    * **AAS-Integration:** Die AAS dient als Schnittstelle, um diese komplexen Chemikaliendaten für Markus Mustermann direkt am Arbeitsplatz visualisierbar zu machen (z. B. Warnhinweis auf Bitumenmatten oder Flammschutzmittel in Platinen), ohne dass er manuell in Datenbanken suchen muss. *(Quelle: Abfallrahmenrichtlinie (2008/98/EG), Artikel 9(1)i und REACH-Verordnung (EG) Nr. 1907/2006).*
+    * **Information obligation:** Since January 2021, manufacturers must submit information on Substances of Very High Concern (SVHC) to the ECHA SCIP database if the concentration exceeds 0.1%.
+    * **AAS Integration:** The AAS serves as an interface to make this complex chemical data directly visualizable for Markus Mustermann at his workstation (e.g., warning label for bitumen mats or flame retardants in circuit boards), without him having to search manually in databases. *(Source: Waste Framework Directive (2008/98/EC), Article 9(1)i and REACH Regulation (EC) No 1907/2006).*
