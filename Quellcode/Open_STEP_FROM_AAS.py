@@ -30,7 +30,6 @@ def ensure_work_part():
             NXOpen.Part.Units.Millimeters
         )
 
-
 def import_step_into_nx(step_path):
     # Imports a STEP file into NX and converts it into an NX part (.prt).
     # Includes geometry such as curves, surfaces, solids, and PMI data.
