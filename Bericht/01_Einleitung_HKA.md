@@ -1,6 +1,10 @@
 # 01 Introduction HKA: Integration of Digital Twins (AAS) and CAD (Siemens NX)
 
-Within the scope of this development project, the informational and conceptual bridge between the Asset Administration Shell (AAS) and the CAD system Siemens NX is built. The goal is to enable working with Digital Twins across system boundaries and to ensure continuous data utilization throughout the entire product lifecycle. 
+Within the scope of this development project, the informational and conceptual bridge between the Asset Administration Shell (AAS) and the CAD system Siemens NX is built. 
+
+> "The Asset Administration Shell is the standardized digital representation of an asset. It structures all relevant data and properties of a physical or logical object throughout its entire lifecycle, thus forming the technical foundation for the Digital Twin in Industry 4.0." [1]
+
+The goal is to enable working with Digital Twins across system boundaries and to ensure continuous data utilization throughout the entire product lifecycle. 
 
 Methodologically, the project is divided into two consecutive phases:
 
@@ -145,14 +149,16 @@ The CAD environment serves as the central data source for creating the Asset Adm
 
 1.  **ESPR (Ecodesign for Sustainable Products Regulation)**
     * **Standard tools & dismantlability:** The existing Regulation (EU) 2019/2022 for dishwashers already stipulates that certain parts (such as pumps or motors) must be replaceable with "commonly available tools" and without causing permanent damage to the appliance.
-    * **Dismantling time:** The new ESPR (Regulation (EU) 2024/1781) allows the EU to set explicit performance requirements in product-specific "delegated acts". For the revision of the dishwasher rules (planned from 2026), discussions are underway to include dismantling time as a metric for recyclability. *(Source: Regulation (EU) 2019/2022, Annex II, Point 3 and Regulation (EU) 2024/1781 (ESPR), Article 5).*
+    * **Dismantling time:** The new ESPR (Regulation (EU) 2024/1781) allows the EU to set explicit performance requirements in product-specific "delegated acts". For the revision of the dishwasher rules (planned from 2026), discussions are underway to include dismantling time as a metric for recyclability. [2], [3]
 2.  **EU Battery Regulation (2023/1542)**
     * **Removability:** From February 18, 2027, portable batteries must be designed so that they can be easily removed and replaced by the end user or qualified personnel.
-    * **Battery passport:** While the full "battery passport" primarily applies to industrial (>2 kWh) and traction batteries, information on chemical composition and safe removal for small batteries must be stored in the Digital Product Passport (DPP) of the main device (here, the dishwasher's AAS). *(Source: Regulation (EU) 2023/1542, Article 11 and Article 77).*
+    * **Battery passport:** While the full "battery passport" primarily applies to industrial (>2 kWh) and traction batteries, information on chemical composition and safe removal for small batteries must be stored in the Digital Product Passport (DPP) of the main device (here, the dishwasher's AAS). [4]
 3.  **WEEE Directive (Waste Electrical and Electronic Equipment)**
     * WEEE regulates the handling of electronic waste after use. 
     * **Collection and recovery targets:** For large appliances (Category 1), which include dishwashers, the directive prescribes a recovery target of 85% and a target for preparation for reuse and recycling of 80%. 
-    * **Role of the AAS:** The AAS is the tool to guarantee "material hygiene". These high targets can only be achieved economically through single-origin separation (e.g., grade 1.4301 stainless steel instead of mixed scrap). *(Source: Directive 2012/19/EU, Annex V).*
+    * **Role of the AAS:** The AAS is the tool to guarantee "material hygiene". These high targets can only be achieved economically through single-origin separation (e.g., grade 1.4301 stainless steel instead of mixed scrap). [5]
 4.  **Substances of Concern (REACH & SCIP)**
     * **Information obligation:** Since January 2021, manufacturers must submit information on Substances of Very High Concern (SVHC) to the ECHA SCIP database if the concentration exceeds 0.1%.
-    * **AAS Integration:** The AAS serves as an interface to make this complex chemical data directly visualizable for Markus Mustermann at his workstation (e.g., warning label for bitumen mats or flame retardants in circuit boards), without him having to search manually in databases. *(Source: Waste Framework Directive (2008/98/EC), Article 9(1)i and REACH Regulation (EC) No 1907/2006).*
+    * **AAS Integration:** The AAS serves as an interface to make this complex chemical data directly visualizable for Markus Mustermann at his workstation (e.g., warning label for bitumen mats or flame retardants in circuit boards), without him having to search manually in databases. [6], [7]
+
+---
