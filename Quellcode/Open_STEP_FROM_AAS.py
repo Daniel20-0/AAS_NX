@@ -221,7 +221,7 @@ def main():
     lw.WriteLine("NX Launcher gestartet")
 
     python_exe = r"C:\Users\chris\AppData\Local\Programs\Python\Python311\python.exe"
-    script_path = r"C:\Users\chris\AAS-Creo-Bridge\src\AAS_TO_NX.py"
+    script_path = r"C:\Users\chris\Documents\EntwicklungsPorjekt_AAS_Master\Entwicklungsprojekt_AAS\AAS_NX\Quellcode\AAS_TO_NX.py"
 
     step_path_1 = r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step"
     step_path_2 = r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step"
