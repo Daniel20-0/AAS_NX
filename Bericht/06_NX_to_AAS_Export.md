@@ -7,6 +7,7 @@ The CSV file contains selected mass properties of a part, e.g.:
 - Volume
 - Mass
 - Surface area
+- Material
 
 The file is automatically saved in the same directory as the NX part.
 
@@ -47,7 +48,8 @@ The following attributes are exported:
 wanted_attributes = [
     "MassPropVolume",
     "MassPropMass",
-    "MassPropArea"
+    "MassPropArea",
+    "Material"
 ]
 
 These attributes correspond to mass properties of an NX part.
@@ -57,10 +59,11 @@ These attributes correspond to mass properties of an NX part.
 | MassPropVolume  | Volume of the part     |
 | MassPropMass    | Mass of the part     |
 | MassPropArea    | Surface area of the part |
+| Material        | Material of the part |
 
 ## Creation of the export file path
 
-The file path of the CSV file is generated automatically:
+The file path of the CSV file is generated automatically
 
 ---
 
