@@ -3,6 +3,7 @@ import subprocess
 import os
 from time import sleep
 import math
+from pathlib import Path
 import NXOpen
 
 
@@ -130,9 +131,6 @@ def import_step_to_prt(step_path):
 
 
 def open_part(part_path):
-    """
-    Öffnet eine bestehende PRT-Datei in NX und gibt das Part-Objekt zurück.
-    """
     session = NXOpen.Session.GetSession()
     lw = session.ListingWindow
 
@@ -221,14 +219,20 @@ def main():
     lw.WriteLine("NX Launcher gestartet")
 
     python_exe = r"C:\Users\chris\AppData\Local\Programs\Python\Python311\python.exe"
-    script_path = r"C:\Users\chris\Documents\EntwicklungsPorjekt_AAS_Master\Entwicklungsprojekt_AAS\AAS_NX\Quellcode\AAS_TO_NX.py"
+    script_path = r"C:\Users\chris\Documents\EntwicklungsPorjekt_AAS_Master\Entwicklungsprojekt_AAS\AAS_NX\Quellcode\AAS-Creo-Bridge\src\AAS_TO_NX.py"
 
-    step_path_1 = r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step"
-    step_path_2 = r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step"
+    step_path_1 = Path(r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step")
+    step_path_2 = Path(r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step")
 
     try:
         lw.WriteLine("Starte externes Skript...")
         lw.WriteLine(script_path)
+
+        # Alte STEP-Datei vor dem Start löschen,
+        # damit kein vorhandener Altbestand importiert wird.
+        if step_path_1.exists():
+            lw.WriteLine("Vorhandene STEP-Datei gefunden -> wird gelöscht")
+            step_path_1.unlink()
 
         result = subprocess.run(
             [python_exe, script_path],
@@ -245,8 +249,12 @@ def main():
         if result.stderr:
             lw.WriteLine(result.stderr)
 
-        if not os.path.exists(step_path_1):
-            lw.WriteLine("STEP Datei wurde nicht erzeugt!")
+        if result.returncode != 0:
+            lw.WriteLine("Externes Skript wurde abgebrochen oder ist fehlgeschlagen -> kein Import")
+            return
+
+        if not step_path_1.exists():
+            lw.WriteLine("STEP Datei wurde nicht neu erzeugt -> kein Import")
             return
 
         lw.WriteLine("STEP Datei gefunden -> starte Import als Komponente")
@@ -255,7 +263,7 @@ def main():
         sleep(1)
 
         import_step_into_nx_as_component(
-            step_path_1,
+            str(step_path_1),
             x=0.0,
             y=0.0,
             z=0.0,
@@ -263,7 +271,7 @@ def main():
         )
 
         import_step_into_nx_as_component(
-            step_path_2,
+            str(step_path_2),
             x=150.0,
             y=0.0,
             z=0.0,
