@@ -215,18 +215,21 @@ def main():
     session = NXOpen.Session.GetSession()
     lw = session.ListingWindow
     lw.Open()
+    current_dir = Path(__file__).resolve().parent.parent
 
+    # Projektstruktur: eine Ebene hoch → dann in src
+    script_path = current_dir / "Quellcode" / "AAS-Creo-Bridge" / "src" / "AAS_TO_NX.py"
     lw.WriteLine("NX Launcher gestartet")
 
     python_exe = r"C:\Users\chris\AppData\Local\Programs\Python\Python311\python.exe"
-    script_path = r"C:\Users\chris\Documents\EntwicklungsPorjekt_AAS_Master\Entwicklungsprojekt_AAS\AAS_NX\Quellcode\AAS_TO_NX.py"
+   
 
     step_path_1 = Path(r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step")
     step_path_2 = Path(r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step")
 
     try:
         lw.WriteLine("Starte externes Skript...")
-        lw.WriteLine(script_path)
+        lw.WriteLine(str(script_path))
 
         # Alte STEP-Datei vor dem Start löschen,
         # damit kein vorhandener Altbestand importiert wird.
@@ -235,7 +238,7 @@ def main():
             step_path_1.unlink()
 
         result = subprocess.run(
-            [python_exe, script_path],
+            [python_exe, str(script_path)],
             capture_output=True,
             text=True
         )
