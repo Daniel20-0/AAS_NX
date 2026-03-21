@@ -13,51 +13,23 @@
 //
 //==============================================================================
 
-//==============================================================================
-//  Purpose:  This TEMPLATE file contains C# source to guide you in the
-//  construction of your Block application dialog. The generation of your
-//  dialog file (.dlx extension) is the first step towards dialog construction
-//  within NX.  You must now create a NX Open application that
-//  utilizes this file (.dlx).
-//
-//  The information in this file provides you with the following:
-//
-//  1.  Help on how to load and display your Block UI Styler dialog in NX
-//      using APIs provided in NXOpen.BlockStyler namespace
-//  2.  The empty callback methods (stubs) associated with your dialog items
-//      have also been placed in this file. These empty methods have been
-//      created simply to start you along with your coding requirements.
-//      The method name, argument list and possible return values have already
-//      been provided for you.
-//==============================================================================
-
-//------------------------------------------------------------------------------
-//These imports are needed for the following template code
-//------------------------------------------------------------------------------
 using System;
 using NXOpen;
 using NXOpen.BlockStyler;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 
-
-//------------------------------------------------------------------------------
-//Represents Block Styler application class
-//------------------------------------------------------------------------------
 public class BOM_auslesen
 {
-    //class members
     private static Session theSession = null;
     private static UI theUI = null;
     private string theDlxFileName;
     private NXOpen.BlockStyler.BlockDialog theDialog;
     private NXOpen.BlockStyler.Group group0;
-    private NXOpen.BlockStyler.Button button0;// Block type: Button
+    private NXOpen.BlockStyler.Button button0;
     private bool exportBomRequested = false;
 
-    //------------------------------------------------------------------------------
-    //Constructor for NX Styler class
-    //------------------------------------------------------------------------------
     public BOM_auslesen()
     {
         try
@@ -74,100 +46,46 @@ public class BOM_auslesen
         }
         catch (Exception ex)
         {
-            //---- Enter your exception handling code here -----
             throw ex;
         }
     }
-    //------------------------------- DIALOG LAUNCHING ---------------------------------
-    //
-    //    Before invoking this application one needs to open any part/empty part in NX
-    //    because of the behavior of the blocks.
-    //
-    //    Make sure the dlx file is in one of the following locations:
-    //        1.) From where NX session is launched
-    //        2.) $UGII_USER_DIR/application
-    //        3.) For released applications, using UGII_CUSTOM_DIRECTORY_FILE is highly
-    //            recommended. This variable is set to a full directory path to a file 
-    //            containing a list of root directories for all custom applications.
-    //            e.g., UGII_CUSTOM_DIRECTORY_FILE=$UGII_BASE_DIR\ugii\menus\custom_dirs.dat
-    //
-    //    You can create the dialog using one of the following way:
-    //
-    //    1. Journal Replay
-    //
-    //        1) Replay this file through Tool->Journal->Play Menu.
-    //
-    //    2. USER EXIT
-    //
-    //        1) Create the Shared Library -- Refer "Block UI Styler programmer's guide"
-    //        2) Invoke the Shared Library through File->Execute->NX Open menu.
-    //
-    //------------------------------------------------------------------------------
+
     public static void Main()
     {
         BOM_auslesen theBOM_auslesen = null;
         try
         {
             theBOM_auslesen = new BOM_auslesen();
-            // The following method shows the dialog immediately
             theBOM_auslesen.Show();
         }
         catch (Exception ex)
         {
-            //---- Enter your exception handling code here -----
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
         finally
         {
-            if(theBOM_auslesen != null)
+            if (theBOM_auslesen != null)
                 theBOM_auslesen.Dispose();
-                theBOM_auslesen = null;
+            theBOM_auslesen = null;
         }
     }
-    //------------------------------------------------------------------------------
-    // This method specifies how a shared image is unloaded from memory
-    // within NX. This method gives you the capability to unload an
-    // internal NX Open application or user  exit from NX. Specify any
-    // one of the three constants as a return value to determine the type
-    // of unload to perform:
-    //
-    //
-    //    Immediately : unload the library as soon as the automation program has completed
-    //    Explicitly  : unload the library from the "Unload Shared Image" dialog
-    //    AtTermination : unload the library when the NX session terminates
-    //
-    //
-    // NOTE:  A program which associates NX Open applications with the menubar
-    // MUST NOT use this option since it will UNLOAD your NX Open application image
-    // from the menubar.
-    //------------------------------------------------------------------------------
-     public static int GetUnloadOption(string arg)
+
+    public static int GetUnloadOption(string arg)
     {
-        //return System.Convert.ToInt32(Session.LibraryUnloadOption.Explicitly);
-         return System.Convert.ToInt32(Session.LibraryUnloadOption.Immediately);
-        // return System.Convert.ToInt32(Session.LibraryUnloadOption.AtTermination);
+        return System.Convert.ToInt32(Session.LibraryUnloadOption.Immediately);
     }
-    
-    //------------------------------------------------------------------------------
-    // Following method cleanup any housekeeping chores that may be needed.
-    // This method is automatically called by NX.
-    //------------------------------------------------------------------------------
+
     public static void UnloadLibrary(string arg)
     {
         try
         {
-            //---- Enter your code here -----
         }
         catch (Exception ex)
         {
-            //---- Enter your exception handling code here -----
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
     }
-    
-    //------------------------------------------------------------------------------
-    //This method shows the dialog on the screen
-    //------------------------------------------------------------------------------
+
     public NXOpen.UIStyler.DialogResponse Show()
     {
         try
@@ -176,31 +94,20 @@ public class BOM_auslesen
         }
         catch (Exception ex)
         {
-            //---- Enter your exception handling code here -----
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
         return 0;
     }
-    
-    //------------------------------------------------------------------------------
-    //Method Name: Dispose
-    //------------------------------------------------------------------------------
+
     public void Dispose()
     {
-        if(theDialog != null)
+        if (theDialog != null)
         {
             theDialog.Dispose();
             theDialog = null;
         }
     }
-    
-    //------------------------------------------------------------------------------
-    //---------------------Block UI Styler Callback Functions--------------------------
-    //------------------------------------------------------------------------------
-    
-    //------------------------------------------------------------------------------
-    //Callback Name: initialize_cb
-    //------------------------------------------------------------------------------
+
     public void initialize_cb()
     {
         try
@@ -210,51 +117,35 @@ public class BOM_auslesen
         }
         catch (Exception ex)
         {
-            //---- Enter your exception handling code here -----
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
     }
-    
-    //------------------------------------------------------------------------------
-    //Callback Name: dialogShown_cb
-    //This callback is executed just before the dialog launch. Thus any value set 
-    //here will take precedence and dialog will be launched showing that value. 
-    //------------------------------------------------------------------------------
+
     public void dialogShown_cb()
     {
         try
         {
-            //---- Enter your callback code here -----
         }
         catch (Exception ex)
         {
-            //---- Enter your exception handling code here -----
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
     }
-    
-    //------------------------------------------------------------------------------
-    //Callback Name: apply_cb
-    //------------------------------------------------------------------------------
+
     public int apply_cb()
     {
         int errorCode = 0;
         try
         {
-            //---- Enter your callback code here -----
         }
         catch (Exception ex)
         {
-            //---- Enter your exception handling code here -----
             errorCode = 1;
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
         return errorCode;
     }
 
-    //------------------------------------------------------------------------------
-    //Callback Name: update_cb
-    //------------------------------------------------------------------------------
     public int update_cb(NXOpen.BlockStyler.UIBlock block)
     {
         try
@@ -275,9 +166,6 @@ public class BOM_auslesen
         return 0;
     }
 
-    //------------------------------------------------------------------------------
-    //Callback Name: ok_cb
-    //------------------------------------------------------------------------------
     public int ok_cb()
     {
         int errorCode = 0;
@@ -286,7 +174,7 @@ public class BOM_auslesen
         {
             if (exportBomRequested)
             {
-                ExportBomToJson();
+                ExportBomToCsv();
             }
         }
         catch (Exception ex)
@@ -301,28 +189,21 @@ public class BOM_auslesen
         return errorCode;
     }
 
-    //------------------------------------------------------------------------------
-    //Function Name: GetBlockProperties
-    //Returns the propertylist of the specified BlockID
-    //------------------------------------------------------------------------------
     public PropertyList GetBlockProperties(string blockID)
     {
-        PropertyList plist =null;
+        PropertyList plist = null;
         try
         {
             plist = theDialog.GetBlockProperties(blockID);
         }
         catch (Exception ex)
         {
-            //---- Enter your exception handling code here -----
             theUI.NXMessageBox.Show("Block Styler", NXMessageBox.DialogType.Error, ex.ToString());
         }
         return plist;
     }
 
-
-
-    private void ExportBomToJson()
+    private void ExportBomToCsv()
     {
         NXOpen.Part workPart = theSession.Parts.Work;
 
@@ -337,61 +218,53 @@ public class BOM_auslesen
 
         List<BomEntry> bomList = new List<BomEntry>();
 
-        // Single part case
+        // Einzelteil
         if (workPart.ComponentAssembly.RootComponent == null)
         {
-            string partId = "";
-
-            if (workPart.HasUserAttribute("PART_ID", NXObject.AttributeType.String, -1))
-            {
-                partId = workPart.GetStringAttribute("PART_ID"); // Warning ok
-            }
+            string partId = GetAttributeValue(workPart, "PART_ID");
+            string material = GetMaterial(workPart);
 
             bomList.Add(new BomEntry
             {
                 Name = workPart.Name,
                 File = workPart.FullPath,
-                PartID = partId
+                PartID = partId,
+                Material = material
             });
         }
         else
         {
-            // Assembly-Fall
+            // Baugruppe
             TraverseComponent(workPart.ComponentAssembly.RootComponent, bomList);
         }
 
-        // Manually create JSON (with escaping)
-        System.Text.StringBuilder sb = new System.Text.StringBuilder();
-        sb.AppendLine("[");
-        for (int i = 0; i < bomList.Count; i++)
+        StringBuilder sb = new StringBuilder();
+
+        // CSV-Header
+        sb.AppendLine("Name;File;PartID;Material");
+
+        foreach (BomEntry item in bomList)
         {
-            BomEntry item = bomList[i];
-
-            sb.AppendLine("  {");
-            sb.AppendLine("    \"Name\": \"" + EscapeJson(item.Name) + "\",");
-            sb.AppendLine("    \"File\": \"" + EscapeJson(item.File) + "\",");
-            sb.AppendLine("    \"PartID\": \"" + EscapeJson(item.PartID) + "\"");
-            sb.Append("  }");
-
-            if (i < bomList.Count - 1) sb.Append(",");
-            sb.AppendLine();
+            sb.AppendLine(
+                EscapeCsv(item.Name) + ";" +
+                EscapeCsv(item.File) + ";" +
+                EscapeCsv(item.PartID) + ";" +
+                EscapeCsv(item.Material)
+            );
         }
-        sb.AppendLine("]");
 
-        string savePath = @"C:\Users\chris\Desktop\bom.json";
-        File.WriteAllText(savePath, sb.ToString());
+        string savePath = @"C:\Users\chris\Desktop\bom.csv";
+        File.WriteAllText(savePath, sb.ToString(), Encoding.UTF8);
 
         theUI.NXMessageBox.Show(
             "Fertig",
             NXMessageBox.DialogType.Information,
-            "BOM gespeichert:\n" + savePath);
+            "BOM als CSV gespeichert:\n" + savePath);
     }
 
     private void TraverseComponent(NXOpen.Assemblies.Component comp, List<BomEntry> list)
     {
         if (comp == null) return;
-
-        // Prototype may be null depending on the situation
         if (comp.Prototype == null) return;
 
         NXOpen.BasePart basePart = comp.Prototype.OwningPart;
@@ -399,18 +272,15 @@ public class BOM_auslesen
 
         if (part != null)
         {
-            string partId = "";
-
-            if (part.HasUserAttribute("PART_ID", NXObject.AttributeType.String, -1))
-            {
-                partId = part.GetStringAttribute("PART_ID"); // Error ok
-            }
+            string partId = GetAttributeValue(part, "PART_ID");
+            string material = GetMaterial(part);
 
             list.Add(new BomEntry
             {
                 Name = comp.DisplayName,
                 File = part.FullPath,
-                PartID = partId
+                PartID = partId,
+                Material = material
             });
         }
 
@@ -422,10 +292,73 @@ public class BOM_auslesen
             TraverseComponent(child, list);
         }
     }
-    private string EscapeJson(string s)
+
+    private string GetMaterial(NXOpen.Part part)
     {
-        if (s == null) return "";
-        return s.Replace("\\", "\\\\").Replace("\"", "\\\"");
+        if (part == null) return "";
+
+        // Häufige Attributnamen prüfen
+        string[] possibleNames = new string[]
+        {
+            "MATERIAL",
+            "Material",
+            "MATATERIAL",
+            "WERKSTOFF",
+            "Werkstoff"
+        };
+
+        foreach (string attrName in possibleNames)
+        {
+            string value = GetAttributeValue(part, attrName);
+            if (!string.IsNullOrEmpty(value))
+                return value;
+        }
+
+        return "";
+    }
+
+    private string GetAttributeValue(NXOpen.NXObject obj, string attributeName)
+    {
+        if (obj == null || string.IsNullOrEmpty(attributeName))
+            return "";
+
+        try
+        {
+            if (obj.HasUserAttribute(attributeName, NXObject.AttributeType.String, -1))
+                return obj.GetStringAttribute(attributeName);
+        }
+        catch
+        {
+        }
+
+        try
+        {
+            if (obj.HasUserAttribute(attributeName, NXObject.AttributeType.Integer, -1))
+                return obj.GetIntegerAttribute(attributeName).ToString();
+        }
+        catch
+        {
+        }
+
+        try
+        {
+            if (obj.HasUserAttribute(attributeName, NXObject.AttributeType.Real, -1))
+                return obj.GetRealAttribute(attributeName).ToString();
+        }
+        catch
+        {
+        }
+
+        return "";
+    }
+
+    private string EscapeCsv(string value)
+    {
+        if (value == null)
+            return "\"\"";
+
+        string escaped = value.Replace("\"", "\"\"");
+        return "\"" + escaped + "\"";
     }
 
     public class BomEntry
@@ -433,6 +366,6 @@ public class BOM_auslesen
         public string Name { get; set; }
         public string File { get; set; }
         public string PartID { get; set; }
+        public string Material { get; set; }
     }
-    
 }
