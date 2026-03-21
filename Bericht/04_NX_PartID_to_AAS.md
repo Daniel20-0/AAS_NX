@@ -17,6 +17,15 @@ To make a 3D model usable in Industry 4.0 scenarios, it must be uniquely identif
 
 Once the part is saved and, for example, exported as a STEP file (including metadata), the AAS can read this `PART_ID` and associate the part with a digital twin.
 
+--- 
+
+## Technical workflow diagram
+
+The following SVG file shows a **flowchart** that describes the technical functionality of the implemented process.
+
+![Technical flowchart of the AASX-to-NX import workflow](./Workflow_ADD_ID.drawio.svg)
+
+
 ---
 
 ## Code structure and the individual functions
