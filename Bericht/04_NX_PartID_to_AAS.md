@@ -23,7 +23,7 @@ Once the part is saved and, for example, exported as a STEP file (including meta
 
 The following SVG file shows a **flowchart** that describes the technical functionality of the implemented process.
 
-![Technical flowchart of the AASX-to-NX import workflow](./Workflow_ADD_ID.drawio.svg)
+![Technical flowchart of the AASX-to-NX import workflow](bilder/Workflow_ADD_ID.drawio.svg)
 
 
 ---
