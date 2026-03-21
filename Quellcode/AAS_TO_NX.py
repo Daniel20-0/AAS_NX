@@ -13,9 +13,6 @@ TEMP_STEP = Path(r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step")
 
 
 def select_aasx_file():
-    # Opens a file dialog to let the user select an AASX file
-    # Returns the selected file path as a Path object
-    # If no file is selected, returns None
     root = tk.Tk()
     root.withdraw()
 
@@ -24,9 +21,11 @@ def select_aasx_file():
         filetypes=[("AASX files", "*.aasx"), ("Alle Dateien", "*.*")]
     )
 
-    if not file_path:
-        print("Keine Datei ausgewählt")
-        return None
+    root.destroy()
+
+    if not file_path or file_path.strip() == "":
+        print("Keine Datei ausgewählt → Abbruch")
+        sys.exit(1)
 
     return Path(file_path)
 
@@ -70,23 +69,21 @@ def extract_step_from_aasx(aasx_path):
 
 
 def main():
-    # Main function of the script
-    # Prompts the user to select an AASX file
-    # Calls the extraction function to retrieve a STEP file
-    # Outputs whether a STEP file was successfully created or not
     aasx_file = select_aasx_file()
 
     if aasx_file is None:
-        return
+        sys.exit(1)
 
     print("Gewählte Datei:", aasx_file)
 
     step_file = extract_step_from_aasx(aasx_file)
 
-    if step_file:
-        print("STEP Datei erstellt:", step_file)
-    else:
+    if not step_file:
         print("Keine STEP Datei gefunden")
+        sys.exit(2)
+
+    print("STEP Datei erstellt:", step_file)
+    sys.exit(0)
 
 
 if __name__ == "__main__":

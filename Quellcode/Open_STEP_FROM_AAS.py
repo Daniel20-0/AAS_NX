@@ -72,8 +72,7 @@ def import_step_into_nx(step_path):
 def main():
     # Main function of the script.
     # Runs an external Python script to generate a STEP file.
-    # Checks whether the STEP file was created successfully.
-    # Ensures a working NX part exists and then imports the STEP file.
+    # Stops immediately if the external script is cancelled or fails.
 
     session = NXOpen.Session.GetSession()
     lw = session.ListingWindow
@@ -82,11 +81,14 @@ def main():
     lw.WriteLine("NX Launcher gestartet")
 
     python_exe = r"C:\Users\chris\AppData\Local\Programs\Python\Python311\python.exe"
-    script_path = r"C:\Users\chris\AAS-Creo-Bridge\src\AAS_TO_NX.py" # Path to the external script that generates the STEP file
+    script_path = r"C:\Users\chris\AAS-Creo-Bridge\src\AAS_TO_NX.py"
     step_path = r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step"
 
-    try:
+    if os.path.exists(step_path):
+        lw.WriteLine("Alte STEP-Datei gefunden -> wird gelöscht")
+        os.remove(step_path)
 
+    try:
         lw.WriteLine("Starte externes Skript...")
         lw.WriteLine(script_path)
 
@@ -96,8 +98,23 @@ def main():
             text=True
         )
 
-        lw.WriteLine("Externes Skript beendet")
-        lw.WriteLine("Return Code: " + str(result.returncode))
+        # 👉 WICHTIG: Abbruch erkennen
+        if result.returncode != 0:
+            lw.WriteLine("Externes Skript wurde abgebrochen oder fehlgeschlagen")
+            lw.WriteLine("Return Code: " + str(result.returncode))
+
+            if result.stdout:
+                lw.WriteLine("STDOUT:")
+                lw.WriteLine(result.stdout)
+
+            if result.stderr:
+                lw.WriteLine("STDERR:")
+                lw.WriteLine(result.stderr)
+
+            lw.WriteLine("NX Skript wird vollständig beendet")
+            return  # ⛔ HARTE BEENDIGUNG
+
+        lw.WriteLine("Externes Skript erfolgreich beendet")
 
         if result.stdout:
             lw.WriteLine(result.stdout)
@@ -105,8 +122,9 @@ def main():
         if result.stderr:
             lw.WriteLine(result.stderr)
 
+        # 👉 zusätzliche Sicherheit
         if not os.path.exists(step_path):
-            lw.WriteLine("STEP Datei wurde nicht erzeugt!")
+            lw.WriteLine("STEP Datei wurde nicht erzeugt → Abbruch")
             return
 
         lw.WriteLine("STEP Datei gefunden -> starte Import")
