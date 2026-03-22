@@ -255,18 +255,6 @@ The script will then automatically start the complete workflow.
 
 ---
 
-## Configuration
-
-Currently, several paths are hardcoded in the code.
-
-Examples:
-
-script_path = C:\Users\chris\AAS-Creo-Bridge\src\AAS_TO_NX.py
-
-step_path = C:\Users\chris\AAS-Creo-Bridge\temp_model.step
-
----
-
 ## Troubleshooting
 
 ### STEP file not found

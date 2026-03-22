@@ -9,7 +9,9 @@ from aas_creo_bridge.adapters.aasx.get_models import get_models_from_aas
 
 
 # Defines the temporary file path where the extracted STEP file will be stored
-TEMP_STEP = Path(r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+TEMP_STEP = BASE_DIR / "temp_model.step"
 
 
 def select_aasx_file():
@@ -52,13 +54,13 @@ def ask_part_name():
 
 
 def get_stem_from_filepath(filepath: str) -> str:
-    # Wandelt z. B. '/aasx/files/GPLE60-3S.stp' in 'GPLE60-3S' um.
+    # Converts e.g. '/aasx/files/GPLE60-3S.stp' into 'GPLE60-3S'
     return Path(filepath).stem
 
 
 def extract_step_from_aasx_by_name(aasx_path: Path, wanted_name: str):
-    # Sucht in der AASX nach einer STEP-Datei, deren Dateiname
-    # (ohne Endung) dem gewünschten Namen entspricht, und speichert sie temporär.
+    # Searches the AASX for a STEP file whose filename
+    # (without extension) matches the desired name, and saves it temporarily.
     print("Importiere AASX...")
     result = import_aasx(aasx_path)
 
@@ -71,11 +73,11 @@ def extract_step_from_aasx_by_name(aasx_path: Path, wanted_name: str):
 
         for model in models:
             for meta in model.metadata:
-                # Nur STEP-Dateien betrachten
+                # Only consider STEP files
                 if "step" not in meta.file_format.format_name.lower():
                     continue
 
-                # Dateinamen ohne Endung aus dem Pfad ableiten
+                # Derive the filename without extension from the path.
                 current_name = get_stem_from_filepath(meta.filepath)
 
                 print(f"Prüfe: {meta.filepath} -> {current_name}")

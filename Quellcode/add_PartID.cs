@@ -38,6 +38,9 @@ using System;
 using NXOpen;
 using NXOpen.BlockStyler;
 
+using System.IO;
+using System.Reflection;
+
 //------------------------------------------------------------------------------
 //Represents Block Styler application class
 //------------------------------------------------------------------------------
@@ -60,7 +63,10 @@ public class add_PartID
         {
             theSession = Session.GetSession();
             theUI = UI.GetUI();
-            theDlxFileName = @"C:\Users\chris\Downloads\add_PartID.dlx";
+            string journalPath = theSession.ExecutingJournal; 
+            string assemblyDir = Path.GetDirectoryName(journalPath);
+
+            theDlxFileName = Path.Combine(assemblyDir, "add_PartID.dlx");
             theDialog = theUI.CreateDialog(theDlxFileName);
             theDialog.AddApplyHandler(new NXOpen.BlockStyler.BlockDialog.Apply(apply_cb));
             theDialog.AddOkHandler(new NXOpen.BlockStyler.BlockDialog.Ok(ok_cb));

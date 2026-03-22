@@ -16,10 +16,8 @@ def main():
 
     filePath = workPart.FullPath.replace(".prt", "_selected_attributes.csv")
 
-    # Dictionary vorbereiten
     values = {name: "" for name in wanted_attributes}
 
-    # Alle Attribute durchgehen
     attrs = workPart.GetUserAttributes()
 
     for attr in attrs:
@@ -37,13 +35,13 @@ def main():
 
     with open(filePath, "w") as f:
 
-        # Kopfzeile
+        # Header
         header = "PartName;"
         for name in wanted_attributes:
             header += name + ";"
         f.write(header.rstrip(";") + "\n")
 
-        # Werte
+        # Values
         row = workPart.Name + ";"
         for name in wanted_attributes:
             row += str(values[name]) + ";"

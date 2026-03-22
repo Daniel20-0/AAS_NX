@@ -12,7 +12,8 @@ def ensure_work_part():
     lw = session.ListingWindow
 
     if session.Parts.Work is None:
-        part_name = r"C:\Users\chris\AAS-Creo-Bridge\StartPart.prt"
+        BASE_DIR = Path(__file__).resolve().parent
+        part_name = str(BASE_DIR / "StartPart.prt")
 
         if os.path.exists(part_name):
             lw.WriteLine("StartPart existiert bereits -> öffne vorhandenes Part")
@@ -215,24 +216,24 @@ def main():
     session = NXOpen.Session.GetSession()
     lw = session.ListingWindow
     lw.Open()
-    current_dir = Path(__file__).resolve().parent.parent
+    current_dir = Path(__file__).resolve().parent
 
-    # Projektstruktur: eine Ebene hoch → dann in src
-    script_path = current_dir / "Quellcode" / "AAS-Creo-Bridge" / "src" / "AAS_TO_NX.py"
+    script_path = current_dir / "AAS-Creo-Bridge" / "src" / "AAS_TO_NX.py"
     lw.WriteLine("NX Launcher gestartet")
 
-    python_exe = r"C:\Users\chris\AppData\Local\Programs\Python\Python311\python.exe"
+    python_exe = "python"
    
+    BASE_DIR = Path(__file__).resolve().parent
 
-    step_path_1 = Path(r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step")
-    step_path_2 = Path(r"C:\Users\chris\AAS-Creo-Bridge\temp_model.step")
+    step_path_1 = BASE_DIR / "AAS-Creo-Bridge" / "temp_model.step"
+    step_path_2 = BASE_DIR / "temp_model.step"
 
     try:
         lw.WriteLine("Starte externes Skript...")
         lw.WriteLine(str(script_path))
 
-        # Alte STEP-Datei vor dem Start löschen,
-        # damit kein vorhandener Altbestand importiert wird.
+        # Delete the old STEP file before starting
+        # so that no existing old data is imported.
         if step_path_1.exists():
             lw.WriteLine("Vorhandene STEP-Datei gefunden -> wird gelöscht")
             step_path_1.unlink()
