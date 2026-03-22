@@ -34,12 +34,14 @@ The entry point of the script.
 
 Functions:
 
-- Access the current NX session
-- Access the active work part
-- Define the required attributes
-- Read all part attributes
-- Filter the relevant attributes
-- Export the values to a CSV file
+- Initialize Session: Access the current `NXOpen.Session`.
+- Get Active Part: Access the `workPart` (abort if none is open).
+- Determine Script Directory: Use `Path(__file__)` to get the folder where the script is stored.
+- Define Target Attributes: Specify required keys (e.g., `MassPropMass`, `Material`).
+- Update Mass Properties: Use `MassCalculationBuilder` to ensure geometry data is up-to-date.
+- Collect Attribute Values: Iterate through all part attributes and filter by defined keys.
+- Define CSV Path: Combine the script directory with the part name for the export file.
+- Export to CSV: Write the filtered values into a `.csv` file located in the script's folder.
 
 ## Definition of the required attributes
 
