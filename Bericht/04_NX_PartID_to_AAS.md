@@ -79,5 +79,5 @@ The included XML file (`.dlx`) defines the visual appearance of the NX dialog. I
 
 ## Troubleshooting
 
-* **Error during startup (dialog cannot be found):** By default, the C# script searches for the file `C:\Users\XXXX\XXXXX\add_PartID.dlx` (as defined in the code). If the file has been moved, the path in the variable `theDlxFileName` in the C# code must be adjusted, or the `.dlx` file must be placed in a standardized NX folder ($UGII_USER_DIR/application/) so that NX can find it automatically.
+* **Error during startup (dialog cannot be found):** By default, the C# script automatically locates the `add_PartID.dlx` file within the same directory where the script is stored. There is no need to manually adjust the path in the code, as long as the .cs file and the .dlx file remain in the same folder. Alternatively, the `.dlx file` can be placed in a standardized NX directory `($UGII_USER_DIR/application/)` for automatic detection by NX.".
 * **Message "No active part available":** The script was executed without a part being open, or the displayed part is not the "Work Part". Set the part as the Work Part by right-clicking it in the Assembly Navigator and try again.
