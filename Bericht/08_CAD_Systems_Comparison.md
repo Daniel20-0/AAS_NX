@@ -1,11 +1,11 @@
-## Vergleich von CAD-Systemen im Kontext der Verwaltungsschale (AAS)
+## Comparison of CAD Systems in the Context of the Asset Administration Shell (AAS)
 
-Wenn sich im Rahmen der Entwicklung die Frage stellt, mit welchem CAD-System gearbeitet werden soll, kann auf praktische Erfahrungen aus unterschiedlichen Projekten zurückgegriffen werden. Wie in der nachfolgenden Tabelle dargestellt, unterscheiden sich die drei etablierten CAD-Systeme Siemens NX, PTC Creo und Autodesk Fusion 360 insbesondere in den Punkten Lizenzen, Funktionsumfang und Benutzerfreundlichkeit voneinander.
+If the question arises during development as to which CAD system should be used, practical experience from various projects can be drawn upon. As shown in the following table, the three established CAD systems Siemens NX, PTC Creo, and Autodesk Fusion 360 differ from each other, particularly in terms of licenses, functional scope, and user-friendliness.
 
-| Kriterium | Siemens NX | PTC Creo | Autodesk Fusion 360 |
+| Criterion | Siemens NX | PTC Creo | Autodesk Fusion 360 |
 | :--- | :--- | :--- | :--- |
-| **Lizenzen** | <center>0</center><br>Enterprise-Lizenz erforderlich zum Arbeiten mit Journals | <center>[+/-/0]</center><br>Begründung... | <center>🚧</center><br>Work in Progress |
-| **Funktionsumfang** | <center>+</center><br>Sehr groß, alles was über Python abgedeckt werden kann | <center>[+/-/0]</center><br>Begründung... | <center>🚧</center><br>Work in Progress |
-| **Benutzerfreundlichkeit** | <center>+</center><br>Durch Integration in die NX-Oberfläche | <center>[+/-/0]</center><br>Begründung... | <center>🚧</center><br>Work in Progress |
+| **Licenses** | <center>0</center><br>Enterprise license required to work with journals | <center>+/-/0</center><br>| <center>🚧</center><br>Work in Progress |
+| **Functional Scope** | <center>+</center><br>Extensive, everything that can be covered via Python | <center>+/-/0</center><br> | <center>🚧</center><br>Work in Progress |
+| **User-Friendliness** | <center>+</center><br>Through integration into the NX interface | <center>+/-/0</center><br> | <center>🚧</center><br>Work in Progress |
 
-*Tabelle: Vergleich ausgewählter CAD-Systeme für die AAS-Integration*
+*Table: Comparison of selected CAD systems for AAS integration*

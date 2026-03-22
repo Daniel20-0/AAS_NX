@@ -1,15 +1,16 @@
 ## Prerequisites
-Für die erfolgreiche Einrichtung und Ausführung der Integration zwischen Siemens NX und der AAS müssen folgende Systemvoraussetzungen erfüllt sein:
 
-### Software & Lizenzen
-- [ ] **Siemens NX:** Lokale Installation (z. B. Version 2021).
-- [ ] **NX-Lizenz:** Enterprise- bzw. NX Open-Lizenz zur Ausführung und Kompilierung von Skripten und externen Programmen.
-- [ ] **AASX Package Explorer:** Tool zur Betrachtung und Validierung der Verwaltungsschalen.
+For the successful setup and execution of the integration between Siemens NX and the AAS, the following system requirements must be met:
 
-### Entwicklungsumgebung & Sprachen
-- [ ] **Python:** Eigenständige Installation (ab Version 3.11) für Adapter weil in der NX 2021 die Python Version nur die (Version 3.8 ist und in dieser die lxml-Bibliothek nicht enthalten ist).
-- [ ] **IDE:** Visual Studio (für z.B. C#) oder Visual Studio Code (für Python) zum anpassen der Sktipte.
+### Software & Licenses
+- [ ] **Siemens NX:** Local installation (e.g., version 2021).
+- [ ] **NX License:** Enterprise or NX Open license for executing and compiling scripts and external programs.
+- [ ] **AASX Package Explorer:** Tool for viewing and validating the Asset Administration Shells.
 
-### Systemrechte & Konfiguration
-- [ ] **Administratorrechte:** Lokale Windows-Adminrechte (für Installationen via `pip` und das Setzen von Umgebungsvariablen).
-- [ ] **NX-Rolle:** Eine fortgeschrittene Benutzerrolle (z. B. "Advanced"), um den Entwickler-Tab in der NX-Oberfläche freizuschalten.
+### Development Environment & Languages
+- [ ] **Python:** Standalone installation (version 3.11 or higher) for adapters, because the Python version in NX 2021 is only version 3.8 and does not include the lxml library.
+- [ ] **IDE:** Visual Studio (e.g., for C#) or Visual Studio Code (for Python) to customize the scripts.
+
+### System Rights & Configuration
+- [ ] **Administrator Rights:** Local Windows admin rights (for installations via `pip` and setting environment variables).
+- [ ] **NX Role:** An advanced user role (e.g., "Advanced") to unlock the developer tab in the NX user interface.

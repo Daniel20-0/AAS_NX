@@ -6,25 +6,28 @@ Asset-ID Programmfunktion Workflow Programm (Chris, Noch einbauen bei 03)
 
 Grundsätzlicher vorgang beim Arbteiten mit NX und Jornal (Chris)
 
-Checkliste (Was braucht man alles Siemens Lizenzen 2021, Adminrechte Externe Pythone, C# ???, Programme, Bilder, Rollen? Rollen in NX in GITHub ablagen) (Daniel Daniel Erledigt nur noch in ENG)
+Checkliste (Was braucht man alles Siemens Lizenzen 2021, Adminrechte Externe Pythone, C# ???, Programme, Bilder, Rollen? Rollen in NX in GITHub ablagen) (Daniel Daniel Erledigt)
 
-04_NX_Verweis auf Siemens UI Styler erweitern (Daniel Erledigt nur noch in ENG)
+04_NX_Verweis auf Siemens UI Styler erweitern (Daniel Erledigt)
 
 05_NX_Sync_Propertier (Chris)
 
 03_An_Adappter_Anpassen (Chris)
 
-Vergleich der CAD Systeme (Lizenzen?, Funktionsumfang, Benutzerfreundlichkeit, ??? ) (Daniel Erledigt nur noch in ENG)
+Vergleich der CAD Systeme (Lizenzen?, Funktionsumfang, Benutzerfreundlichkeit, ??? ) (Daniel Erledigt)
 
-Quellen Hilfmittel HKA (Deepl, Gemini markdownformat, Drawio Diagramme, VS Programierun, GitHub Verwaltung, NX CAD Arbeiuten) (Siemens Handbuch, AAS Doku) (Daniel, Erledigt nur noch in ENG)
+Quellen Hilfmittel HKA (Deepl, Gemini markdownformat, Drawio Diagramme, VS Programierun, GitHub Verwaltung, NX CAD Arbeiuten) (Siemens Handbuch, AAS Doku) (Daniel, Erledigt)
 
-Fazit und Ausblick HKA (Daniel)
+PowerPoint Layout (Daniel, Erledigt Teams
 
-Werkzeugkasten (Darstellung was alles möglich, xyz Kordinaten vorgeben Import möglich bei Baugruppen) (Daniel)
+Werkzeugkasten (Darstellung was alles möglich, xyz Kordinaten vorgeben Import möglich bei Baugruppen) (Daniel, Erledigt nur noch in ENG)
+
 
 EU_Vorgabe_Recyling (Daniel)
+Fazit und Ausblick HKA (Daniel)
 
-PowerPoint Layout (Daniel)
+
+
 
 
 
