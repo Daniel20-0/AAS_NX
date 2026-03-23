@@ -18,7 +18,7 @@ Vergleich der CAD Systeme (Lizenzen?, Funktionsumfang, Benutzerfreundlichkeit, ?
 
 Quellen Hilfmittel HKA (Deepl, Gemini markdownformat, Drawio Diagramme, VS Programierun, GitHub Verwaltung, NX CAD Arbeiuten) (Siemens Handbuch, AAS Doku) (Daniel, Erledigt)
 
-PowerPoint Layout (Daniel, Erledigt Teams
+PowerPoint Layout (Daniel, Erledigt Teams)
 
 Werkzeugkasten (Darstellung was alles möglich, xyz Kordinaten vorgeben Import möglich bei Baugruppen) (Daniel, Erledigt nur noch in ENG)
 
