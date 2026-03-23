@@ -69,14 +69,9 @@ The file path of the CSV file is generated automatically
 
 ---
 
-## Installation & Execution in NX
+## Sync other Properties
 
-Ensure that Siemens NX with the NX Open Python API is installed. Save the script in an NX script directory or a project folder. Open a part in Siemens NX. Execute the script via the following menu:
-- File → Execute → NX Open
-- Select the Python script
-- After execution, a CSV file is automatically generated
 
----
 
 ## Troubleshooting (Fehlerbehebung)
 No CSV file is generated
