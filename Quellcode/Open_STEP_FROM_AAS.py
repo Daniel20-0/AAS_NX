@@ -16,7 +16,7 @@ def ensure_work_part():
         part_name = str(BASE_DIR / "StartPart.prt")
 
         if os.path.exists(part_name):
-            lw.WriteLine("StartPart existiert bereits -> öffne vorhandenes Part")
+            lw.WriteLine("Start part already exists → opening existing part")
             part_load_status = None
             try:
                 base_part, part_load_status = session.Parts.OpenBaseDisplay(part_name)
@@ -24,7 +24,7 @@ def ensure_work_part():
                 if part_load_status:
                     part_load_status.Dispose()
         else:
-            lw.WriteLine("Kein aktives Part vorhanden -> erstelle neues Part")
+            lw.WriteLine("No active part available → creating new part")
             session.Parts.NewDisplay(
                 part_name,
                 NXOpen.Part.Units.Millimeters
@@ -113,14 +113,14 @@ def import_step_to_prt(step_path):
         importer.FileOpenFlag = False
         importer.ProcessHoldFlag = True
 
-        lw.WriteLine("Importiere STEP -> PRT: " + step_path)
+        lw.WriteLine("Importing STEP -> PRT: " + step_path)
         importer.Commit()
-        lw.WriteLine("STEP Import abgeschlossen: " + prt_path)
+        lw.WriteLine("STEP Import completed: " + prt_path)
 
         return prt_path
 
     except Exception as ex:
-        lw.WriteLine("Fehler während STEP Import:")
+        lw.WriteLine("Error during STEP Import:")
         lw.WriteLine(str(ex))
         return None
 
@@ -140,10 +140,10 @@ def open_part(part_path):
 
     try:
         opened_part, part_load_status = session.Parts.OpenBaseDisplay(part_path)
-        lw.WriteLine("PRT geöffnet: " + part_path)
+        lw.WriteLine("PRT opened: " + part_path)
         return opened_part
     except Exception as ex:
-        lw.WriteLine("Fehler beim Öffnen der PRT:")
+        lw.WriteLine("Error while opening PRT:")
         lw.WriteLine(str(ex))
         return None
     finally:
@@ -177,11 +177,11 @@ def add_prt_as_component(target_part, prt_path, component_name, x=0.0, y=0.0, z=
         except:
             pass
 
-        lw.WriteLine(f"Komponente eingefügt: {component_name} | X={x}, Y={y}, Z={z}")
+        lw.WriteLine(f"Component added: {component_name} | X={x}, Y={y}, Z={z}")
         return component
 
     except Exception as ex:
-        lw.WriteLine("Fehler beim Einfügen der Komponente:")
+        lw.WriteLine("Error while adding component:")
         lw.WriteLine(str(ex))
         return None
 
@@ -194,7 +194,7 @@ def import_step_into_nx_as_component(step_path, x=0.0, y=0.0, z=0.0, axis="X", a
 
     prt_path = import_step_to_prt(step_path)
     if not prt_path:
-        lw.WriteLine("PRT wurde nicht erzeugt.")
+        lw.WriteLine("PRT was not created.")
         return None
 
     if component_name is None:
@@ -219,7 +219,7 @@ def main():
     current_dir = Path(__file__).resolve().parent
 
     script_path = current_dir / "AAS-Creo-Bridge" / "src" / "AAS_TO_NX.py"
-    lw.WriteLine("NX Launcher gestartet")
+    lw.WriteLine("NX Launcher started")
 
     python_exe = "python"
    
@@ -235,7 +235,7 @@ def main():
         # Delete the old STEP file before starting
         # so that no existing old data is imported.
         if step_path_1.exists():
-            lw.WriteLine("Vorhandene STEP-Datei gefunden -> wird gelöscht")
+            lw.WriteLine("Existing STEP file found -> will be deleted")
             step_path_1.unlink()
 
         result = subprocess.run(
@@ -244,7 +244,7 @@ def main():
             text=True
         )
 
-        lw.WriteLine("Externes Skript beendet")
+        lw.WriteLine("External script completed")
         lw.WriteLine("Return Code: " + str(result.returncode))
 
         if result.stdout:
@@ -254,14 +254,14 @@ def main():
             lw.WriteLine(result.stderr)
 
         if result.returncode != 0:
-            lw.WriteLine("Externes Skript wurde abgebrochen oder ist fehlgeschlagen -> kein Import")
+            lw.WriteLine("External script was cancelled or failed -> no import")
             return
 
         if not step_path_1.exists():
-            lw.WriteLine("STEP Datei wurde nicht neu erzeugt -> kein Import")
+            lw.WriteLine("STEP file was not created -> no import")
             return
 
-        lw.WriteLine("STEP Datei gefunden -> starte Import als Komponente")
+        lw.WriteLine("STEP file found -> starting import as component")
 
         ensure_work_part()
         sleep(1)
@@ -271,7 +271,7 @@ def main():
             x=0.0,
             y=0.0,
             z=0.0,
-            component_name="Teil_1"
+            component_name="Part_1"
         )
 
         import_step_into_nx_as_component(
@@ -279,11 +279,11 @@ def main():
             x=150.0,
             y=0.0,
             z=0.0,
-            component_name="Teil_2"
+            component_name="Part_2"
         )
 
     except Exception as e:
-        lw.WriteLine("Fehler:")
+        lw.WriteLine("Error:")
         lw.WriteLine(str(e))
 
 

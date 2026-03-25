@@ -5,7 +5,7 @@ import os
 import csv
 
 def update_mass_properties(part):
-    """Aktualisiert die Masseeigenschaften eines Parts robust."""
+    """Updates the mass properties of a part in a robust manner."""
     if part is None:
         return
 
@@ -31,7 +31,7 @@ def update_mass_properties(part):
 
 
 def nx_attr_to_python_value(attr):
-    """Wandelt ein NX-Attribut robust in einen Python-String/Wert um."""
+    """Converts an NX attribute to a Python string/value in a robust manner."""
     try:
         if attr.Type == NXOpen.NXObject.AttributeType.String:
             return attr.StringValue
@@ -48,7 +48,7 @@ def nx_attr_to_python_value(attr):
 
 
 def get_all_user_attributes(nx_object):
-    """Liest alle Benutzerattribute eines NX-Objekts in ein Dictionary."""
+    """Converts all user attributes of an NX object to a Python dictionary."""
     values = {}
 
     if nx_object is None:
@@ -65,16 +65,17 @@ def get_all_user_attributes(nx_object):
 
 
 def get_standard_attribute_values(part, wanted_attributes):
-    """Liest Standardwerte: Masse direkt messen, Rest aus Attributen."""
+    """Reads default values: measures mass directly, with remaining properties retrieved from attributes."""
     values = {name: "N/A" for name in wanted_attributes}
 
-    # Massenwerte direkt berechnen statt als Attribute auszulesen
+    # Calculate mass values directly instead of reading as attributes
     mass_values = get_mass_values(part)
     for key, value in mass_values.items():
         if key in values:
             values[key] = value
 
-    # Andere Standardattribute wie Material weiter normal auslesen
+    # Reads other standard attributes, such as material, in the usual manner.
+
     for attr in part.GetUserAttributes():
         title = attr.TitleAlias if attr.TitleAlias else attr.Title
 
@@ -85,7 +86,6 @@ def get_standard_attribute_values(part, wanted_attributes):
 
 
 def get_leaf_components(component):
-    """Liefert rekursiv alle Blatt-Komponenten."""
     children = component.GetChildren()
 
     if not children:
@@ -97,7 +97,7 @@ def get_leaf_components(component):
     return result
 
 def get_mass_values(part):
-    """Liest Masse, Volumen und Fläche direkt per MeasureManager aus."""
+    """Reads mass, volume, and area directly via MeasureManager."""
     solid_bodies = [body for body in part.Bodies if body.IsSolidBody]
 
     result = {
@@ -133,7 +133,7 @@ def get_mass_values(part):
     return result
 
 def get_component_part(component):
-    """Ermittelt das Part-Objekt einer Komponente robust."""
+    """Robustly determines the part object of a component."""
     proto = component.Prototype
 
     if isinstance(proto, NXOpen.Part):
@@ -168,14 +168,13 @@ def main():
     root_component = workPart.ComponentAssembly.RootComponent
 
     if root_component is None:
-        # Einzelteil
         update_mass_properties(workPart)
 
         standard_values = get_standard_attribute_values(workPart, wanted_attributes)
         all_attrs = get_all_user_attributes(workPart)
 
-        # Standardattribute aus benutzerdefiniertem Satz entfernen,
-        # damit sie nicht doppelt in der CSV auftauchen
+        # Remove standard attributes from the custom set
+        # to prevent them from appearing twice in the CSV
         for name in wanted_attributes:
             if name in all_attrs:
                 del all_attrs[name]
@@ -183,7 +182,7 @@ def main():
         custom_attribute_names.update(all_attrs.keys())
 
         row_data = {
-            "Komponente": workPart.Leaf
+            "Component": workPart.Leaf
         }
 
         for name in wanted_attributes:
@@ -195,7 +194,8 @@ def main():
         rows.append(row_data)
 
     else:
-        # Baugruppe: jede Blatt-Komponente als eigene Zeile
+        # Assembly: each leaf component as a separate row
+
         leaf_components = get_leaf_components(root_component)
 
         for comp in leaf_components:
@@ -206,24 +206,23 @@ def main():
 
             update_mass_properties(comp_part)
 
-            # Standardattribute vom Part
+            # Standard attributes of the part
             standard_values = get_standard_attribute_values(comp_part, wanted_attributes)
 
-            # Alle Part-Attribute
+            # All part attributes
             part_attrs = get_all_user_attributes(comp_part)
 
-            # Alle Komponenten-Attribute (Instanzattribute)
+            # All component attributes (instance attributes)
             comp_attrs = get_all_user_attributes(comp)
 
-            # Standardattribute aus Part-Attributen entfernen
+            # Remove standard attributes from the part attributes
             for name in wanted_attributes:
                 if name in part_attrs:
                     del part_attrs[name]
                 if name in comp_attrs:
                     del comp_attrs[name]
 
-            # Zusammenführen:
-            # erst Part-Attribute, dann Komponenten-Attribute überschreiben ggf. gleiche Namen
+            # First apply part attributes, then component attributes—overwriting any with identical names if necessary.
             merged_custom_attrs = {}
             merged_custom_attrs.update(part_attrs)
             merged_custom_attrs.update(comp_attrs)
@@ -231,7 +230,7 @@ def main():
             custom_attribute_names.update(merged_custom_attrs.keys())
 
             row_data = {
-                "Komponente": comp.DisplayName
+                "Component": comp.DisplayName
             }
 
             for name in wanted_attributes:
@@ -242,13 +241,13 @@ def main():
 
             rows.append(row_data)
 
-    # Sortierte benutzerdefinierte Attributnamen für sauberen CSV-Header
+    # Sorted custom attribute names for a clean CSV header
     custom_attribute_names = sorted(custom_attribute_names)
 
     with open(filePath, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f, delimiter=";")
 
-        header = ["Komponente"] + wanted_attributes + custom_attribute_names
+        header = ["Component"] + wanted_attributes + custom_attribute_names
         writer.writerow(header)
 
         for row_data in rows:

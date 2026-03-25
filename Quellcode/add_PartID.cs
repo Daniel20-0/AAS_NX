@@ -257,8 +257,8 @@ public class add_PartID
                 theUI.NXMessageBox.Show(
                     "Info",
                     NXMessageBox.DialogType.Information,
-                    "Bitte eine ID eingeben.");
-                return 1;   // Fehler -> Dialog bleibt offen
+                    "Please enter an ID.");
+                return 1;
             }
 
             NXOpen.Part workPart = theSession.Parts.Work;
@@ -266,9 +266,9 @@ public class add_PartID
             if (workPart == null)
             {
                 theUI.NXMessageBox.Show(
-                    "Fehler",
+                    "Error",
                     NXMessageBox.DialogType.Error,
-                    "Kein aktives Bauteil vorhanden.");
+                    "No active part available.");
                 return 1;
             }
 
@@ -282,14 +282,14 @@ public class add_PartID
             workPart.SetAttribute("PART_ID", eingegebeneID);
 
             // Undo-Mark benennen
-            theSession.SetUndoMarkName(markId, "Part ID gesetzt");
+            theSession.SetUndoMarkName(markId, "Part ID set");
 
         }
         catch (Exception ex)
         {
             errorCode = 1;
             theUI.NXMessageBox.Show(
-                "Fehler",
+                "Error",
                 NXMessageBox.DialogType.Error,
                 ex.ToString());
         }

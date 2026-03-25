@@ -170,10 +170,10 @@ class Add_Attributes:
             workPart = self.theSession.Parts.Work
 
             if workPart is None:
-                raise Exception("Kein aktives Work Part gefunden.")
+                raise Exception("No active work part found.")
 
             if attr_title is None or attr_title.strip() == "":
-                raise Exception("Der Attributname (Label/Titel) darf nicht leer sein.")
+                raise Exception("The attribute name (Label/Title) cannot be empty.")
 
             # String-Attribut am aktiven Teil speichern
             workPart.SetUserAttribute(attr_title, -1, attr_value, NXOpen.Update.Option.Now)

@@ -22,14 +22,14 @@ def select_aasx_file():
     root.withdraw()
 
     file_path = filedialog.askopenfilename(
-        title="AASX Datei auswählen",
-        filetypes=[("AASX files", "*.aasx"), ("Alle Dateien", "*.*")]
+        title="Select AASX File",
+        filetypes=[("AASX files", "*.aasx"), ("All files", "*.*")]
     )
 
     root.destroy()
 
     if not file_path:
-        print("Keine Datei ausgewählt")
+        print("No file selected")
         return None
 
     return Path(file_path)
@@ -40,14 +40,14 @@ def ask_part_name():
     root.withdraw()
 
     part_name = simpledialog.askstring(
-        "Teilname eingeben",
-        "Bitte Teilnamen eingeben (z. B. GPLE60-3S):"
+        "Enter Part Name",
+        "Please enter the part name (e.g., GPLE60-3S):"
     )
 
     root.destroy()
 
     if not part_name or not part_name.strip():
-        print("Kein Teilname eingegeben")
+        print("No part name entered")
         return None
 
     return part_name.strip()
@@ -61,10 +61,10 @@ def get_stem_from_filepath(filepath: str) -> str:
 def extract_step_from_aasx_by_name(aasx_path: Path, wanted_name: str):
     # Searches the AASX for a STEP file whose filename
     # (without extension) matches the desired name, and saves it temporarily.
-    print("Importiere AASX...")
+    print("Importing AASX...")
     result = import_aasx(aasx_path)
 
-    print("Gefundene AAS:", result.shells)
+    print("Found AAS:", result.shells)
 
     wanted_name_lower = wanted_name.lower()
 
@@ -83,7 +83,7 @@ def extract_step_from_aasx_by_name(aasx_path: Path, wanted_name: str):
                 print(f"Prüfe: {meta.filepath} -> {current_name}")
 
                 if current_name.lower() == wanted_name_lower:
-                    print("Passende STEP gefunden:", meta.filepath)
+                    print("Found matching STEP file:", meta.filepath)
 
                     if TEMP_STEP.exists():
                         TEMP_STEP.unlink()
@@ -91,7 +91,7 @@ def extract_step_from_aasx_by_name(aasx_path: Path, wanted_name: str):
                     with open(TEMP_STEP, "wb") as f:
                         result.file_store.write_file(meta.filepath, f)
 
-                    print("STEP wird geschrieben nach:", TEMP_STEP)
+                    print("STEP file written to:", TEMP_STEP)
                     return str(TEMP_STEP)
 
     return None
@@ -100,25 +100,25 @@ def extract_step_from_aasx_by_name(aasx_path: Path, wanted_name: str):
 def main():
     aasx_file = select_aasx_file()
     if aasx_file is None:
-        print("Keine Datei ausgewählt -> externer Prozess wird beendet")
+        print("No file selected -> external process will be terminated")
         sys.exit(1)
 
-    print("Gewählte Datei:", aasx_file)
+    print("Selected file:", aasx_file)
 
     part_name = ask_part_name()
     if part_name is None:
-        print("Kein Teilname eingegeben -> externer Prozess wird beendet")
+        print("No part name entered -> external process will be terminated")
         sys.exit(1)
 
-    print("Gesuchter Teilname:", part_name)
+    print("Searched part name:", part_name)
 
     step_file = extract_step_from_aasx_by_name(aasx_file, part_name)
 
     if step_file:
-        print("STEP Datei erstellt:", step_file)
+        print("STEP file created:", step_file)
         sys.exit(0)
     else:
-        print(f"Keine STEP Datei mit Namen '{part_name}' gefunden")
+        print(f"No STEP file with name '{part_name}' found")
         sys.exit(2)
 
 
