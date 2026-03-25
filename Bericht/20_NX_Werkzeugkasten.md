@@ -1,23 +1,23 @@
-## Werkzeugkasten in NX
+## Toolbox in NX
 
-Die Anbindung des CAD-Systems Siemens NX an die Asset Administration Shell (AAS) ermöglicht einen durchgängigen, bidirektionalen Informationsfluss. Dadurch wird das statische 3D-Modell zu einem integralen Bestandteil des Digitalen Zwillings. Über die NX Open API lassen sich vielfältige Funktionen realisieren, die den Funktionsumfang für AAS-Anwendungsfälle nahezu unbegrenzt erweitern.
+The connection of the CAD system Siemens NX to the Asset Administration Shell (AAS) enables a continuous, bidirectional flow of information. This transforms the static 3D model into an integral component of the Digital Twin. Using the NX Open API, a wide variety of functions can be implemented, expanding the functional scope for AAS use cases almost limitlessly.
 
-Folgende Kernfunktionen und Workflows sind durch die Integration möglich:
+The following core functions and workflows are made possible by this integration:
 
-### 1. Automatisierter Import von CAD-Daten aus der AAS
-* **AASX-Extraktion:** CAD-Modelle (wie z. B. STEP-Dateien), die in einem AASX-Container referenziert sind, können über externe Python-Skripte gezielt gesucht, extrahiert und in einem temporären Verzeichnis abgelegt werden.
-* **Automatisches Laden in NX:** Ein in NX ausgeführtes Launcher-Skript greift diese Daten auf und importiert sie über den NX Step Importer automatisch in die Arbeitsumgebung.
-* **Baugruppen und Einzelteile:** Es können sowohl komplexe Baugruppenstrukturen als auch Einzelteile geladen werden. *Hinweis zur Positionierung: Über die NX Open API können den importierten Körpern beim Laden oder in der Baugruppe exakte Transformationsmatrizen (Koordinaten) mitgegeben werden.*
+### 1. Automated import of CAD data from the AAS
+* **AASX extraction:** CAD models (such as STEP files) referenced within an AASX container can be specifically searched for, extracted, and saved in a temporary directory using external Python scripts.
+* **Automatic loading in NX:** A launcher script executed in NX picks up this data and automatically imports it into the work environment via the NX Step Importer.
+* **Assemblies and single parts:** Complex assembly structures as well as individual parts can be loaded. *Note on positioning: Via the NX Open API, exact transformation matrices (coordinates) can be passed to the imported bodies during loading or within the assembly.*
 
-### 2. Zuweisung einer eindeutigen Asset-ID (Digitaler Faden)
-* **ID-Verknüpfung:** Um ein CAD-Bauteil eindeutig einer spezifischen AAS-Instanz zuzuordnen, kann dem Modell direkt in NX eine eindeutige ID zugewiesen werden.
-* **Attributierung:** Diese Zuweisung erfolgt durch das Schreiben von Metadaten in die Part-Attribute (z. B. Anlage des Attributs `PART_ID`). Wird das Teil später exportiert, bleibt diese ID als Meta-Information im Modell erhalten und kann von Systemen der Industrie 4.0 ausgelesen werden.
+### 2. Assignment of a unique Asset ID (Digital Thread)
+* **ID linking:** To uniquely assign a CAD part to a specific AAS instance, a unique ID can be assigned to the model directly in NX.
+* **Attribution:** This assignment is done by writing metadata into the part attributes (e.g., creating the attribute `PART_ID`). If the part is exported later, this ID is retained as meta-information within the model and can be read by Industry 4.0 systems.
 
-### 3. Datenexport für Stücklisten (BOM) und AAS-Synchronisation
-* **Eigenschaften auslesen:** Spezifische physikalische Masseneigenschaften eines NX-Teils (wie Volumen, Masse und Oberfläche) können automatisiert über ein Python-Skript ausgelesen werden.
-* **BOM-Erstellung:** Diese ausgelesenen CAD-Attribute lassen sich exportieren (z. B. als CSV-Datei). Diese Daten bilden die Grundlage für detaillierte Stücklisten (wie z. B. eine R-BOM für Recycling-Szenarien), die anschließend direkt in die Struktur der AASX-Datei eingehängt werden können.
+### 3. Data export for Bills of Materials (BOM) and AAS synchronization
+* **Reading properties:** Specific physical mass properties of an NX part (such as volume, mass, and surface area) can be automatically read out using a Python script.
+* **BOM creation:** These extracted CAD attributes can be exported (e.g., as a CSV file). This data forms the basis for detailed bills of materials (such as an R-BOM for recycling scenarios), which can then be linked directly into the structure of the AASX file.
 
-### 4. UI-Anpassung und Nutzerinteraktion
-* **NX Block UI Styler:** Native grafische Benutzeroberflächen (Dialogboxen) können direkt in NX erstellt werden. So kann der Nutzer beispielsweise IDs über ein komfortables Textfeld eingeben, während im Hintergrund Validierungsprüfungen (z. B. ob ein aktives Bauteil geöffnet ist) ablaufen.
-* **Nahtlose Integration:** Die Benutzeroberfläche von NX lässt sich anpassen, indem Skripte als interaktive Buttons direkt in der NX-Menüleiste (Ribbon) hinterlegt werden. Dies sorgt für eine hohe Benutzerfreundlichkeit.
-* **Grenzenlose Erweiterbarkeit:** Da NX sowohl als Launcher für externe Python-Skripte agieren als auch interne C#/Python-Logik ausführen kann, gibt es für die Automatisierung und Datenverknüpfung mit dem Digitalen Zwilling kaum technische Einschränkungen.
+### 4. UI customization and user interaction
+* **NX Block UI Styler:** Native graphical user interfaces (dialog boxes) can be created directly in NX. For example, the user can enter IDs via a convenient text field while validation checks run in the background (e.g., whether an active part is open).
+* **Seamless integration:** The NX user interface can be customized by adding scripts as interactive buttons directly to the NX menu bar (ribbon). This ensures a high level of user-friendliness.
+* **Limitless extensibility:** Since NX can act both as a launcher for external Python scripts and execute internal C#/Python logic, there are virtually no technical limitations for automation and data linking with the Digital Twin.

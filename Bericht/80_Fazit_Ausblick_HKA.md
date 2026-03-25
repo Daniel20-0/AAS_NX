@@ -1,25 +1,24 @@
-## Fazit und Ausblick
+## Conclusion and Outlook
 
-### Fazit
+### Conclusion
 
-Dieses Projekt hat erfolgreich eine funktionierende Brücke zwischen der standardisierten Verwaltungsschale (AAS) und dem CAD-System Siemens NX geschlagen. Dabei hat sich gezeigt: Eine direkte, bidirektionale Verbindung beider Welten ist unerlässlich. Über den gesamten Produktlebenszyklus hinweg müssen Daten nahtlos fließen – ob sie nun im CAD erzeugt und an die AAS übergeben werden oder umgekehrt. Ein anschauliches Praxisbeispiel hierfür ist die automatisierte Berechnung von Materialgewichten einer Baugruppe im CAD, die anschließend direkt für Prozesse in der AAS bereitgestellt werden.
+This project has successfully built a functioning bridge between the standardized Asset Administration Shell (AAS) and the CAD system Siemens NX. In doing so, it has shown that a direct, bidirectional connection between both worlds is essential. Data must flow seamlessly throughout the entire product lifecycle – whether it is generated in CAD and transferred to the AAS, or vice versa. A clear practical example of this is the automated calculation of the material weights of an assembly in CAD, which are then made directly available for processes in the AAS.
 
-Allerdings gab es zu Projektbeginn einige Hürden zu meistern. Eine Herausforderung war das Lizenzmodell von Siemens NX: Die für die Schnittstellenprogrammierung zwingend benötigten "NX Open"-Funktionen fehlen in der kostenlosen Studentenversion.
+However, there were some hurdles to overcome at the beginning of the project. One challenge was the licensing model of Siemens NX: the "NX Open" functions, which are absolutely necessary for interface programming, are missing in the free student version.
 
-Trotzdem konnten wir im Rahmen des Projekts die entscheidenden Werkzeuge für einen automatisierten Datenaustausch erfolgreich umsetzen:
+Nevertheless, we were able to successfully implement the essential tools for automated data exchange within the scope of the project:
 
-* **Import of 3D data from the AAS:** Ein Tool extrahiert gezielt STEP-Modelle aus AASX-Containern, wandelt sie in native NX-PRT-Dateien um und fügt sie automatisch und mit der möglicheit einer Positonierung in NX ein.
-* **Assignment of an Asset ID to a part ("addPartID"):** Über eine integrierte Benutzeroberfläche können Konstrukteure ihren Modellen direkt in NX eine eindeutige Asset-ID (`PART_ID`) zuweisen. Diese Verknüpfung des 3D-Modells mit seiner AAS-Instanz ist eine Grundvoraussetzung für Industrie 4.0.
-* **Synchronize properties&Data export from CAD:** Ein Python-Skript liest physikalische Eigenschaften (Volumen, Masse, Material) automatisch aus NX aus und exportiert sie als CSV-Datei – die ideale Basis für Recycling-Stücklisten (R-BOMs).
+* **Import of 3D data from the AAS:** A tool specifically extracts STEP models from AASX containers, converts them into native NX PRT files, and automatically inserts them into NX, including the option for positioning.
+* **Assignment of an Asset ID to a part ("addPartID"):** Using an integrated user interface, designers can assign a unique Asset ID (`PART_ID`) to their models directly in NX. This linking of the 3D model with its AAS instance is a fundamental prerequisite for Industry 4.0.
+* **Synchronize properties & Data export from CAD:** A Python script automatically reads physical properties (volume, mass, material) from NX and exports them as a CSV file – the ideal basis for recycling bills of materials (R-BOMs).
+* **Seamless UI integration:** All developed functions were integrated as buttons directly into the NX menu bar (ribbon). They do not disrupt the normal design workflow and are highly intuitive to use.
 
-* **Nahtlose UI-Integration:** Alle entwickelten Funktionen wurden als Buttons direkt in die Menüleiste (Ribbon) von NX integriert. Sie stören den normalen Konstruktionsfluss nicht und sind sehr intuitiv nutzbar.
 
+### Outlook
 
-### Ausblick
+The created interfaces form a solid foundation. To completely close the data loop, the following further developments are recommended for future projects:
 
-Die geschaffenen Schnittstellen bilden ein solides Fundament. Um den Datenkreislauf vollständig zu schließen, bieten sich für zukünftige Projekte folgende Weiterentwicklungen an:
+* **Web-based search function:** The goal is to use an Asset ID in the browser to directly download the appropriate AASX file, automatically find the contained CAD model, and seamlessly open it in NX.
+* **Direct AASX export:** The current workaround using CSV files should be eliminated. In the future, material and geometry data from the CAD system should be written directly into the standardized AASX format so that it can be used in the AAS without intermediate steps.
 
-* **Webbasierte Suchfunktion:** Ziel ist es, künftig anhand einer Asset-ID im Browser direkt die passende AASX-Datei herunterzuladen, das enthaltene CAD-Modell automatisch zu finden und nahtlos in NX zu öffnen.
-* **Direkter AASX-Export:** Der aktuelle Umweg über CSV-Dateien soll entfallen. Zukünftig sollen Material- und Geometriedaten aus dem CAD-System direkt in das standardisierte AASX-Format geschrieben werden, um sie ohne Zwischenschritte in der AAS zu nutzen.
-
-Sobald dieser bidirektionale Workflow in Siemens NX vollständig abgeschlossen ist, kann unsere Methodik als Blaupause dienen. Die hier entwickelten Konzepte lassen sich dann problemlos auf andere CAD-Systeme übertragen, um eine echte, systemübergreifende Interoperabilität zu erreichen.
+Once this bidirectional workflow is fully established in Siemens NX, our methodology can serve as a blueprint. The concepts developed here can then be easily transferred to other CAD systems to achieve true, cross-system interoperability.
