@@ -1,293 +1,425 @@
 # NX AASX to STEP Import Tool
 
-This project contains a Python script that is executed via the **NX Open Python API**.  
-The tool is used to select an **AASX file (Asset Administration Shell)**, automatically extract a contained **STEP model** from it, and then import it into **Siemens NX**.
+This project contains a Python-based workflow for importing CAD geometry from an **AASX file (Asset Administration Shell package)** into **Siemens NX**.
 
-The application thus connects an **Asset Administration Shell (AAS)** with a CAD system by directly opening a STEP model referenced within the AAS in NX.
+The solution consists of two scripts:
+
+- **NX launcher script**  
+  Executes inside Siemens NX via the **NX Open Python API**
+- **External AAS script**  
+  Extracts a STEP file from an AASX package
+
+The workflow connects an **Asset Administration Shell (AAS)** with a CAD system by extracting a referenced STEP model and importing it into NX as a native `.prt` component.
 
 ---
 
 ## Overview
 
-The tool enables a semi-automated workflow to extract and load CAD data from an Asset Administration Shell (AASX) into Siemens NX.
+The tool enables a semi-automated workflow to extract and load CAD data from an AASX container into Siemens NX.
 
-Key Features:
+### Key Features
 
-- Interactive selection of an AASX file
-- User-defined selection of a specific STEP model via part name
-- Targeted extraction of STEP files instead of generic search
-- Automatic conversion from STEP → NX PRT format
-- Automatic insertion of components into an assembly
-- Support for positioning multiple instances of the same model
-- Logging and error output via NX Listing Window
-
----
-
-## Basic functionality
-
-The workflow has been extended to allow **targeted selection of CAD models** and **structured import into NX assemblies**.
-
-### Process:
-
-1. **Start of the NX script**
-
-   The user launches the NX script inside Siemens NX.
-
-2. **Execution of external AAS script**
-
-   The NX script starts the external Python script via subprocess.
-
-3. **Selection of AASX file**
-
-   A file dialog is opened, allowing the user to select an `.aasx` file.
-
-4. **Input of part name**
-
-   The user is prompted to enter a specific part name  
-   (e.g., `GPLE60-3S`).
-
-5. **Targeted STEP extraction**
-
-   The script:
-   - Parses the AASX file
-   - Searches for STEP models
-   - Compares filenames with the user input
-   - Extracts only the matching STEP file
-
-6. **Temporary storage**
-
-   The STEP file is stored locally.
-
-7. **Import into NX**
-
-   The NX script:
-   - Converts the STEP file into a `.prt` file
-   - Inserts it as a component into the current assembly
-   - Optionally inserts multiple instances with positioning
+- Interactive execution from Siemens NX
+- Launch of an external Python extraction script via `subprocess`
+- Automatic detection or creation of an active NX work part
+- Conversion from **STEP** to **NX PRT**
+- Insertion of imported `.prt` files as assembly components
+- Support for multiple component instances
+- Logging and error output via the NX Listing Window
 
 ---
 
-## Code structure and individual functions
+## Basic Functionality
 
-The code consists of two scripts:
+The current implementation performs the following workflow:
 
-- **NX launcher script** (performs the import in NX)
-- **External AAS script** (extracts the STEP model from the AASX)
+1. The NX launcher script starts inside Siemens NX
+2. The launcher executes the external script `AAS_TO_NX.py`
+3. The external script handles:
+   - AASX file selection
+   - STEP model identification
+   - STEP extraction
+4. The NX launcher checks whether the STEP file was created
+5. The STEP file is converted into a native NX `.prt` file
+6. The resulting `.prt` file is inserted into the active assembly as a component
+7. A second component instance can be added at another position
 
 ---
 
-## NX launcher script
+## Project Structure
 
-The NX script has been extended to support:
+The solution consists of two scripts:
 
-- STEP → PRT conversion
-- Component-based assembly building
-- Multiple component placement
+- **NX launcher script**
+- **External extraction script**: `AAS_TO_NX.py`
+
+---
+
+# NX Launcher Script
+
+The NX launcher script is responsible for the NX-side import workflow.
+
+It currently includes the following main tasks:
+
+- Ensure that a valid work part exists
+- Launch the external extraction script
+- Convert STEP to NX PRT
+- Insert the imported geometry as assembly components
+- Write status and error information to the NX Listing Window
 
 ---
 
 ## `main()`
 
-The entry point of the NX script.
+Entry point of the NX launcher script.
 
-Functions:
+### Responsibilities
 
-- Opens the NX Listing Window to display status messages
-- Starts the external Python script via subprocess
-- Checks whether the STEP file was created
-- Ensures that an active NX part exists
-- Imports the STEP file into NX
+- Opens the NX Listing Window
+- Resolves the path to the external script
+- Deletes an old STEP file before starting the extraction
+- Executes the external script via `subprocess.run(...)`
+- Evaluates return code, stdout, and stderr
+- Verifies whether the extracted STEP file exists
+- Ensures that an NX work part is available
+- Imports the STEP file as one or more assembly components
+
+### Notes
+
+- The launcher currently checks for `temp_model.step` in  
+  `AAS-Creo-Bridge/temp_model.step`
+- It also tries to place a second instance using  
+  `temp_model.step` in the launcher base directory
+- The code currently validates only the first STEP path before import
 
 ---
 
 ## `ensure_work_part()`
 
-This function ensures that an active NX part exists.
+Ensures that an active NX work part exists.
 
-If no work part is available:
+### Behavior
 
-- a new part is created
-- any existing old part is deleted
-- the new part is set as the work part
+- Checks whether `session.Parts.Work` is available
+- If no work part exists:
+  - Looks for `StartPart.prt` in the launcher directory
+  - Opens it if it already exists
+  - Otherwise creates a new part in millimeter units
 
-This prevents NXOpen functions from being executed without a valid target part.
+### Purpose
+
+This prevents NX Open operations from failing due to a missing active work part.
 
 ---
 
-## `import_step_to_prt()`
+## `identity_matrix()`
 
-This function converts a STEP file into an NX `.prt` file.
+Creates and returns an identity rotation matrix of type `NXOpen.Matrix3x3`.
 
-Features:
+### Purpose
 
-- Uses NX Step242Importer
-- Creates a new NX-native part file
-- Enables:
-  - Solids
-  - Surfaces
+Used as the default orientation matrix when inserting components.
+
+---
+
+## `rotation_matrix_x(angle_deg)`
+
+Creates a rotation matrix for a rotation about the **X axis**.
+
+### Input
+
+- `angle_deg`: rotation angle in degrees
+
+---
+
+## `rotation_matrix_y(angle_deg)`
+
+Creates a rotation matrix for a rotation about the **Y axis**.
+
+### Input
+
+- `angle_deg`: rotation angle in degrees
+
+---
+
+## `rotation_matrix_z(angle_deg)`
+
+Creates a rotation matrix for a rotation about the **Z axis**.
+
+### Input
+
+- `angle_deg`: rotation angle in degrees
+
+---
+
+## `get_rotation_matrix(axis="X", angle_deg=0.0)`
+
+Returns a rotation matrix depending on the selected axis.
+
+### Supported axes
+
+- `X`
+- `Y`
+- `Z`
+
+If the axis is invalid, the function returns the identity matrix.
+
+### Note
+
+This helper function exists in the code, but the current component insertion logic does **not yet apply** the computed rotation matrix.  
+`add_prt_as_component()` currently uses `identity_matrix()` directly.
+
+---
+
+## `import_step_to_prt(step_path)`
+
+Converts a STEP file into a native NX `.prt` file.
+
+### Behavior
+
+- Creates an NX `Step242Importer`
+- Uses native file system import mode
+- Imports the file into a **new part**
+- Enables import of:
   - Curves
+  - Surfaces
+  - Solids
   - PMI data
-- Outputs a `.prt` file in the same directory
+- Writes the output `.prt` file next to the STEP file
 
-This replaces direct STEP import into the work part.
+### Returns
 
----
-
-## `add_prt_as_component()`
-
-This function inserts a `.prt` file into the current assembly.
-
-Features:
-
-- Adds part as a component
-- Supports positioning via:
-  - X, Y, Z coordinates
-- Assigns a component name
-- Uses NX ComponentAssembly API
+- Path to the generated `.prt` file on success
+- `None` on failure
 
 ---
 
-## `import_step_into_nx_as_component()`
+## `open_part(part_path)`
 
-This is the central import function.
+Opens an NX part file using `session.Parts.OpenBaseDisplay(...)`.
 
-Process:
+### Behavior
 
-1. Ensure active work part exists
-2. Convert STEP → PRT
-3. Insert PRT as component into assembly
-4. Apply position and naming
+- Opens the specified `.prt` file
+- Logs success or failure in the NX Listing Window
 
-This replaces the old direct STEP import.
+### Returns
 
----
+- The opened part object on success
+- `None` on failure
 
-## Multiple component placement
+### Note
 
-The script supports inserting multiple instances of the same STEP model:
-
-Example:
-
-- Component 1 at (0, 0, 0)
-- Component 2 at (150, 0, 0)
-
-This enables simple assembly creation directly from AAS data.
+This function is currently available in the launcher code but is not used by `main()`.
 
 ---
 
-## External script (AAS_TO_NX.py)
+## `add_prt_as_component(target_part, prt_path, component_name, x=0.0, y=0.0, z=0.0, axis="X", angle_deg=0.0)`
 
-This script extracts a STEP model from an AASX file.
+Adds a `.prt` file as a component to the target assembly.
+
+### Behavior
+
+- Creates a placement point from `x`, `y`, `z`
+- Uses the NX `ComponentAssembly.AddComponent(...)` API
+- Assigns the given component name
+- Inserts the part as `"Entire Part"`
+
+### Returns
+
+- The created component on success
+- `None` on failure
+
+### Important Note
+
+Although the function signature includes:
+
+- `axis`
+- `angle_deg`
+
+the current implementation does **not** apply rotational placement.  
+The component orientation is currently always the identity matrix.
+
+---
+
+## `import_step_into_nx_as_component(step_path, x=0.0, y=0.0, z=0.0, axis="X", angle_deg=0.0, component_name=None)`
+
+Central import helper for NX-side processing.
+
+### Process
+
+1. Ensure an active work part exists
+2. Convert STEP to PRT
+3. Derive a default component name from the `.prt` filename if needed
+4. Insert the `.prt` file as a component into the assembly
+
+### Returns
+
+- The created NX component on success
+- `None` on failure
+
+---
+
+## Multiple Component Placement
+
+The NX launcher currently supports inserting multiple instances of the imported model.
+
+### Current Example in Code
+
+- `Part_1` at `(0.0, 0.0, 0.0)`
+- `Part_2` at `(150.0, 0.0, 0.0)`
+
+This allows simple assembly population with repeated geometry.
+
+### Note
+
+The second import currently references a different STEP path:
+
+- `AAS-Creo-Bridge/temp_model.step`
+- `temp_model.step` in the base directory
+
+This behavior should be kept in mind when testing the workflow.
+
+---
+
+# External Script: `AAS_TO_NX.py`
+
+The external script is responsible for extracting a STEP file from the selected AASX package.
+
+Its functionality remains unchanged.
 
 ---
 
 ## `main()`
 
-The entry point of the external script.
+Entry point of the external extraction script.
 
-Process:
+### Process
 
 1. Opens a file selection dialog
-2. The user selects an .aasx file
-3. The file is analyzed
-4. A STEP model is extracted
-5. The STEP file is saved locally
+2. User selects an `.aasx` file
+3. The AASX content is analyzed
+4. A matching STEP file is extracted
+5. The STEP file is written to a temporary location
 
 ---
 
 ## `select_aasx_file()`
 
-This function opens a file dialog using Tkinter.
+Opens a file dialog using Tkinter.
 
-The user can select an .aasx file.
+### Behavior
 
-If no file is selected, the process is terminated.
+- Allows the user to select an `.aasx` file
+- Aborts the process if no file is selected
+
+---
+
+## `ask_part_name()`
+
+Prompts the user to enter a specific part name.
+
+### Behavior
+
+- Uses a Tkinter input dialog
+- Validates that the input is not empty
+- Defines which STEP model should be extracted from the AASX package
 
 ---
 
 ## `extract_step_from_aasx_by_name()`
 
-This function performs a **targeted search** for a STEP file inside the AASX.
+Performs a targeted extraction of a STEP model from the AASX package.
 
-Process:
+### Process
 
-1. Import AASX file
-2. Iterate through all AAS shells
-3. Extract models from each AAS
-4. Check metadata for STEP format
-5. Extract filename (without extension)
-6. Compare with user-defined part name
-7. If match is found:
-   - Extract file from file store
-   - Save to temporary location
-8. Return path to STEP file
+1. Open and parse the AASX file
+2. Iterate over available AAS shells
+3. Inspect referenced files and metadata
+4. Identify STEP files
+5. Compare the file name with the user-defined part name
+6. Extract the matching STEP file
+7. Save it to a temporary location
+8. Return the resulting STEP path
 
-If no matching STEP file is found:
-- Function returns `None`
+### Returns
 
-## `ask_part_name()`
-
-This function prompts the user to enter a part name.
-
-- Uses Tkinter dialog
-- Input is validated (no empty values)
-- Defines which STEP model should be extracted
-
-This replaces the previous "take first STEP file" logic.
+- STEP file path if a matching file is found
+- `None` if no matching STEP file exists
 
 ---
 
-## Installation & execution in NX
+## Installation and Execution in NX
 
-1. Ensure that Python is installed.
-2. Ensure that the NX Python API is available.
-3. Place both scripts in your project directory.
+1. Ensure Python is installed and available
+2. Ensure the NX Open Python API is available
+3. Place both scripts in the expected project structure
+4. Open Siemens NX
+5. Execute the NX launcher script
 
-Required scripts:
-
-- NX launcher script:
-  AAS_TO_NX.py
-
-4. Open Siemens NX.
-5. Start the NX script
-
-The script will then automatically start the complete workflow.
+The launcher then starts the extraction and import workflow automatically.
 
 ---
 
 ## Troubleshooting
 
-### STEP file not found
+### No file selected
+
+Possible cause:
+
+- The AASX file selection dialog was cancelled
+
+---
+
+### No matching STEP file found
 
 Possible causes:
 
 - No STEP file matches the entered part name
-- Naming mismatch between AASX and user input
+- Naming mismatch between AASX file content and user input
 
 ---
 
-### External script aborted
+### External script failed
 
-Return codes:
-
-- `1` → No file selected
-- `2` → No matching STEP found
-
----
-
-### Import into NX fails
+The launcher reports the external return code and any stdout/stderr output in the NX Listing Window.
 
 Possible causes:
 
-- STEP → PRT conversion failed
+- Missing Python environment
+- Invalid script path
+- Runtime error in the external script
+
+---
+
+### STEP file was not created
+
+Possible causes:
+
+- Extraction failed
+- Output path mismatch
+- File was written to a different temporary location than expected
+
+---
+
+### Import into NX failed
+
+Possible causes:
+
+- STEP to PRT conversion failed
 - NX importer configuration issue
-- File system access problem
+- Invalid or inaccessible file path
+- Component insertion failure in the current assembly
 
-## Possible improvements
+---
 
-- Selection of part names from dropdown instead of manual input
-- Preview of available STEP models inside AASX
-- Support for multiple different components from one AASX
-- Automatic placement based on metadata (position/orientation)
-- Configurable paths instead of hardcoded values
-- Logging to file instead of only NX Listing Window
+## Possible Improvements
+
+- Apply the computed rotation matrix during component placement
+- Validate both STEP paths before inserting multiple instances
+- Use a consistent temporary output path
+- Let the user select from available STEP models instead of entering a name manually
+- Support import of multiple different components from one AASX package
+- Add automatic placement using metadata
+- Add configurable paths instead of fixed relative paths
+- Write logs to a file in addition to the NX Listing Window
