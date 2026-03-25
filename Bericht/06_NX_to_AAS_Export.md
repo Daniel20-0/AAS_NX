@@ -16,12 +16,20 @@ The file is automatically saved in the same directory as the NX part.
 
 The script executes the following process:
 
-1. Establish a connection to the current NX session 
-2. Access the active work part 
-3. Define the attributes to be read
-4. Iterate over all attributes of the part 
-5. Extract the required values
-6. Write the data to a CSV file
+1. Establish a connection to the current NX session
+2. Access the active work part
+3. Check whether the active part is a standalone part or an assembly
+4. Define the standard attributes to be exported
+5. Update the mass properties of each relevant part
+6. Read mass, volume, and area directly via NX measurement functions
+7. Read additional standard attributes, such as material, from part attributes
+8. Collect all custom user attributes from the part
+9. In assemblies, additionally collect instance-specific attributes from each leaf component
+10. Merge part attributes and component attributes, with component attributes overriding identical names if necessary
+11. Remove standard attributes from the custom attribute set to avoid duplicate CSV columns
+12. Create one CSV row per standalone part or per leaf component in an assembly
+13. Build a sorted CSV header containing standard and custom attributes
+14. Write the extracted data to a CSV file
 
 ---
 
