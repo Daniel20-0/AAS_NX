@@ -1,71 +1,103 @@
-## Integration of the developed scripts into the Siemens NX CAD environment
+## Execution and Integration in Siemens NX
+
+This section describes how the developed scripts are integrated and executed within the Siemens NX environment.
+
+The mechanisms described here apply globally to the entire project and are not repeated in individual function descriptions.
 
 ---
 
-## Integration of Python Scripts in Siemens NX
+## Execution Methods in Siemens NX
 
-There are multiple ways to integrate and execute Python scripts in Siemens NX.
+There are multiple ways to execute the NX launcher script inside Siemens NX.
 
-### Option 1: Execution via Journal
+### Option 1: Journal Playback
 
-One approach is to execute the script using the **Journal playback functionality**.
+The script can be executed using the **Journal Playback** functionality.
 
 Steps:
-- Add the *Journal Playback* command in NX
-- Select the desired Python script
-- Execute the script directly within the NX environment
+
+- Open *Journal Playback* in NX
+- Select the NX launcher script
+- Execute the script
+
+This is the simplest method and is recommended for development and testing.
 
 ---
 
-### Option 2: User-defined command
+### Option 2: Custom User Command
 
-Another approach is to create a **custom user command** in NX.
+The script can also be integrated as a **custom NX command**.
 
-- A new user command is defined
-- The Python script is assigned as the corresponding action
-- The script can then be executed like a native NX command
+- A user-defined command is created in NX
+- The NX launcher script is assigned as the execution action
+- The command can be added to toolbars or menus
 
----
-
-### Important note
-
-It is important to note that scripts are referenced via **file paths** in Siemens NX.
-
-- If the script is moved or renamed,
-- the corresponding path in NX must be updated
-
-Otherwise, the script can no longer be executed.
+This approach is recommended for productive workflows.
 
 ---
 
-## Integration of C# based UI Styler Scripts
+## File Path Dependencies
 
-Scripts created with the **NX UI Styler** can also be executed via the **Journal Replay** functionality.
+Scripts in Siemens NX are referenced via **absolute or relative file paths**.
 
-However, there are some important aspects to consider:
+Important considerations:
 
-- UI Styler-based scripts require both a `.cs` file and a corresponding `.dllx` file.
-- These files must be correctly linked to each other.
-- The `.cs` file contains a file path reference to the associated `.dllx` file.
-- This path must be updated before the first execution to ensure correct functionality.
+- If scripts are moved or renamed, paths must be updated
+- The NX launcher script must be able to locate:
+  - the external script
+  - the temporary STEP file
 
----
-
-### Additional Integration Option
-
-UI Styler scripts can also be integrated as a **custom user command**:
-
-- The `.cs` script is assigned as the execution action.
-- The command can then be added to the NX user interface (e.g., toolbar or menu).
-
-This allows seamless integration into regular NX workflows.
+Incorrect paths will prevent execution.
 
 ---
 
-## Workflow Diagram
+## External Script Execution
 
-The following flowchart presents the internal process flow of the interaction between a UI Styler-based interface and a Python script.
+The NX launcher automatically executes the external script:
 
-The UI Styler component is exemplified by the `add_PartID` function, whereas the Python-based backend logic is represented by the `NX AASX to STEP Import Tool` function.
+- Don't change path of the downloaded scripts
+- No manual interaction is required
+- Communication is handled via:
+  - file system (STEP file)
+  - return codes
+  - stdout / stderr logging
+
+---
+
+## UI Styler Integration (Optional)
+
+If a graphical interface is created using **NX UI Styler**, additional integration is possible.
+
+### Requirements
+
+- `.cs` file (UI logic)
+- `.dllx` file (compiled UI definition)
+
+### Important Notes
+
+- The `.cs` file contains a reference to the `.dllx` file
+- This path must be updated before first execution
+- Both files must remain linked
+
+---
+
+### Execution Options for UI Styler
+
+UI Styler scripts can be executed via:
+
+- **Journal Replay**
+- **Custom NX Command**
+
+This allows seamless integration into NX workflows.
+
+---
+
+## Workflow Overview
+
+The following diagram illustrates the interaction between:
+
+- NX launcher script
+- External AAS processing script
+- Optional UI layer
 
 ![Technical flowchart of the AASX-to-NX import workflow](bilder/Workflow_functions.svg)
