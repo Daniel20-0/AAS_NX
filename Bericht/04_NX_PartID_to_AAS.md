@@ -25,7 +25,6 @@ The following SVG file shows a **flowchart** that describes the technical functi
 
 ![Technical flowchart of the AASX-to-NX import workflow](bilder/Workflow_ADD_ID.drawio.svg)
 
-
 ---
 
 ## Code structure and the individual functions
