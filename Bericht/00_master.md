@@ -1,5 +1,6 @@
-@import "01_Einleitung_HKA.md" 
+@import "01_Einleitung_HKA.md"
 @import "02_Einleitung_GitHub.md"
+@import "09_Prerequisites.md"
 @import "03_AAS_to_NX_Part_import.md"
 @import "04_NX_PartID_to_AAS.md"
 @import "05_NX_Sync_Properties_with_AAS.md"
@@ -8,4 +9,3 @@
 @import "notice.md"
 @import "07_Recycling_NX_R-BOM_to_AAS.md"
 @import "08_CAD_Systems_Comparison.md"
-@import "09_Prerequisites.md"

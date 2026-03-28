@@ -1,4 +1,8 @@
-# NX AASX to STEP Import Tool
+# 03 Function Descriptions
+
+The following sections describe the implementation of the core features.
+
+## NX AASX to STEP Import Tool
 
 This project contains a Python-based workflow for importing CAD geometry from an **AASX file (Asset Administration Shell package)** into **Siemens NX**.
 
