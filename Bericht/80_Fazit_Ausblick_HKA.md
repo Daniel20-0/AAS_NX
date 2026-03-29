@@ -2,7 +2,7 @@
 
 ### Conclusion
 
-This project has successfully built a functioning bridge between the standardized Asset Administration Shell (AAS) and the CAD system Siemens NX. In doing so, it has shown that a direct, bidirectional connection between both worlds is essential. Data must flow seamlessly throughout the entire product lifecycle – whether it is generated in CAD and transferred to the AAS, or vice versa. A clear practical example of this is the automated calculation of the material weights of an assembly in CAD, which are then made directly available for processes in the AAS.
+This project has successfully built a functioning bridge between the standardized AAS and the CAD system Siemens NX. In doing so, it has shown that a direct, bidirectional connection between both worlds is essential. Data must flow seamlessly throughout the entire product lifecycle – whether it is generated in CAD and transferred to the AAS, or vice versa. A clear practical example of this is the automated calculation of the material weights of an assembly in CAD, which are then made directly available for processes in the AAS.
 
 However, there were some hurdles to overcome at the beginning of the project. One challenge was the licensing model of Siemens NX: the "NX Open" functions, which are absolutely necessary for interface programming, are missing in the free student version.
 

@@ -1,6 +1,6 @@
 ## Toolbox in NX
 
-The connection of the CAD system Siemens NX to the Asset Administration Shell (AAS) enables a continuous, bidirectional flow of information. This transforms the static 3D model into an integral component of the Digital Twin. Using the NX Open API, a wide variety of functions can be implemented, expanding the functional scope for AAS use cases almost limitlessly.
+The connection of the CAD system Siemens NX to the AAS enables a continuous, bidirectional flow of information. This transforms the static 3D model into an integral component of the Digital Twin. Using the NX Open API, a wide variety of functions can be implemented, expanding the functional scope for AAS use cases almost limitlessly.
 
 The following core functions and workflows are made possible by this integration:
 

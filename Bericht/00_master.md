@@ -5,7 +5,7 @@
 @import "04_NX_PartID_to_AAS.md"
 @import "05_NX_Sync_Properties_with_AAS.md"
 @import "06_NX_to_AAS_Export.md"
+@import "08_CAD_Systems_Comparison.md"
 @import "Lizenz.md"
 @import "notice.md"
-@import "07_Recycling_NX_R-BOM_to_AAS.md"
-@import "08_CAD_Systems_Comparison.md"
+

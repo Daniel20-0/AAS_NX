@@ -1,7 +1,7 @@
 # NX addPartID for AAS
 This project includes a Siemens NX Open application (C#) created using the NX Block UI Styler. For detailed instructions and technical background on working with this tool, please refer to the official Siemens manual **"NX Open Programmer's Guide"**, specifically the chapters on the **"Block UI Styler Introduction"** (for dialog creation and callbacks).
 
-The tool enables designers to assign a unique ID (Part ID) to an active NX part via a simple graphical user interface. This ID is stored as a part attribute (`PART_ID`) and is used to link the 3D model with the **Asset Administration Shell (AAS)** for digital twins.
+The tool enables designers to assign a unique ID (Part ID) to an active NX part via a simple graphical user interface. This ID is stored as a part attribute (`PART_ID`) and is used to link the 3D model with the AAS for digital twins.
 
 ---
 
@@ -9,7 +9,7 @@ The tool enables designers to assign a unique ID (Part ID) to an active NX part 
 
 To make a 3D model usable in Industry 4.0 scenarios, it must be uniquely identifiable. This script addresses this requirement by providing a defined workflow in NX:
 
-1. **User input:** The user starts the script in NX. A dialog box (defined by the `.dlx` file) opens, in which the desired ID for the Asset Administration Shell is entered.
+1. **User input:** The user starts the script in NX. A dialog box (defined by the `.dlx` file) opens, in which the desired ID for the AAS is entered.
 
 2. **Validation:** The tool verifies whether an ID has been entered and whether a part is opened and active (Work Part) in NX.
 

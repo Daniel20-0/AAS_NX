@@ -1,4 +1,4 @@
-## Comparison of CAD Systems in the Context of the Asset Administration Shell (AAS)
+## Comparison of CAD Systems in the Context of the AAS
 
 If the question arises during development as to which CAD system should be used, practical experience from various projects can be drawn upon. As shown in the following table, the three established CAD systems Siemens NX, PTC Creo, and Autodesk Fusion 360 differ from each other, particularly in terms of licenses, functional scope, and user-friendliness.
 

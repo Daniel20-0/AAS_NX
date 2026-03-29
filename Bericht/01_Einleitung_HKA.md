@@ -43,12 +43,12 @@ Based on the conceptual preliminary work of the first phase, the focus of the se
 ### 3.1 Detailed description of the scenario
 Lena Müller works as a production planner and assembly manager in final assembly. She is responsible for the correct execution of the assembly processes as well as for the quality assurance of the assembled modules. Lena checks the tightening torques of the individual screw connections and assembles the corresponding sheet metal components. In doing so, she ensures that all assembly specifications are strictly adhered to in order to guarantee the functionality, safety, and quality of the product. 
 
-The relevant assembly information is provided to Lena digitally. An assembly drawing, linked to the respective physical asset via the Asset Administration Shell (AAS), is stored in the CAD model. Using a digital device (e.g., an industrial tablet or HMI), Lena can access this information in context.
+The relevant assembly information is provided to Lena digitally. An assembly drawing, linked to the respective physical asset via the AAS, is stored in the CAD model. Using a digital device (e.g., an industrial tablet or HMI), Lena can access this information in context.
 
 ### 3.2 Process flow description
 
 * **Product / Asset Identification:** Lena identifies the product to be assembled using a serial number or a QR code.
-* **Calling up the AAS:** The corresponding Asset Administration Shell is loaded via the manufacturing system.
+* **Calling up the AAS:** The corresponding AAS is loaded via the manufacturing system.
 * **Accessing assembly information:** The AAS points to the linked CAD model and the corresponding assembly drawing.
 * **Display of assembly steps:** The individual assembly steps are presented sequentially, including the required tools.
 * **Checking tightening torques:** The target torques for each screw connection are displayed and verified with the torque tool in use.
@@ -66,8 +66,8 @@ The relevant assembly information is provided to Lena digitally. An assembly dra
 
 ### 3.4 Technical implementation
 
-#### 3.4.1 Implementation in the Asset Administration Shell (AAS)
-The Asset Administration Shell serves as a central data hub for assembly- and quality-relevant information. Technically, the implementation is carried out via clearly defined `SubmodelElements` that standardize assembly knowledge, CAD references, and torque specifications.
+#### 3.4.1 Implementation in the Asset Administration Shell
+The AAS serves as a central data hub for assembly- and quality-relevant information. Technically, the implementation is carried out via clearly defined `SubmodelElements` that standardize assembly knowledge, CAD references, and torque specifications.
 
 **Assembly and torque data**
 * **Submodel "AssemblyInformation":** Contains the complete description of the assembly steps as structured `SubmodelElements` (e.g., `Operation`, `Sequence`, `StepNumber`).
@@ -98,7 +98,7 @@ These reports are stored as an `Event` or `Annotation` directly in the AAS and a
 ## 6. Scenario: Recycling (End-of-Life)
 
 ### 6.1 Detailed description of the scenario
-In 2026, the linear economy ("take, make, dispose") was legally ended by the *Ecodesign for Sustainable Products Regulation* (ESPR). Every dishwasher sold in the EU must now have a Digital Product Passport (DPP), which is technically implemented as an Asset Administration Shell (AAS). 
+In 2026, the linear economy ("take, make, dispose") was legally ended by the *Ecodesign for Sustainable Products Regulation* (ESPR). Every dishwasher sold in the EU must now have a Digital Product Passport (DPP), which is technically implemented as an AAS. 
 
 Markus Mustermann, a specialized employee in a certified dismantling center, faces a challenge: A modern dishwasher consists of over 150 different materials, including valuable stainless steel, copper-bearing motors, electronics with rare earths, and problematic bitumen insulation mats.
 
@@ -135,7 +135,7 @@ The AAS serves as a data hub. All installed components have their properties sto
 * **API Interface:** The AAS provides a REST API through which the recycling software makes queries (e.g., `GET /submodels/MaterialComposition/submodel-elements/CopperWeight`).
 
 #### 6.4.2 Implementation in the CAD environment
-The CAD environment serves as the central data source for creating the Asset Administration Shell (AAS). The process is structured as follows:
+The CAD environment serves as the central data source for creating the AAS. The process is structured as follows:
 
 * **Provision of documents:** Dismantling drawings in PDF format are generated directly from the CAD system and made available to the AAS.
 * **Material flow analysis:** An automated list is generated that records all components, including their volumes and materials. From this, the exact masses of the different raw materials can be derived. 

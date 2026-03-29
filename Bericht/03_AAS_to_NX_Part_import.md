@@ -13,7 +13,7 @@ The solution consists of two scripts:
 - **External AAS script**  
   Extracts a STEP file from an AASX package
 
-The workflow connects an **Asset Administration Shell (AAS)** with a CAD system by extracting a referenced STEP model and importing it into NX as a native `.prt` component.
+The workflow connects an AAS with a CAD system by extracting a referenced STEP model and importing it into NX as a native `.prt` component.
 
 ---
 
