@@ -81,7 +81,7 @@ The file path of the CSV file is generated automatically
 
 
 
-## Troubleshooting (Fehlerbehebung)
+## Troubleshooting
 No CSV file is generated
 Possible causes:
 - No active work part is available

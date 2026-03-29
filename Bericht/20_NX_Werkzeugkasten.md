@@ -14,7 +14,7 @@ The following core functions and workflows are made possible by this integration
 * **Attribution:** This assignment is done by writing metadata into the part attributes (e.g., creating the attribute `PART_ID`). If the part is exported later, this ID is retained as meta-information within the model and can be read by Industry 4.0 systems.
 
 ### 3. Data export for Bills of Materials (BOM) and AAS synchronization
-* **Reading properties:** Specific physical mass properties of an NX part (such as volume, mass, and surface area) can be automatically read out using a Python script.
+* **Reading properties:** Specific physical mass properties of an NX part (such as volume, mass, and surface area) but also user-defined attributes can be read out automatically using a Python script.
 * **BOM creation:** These extracted CAD attributes can be exported (e.g., as a CSV file). This data forms the basis for detailed bills of materials (such as an R-BOM for recycling scenarios), which can then be linked directly into the structure of the AASX file.
 
 ### 4. UI customization and user interaction
