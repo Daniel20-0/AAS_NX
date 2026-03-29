@@ -1,6 +1,6 @@
-## Tools and Sources
+## 12 Tools and Sources
 
-### Tools Used
+### 12.1 Tools Used
 
 The following tools supported the implementation and documentation of the project:
 
@@ -11,7 +11,7 @@ The following tools supported the implementation and documentation of the projec
 * **GitHub:** For version control and publishing the code.
 * **Siemens NX:** For the CAD work.
 
-### Sources
+### 12.2 Sources
 
 The theoretical and technical basis of this project relies on the following documents:
 

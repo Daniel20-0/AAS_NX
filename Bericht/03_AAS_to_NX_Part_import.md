@@ -1,8 +1,8 @@
-# 03 Function Descriptions
+# 4 Function Descriptions
 
 The following sections describe the implementation of the core features.
 
-## NX AASX to STEP Import Tool
+## 4.1 NX AASX to STEP Import Tool
 
 This project contains a Python-based workflow for importing CAD geometry from an **AASX file (Asset Administration Shell package)** into **Siemens NX**.
 
@@ -17,11 +17,11 @@ The workflow connects an AAS with a CAD system by extracting a referenced STEP m
 
 ---
 
-## Overview
+## 4.2 Overview
 
 The tool enables a semi-automated workflow to extract and load CAD data from an AASX container into Siemens NX.
 
-### Key Features
+### 4.2.1 Key Features
 
 - Interactive execution from Siemens NX
 - Launch of an external Python extraction script via `subprocess`
@@ -33,7 +33,7 @@ The tool enables a semi-automated workflow to extract and load CAD data from an 
 
 ---
 
-## Basic Functionality
+## 4.3 Basic Functionality
 
 The current implementation performs the following workflow:
 
@@ -50,7 +50,7 @@ The current implementation performs the following workflow:
 
 ---
 
-## Project Structure
+## 4.4 Project Structure
 
 The solution consists of two scripts:
 
@@ -59,7 +59,7 @@ The solution consists of two scripts:
 
 ---
 
-# NX Launcher Script
+# 4.5 NX Launcher Script
 
 The NX launcher script is responsible for the NX-side import workflow.
 
@@ -102,7 +102,7 @@ Entry point of the NX launcher script.
 
 Ensures that an active NX work part exists.
 
-### Behavior
+###  Behavior
 
 - Checks whether `session.Parts.Work` is available
 - If no work part exists:
@@ -353,7 +353,7 @@ Performs a targeted extraction of a STEP model from the AASX package.
 
 ---
 
-## Installation and Execution in NX
+## 4.6 Installation and Execution in NX
 
 1. Ensure Python is installed and available
 2. Ensure the NX Open Python API is available
@@ -365,7 +365,7 @@ The launcher then starts the extraction and import workflow automatically.
 
 ---
 
-## Troubleshooting
+## 4.7 Troubleshooting
 
 ### No file selected
 
@@ -417,7 +417,7 @@ Possible causes:
 
 ---
 
-## Possible Improvements
+## 4.8 Possible Improvements
 
 - Apply the computed rotation matrix during component placement
 - Validate both STEP paths before inserting multiple instances

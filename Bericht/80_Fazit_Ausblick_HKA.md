@@ -1,6 +1,6 @@
-## Conclusion and Outlook
+## 11 Conclusion and Outlook
 
-### Conclusion
+### 11.1 Conclusion
 
 This project has successfully built a functioning bridge between the standardized AAS and the CAD system Siemens NX. In doing so, it has shown that a direct, bidirectional connection between both worlds is essential. Data must flow seamlessly throughout the entire product lifecycle – whether it is generated in CAD and transferred to the AAS, or vice versa. A clear practical example of this is the automated calculation of the material weights of an assembly in CAD, which are then made directly available for processes in the AAS.
 
@@ -14,7 +14,7 @@ Nevertheless, we were able to successfully implement the essential tools for aut
 * **Seamless UI integration:** All developed functions were integrated as buttons directly into the NX menu bar (ribbon). They do not disrupt the normal design workflow and are highly intuitive to use.
 
 
-### Outlook
+### 11.2 Outlook
 
 The created interfaces form a solid foundation. To completely close the data loop, the following further developments are recommended for future projects:
 
