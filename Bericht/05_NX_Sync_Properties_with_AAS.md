@@ -1,11 +1,11 @@
-# 05 NX Add Attributes Tool  
+# 6 NX Add Attributes Tool  
 This project includes a Siemens NX Open application (Python) created using the NX Block UI Styler. For detailed instructions and technical background on working with this tool, please refer to the official Siemens manual **"NX Open Programmer's Guide"**, specifically the chapters on the **"Block UI Styler Introduction"** (for dialog creation and callbacks).
 
 The tool enables designers to assign **custom user-defined attributes** (name + value) to the active NX part via a simple graphical user interface.
 
 ---
 
-## Basic functionality (Adding custom attributes to an NX part)
+## 6.1 Basic functionality (Adding custom attributes to an NX part)
 
 In many engineering workflows, additional metadata must be attached to a CAD model (e.g., IDs, descriptions, classifications). This script provides a flexible way to assign such attributes:
 
@@ -27,7 +27,7 @@ This allows flexible enrichment of NX parts with metadata for downstream process
 
 ---
 
-## Technical workflow diagram
+## 6.2 Technical workflow diagram
 
 The following SVG file shows a **flowchart** that describes the technical functionality of the implemented process.
 
@@ -35,7 +35,7 @@ The following SVG file shows a **flowchart** that describes the technical functi
 
 ---
 
-## Code structure and the individual functions
+## 6.3 Code structure and the individual functions
 
 The code is based on the standard template of the NX Block UI Styler. Below is a detailed description of the key functions in `Add_Attributes.py`:
 
@@ -143,7 +143,7 @@ The UI is intentionally minimalistic to allow fast and flexible attribute entry.
 
 ---
 
-## Installation & Execution in NX
+## 6.4 Installation & Execution in NX
 
 1. Download the files `Add_Attributes.py` and `Add_Attributes.dlx`
 2. Ensure both files are located in the same directory  
@@ -155,7 +155,7 @@ The UI is intentionally minimalistic to allow fast and flexible attribute entry.
 
 ---
 
-## Troubleshooting
+## 6.7 Troubleshooting
 
 * **Dialog cannot be found:**  
   Ensure that the `.dlx` file is located in the same directory as the Python script. The script automatically resolves the path based on its own location.

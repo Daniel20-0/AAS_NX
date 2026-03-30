@@ -7,7 +7,7 @@ The Apache Software Foundation (http://www.apache.org/).
 
 ---
 
-## Drittanbieter-Code & Abhängigkeiten
+## Third-Party Code and Dependencies
 
 ### Siemens NX 2021 UI-Styler
 Portions of the user interface code in this project were generated using the Siemens NX 2021 UI-Styler and subsequently modified.  

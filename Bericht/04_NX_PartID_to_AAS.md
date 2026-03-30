@@ -1,15 +1,15 @@
-# NX addPartID for AAS
+# 5 NX addPartID for AAS
 This project includes a Siemens NX Open application (C#) created using the NX Block UI Styler. For detailed instructions and technical background on working with this tool, please refer to the official Siemens manual **"NX Open Programmer's Guide"**, specifically the chapters on the **"Block UI Styler Introduction"** (for dialog creation and callbacks).
 
-The tool enables designers to assign a unique ID (Part ID) to an active NX part via a simple graphical user interface. This ID is stored as a part attribute (`PART_ID`) and is used to link the 3D model with the **Asset Administration Shell (AAS)** for digital twins.
+The tool enables designers to assign a unique ID (Part ID) to an active NX part via a simple graphical user interface. This ID is stored as a part attribute (`PART_ID`) and is used to link the 3D model with the AAS for digital twins.
 
 ---
 
-## Basic functionality (Adding the Part ID for the AAS)
+## 5.1 Basic functionality (Adding the Part ID for the AAS)
 
 To make a 3D model usable in Industry 4.0 scenarios, it must be uniquely identifiable. This script addresses this requirement by providing a defined workflow in NX:
 
-1. **User input:** The user starts the script in NX. A dialog box (defined by the `.dlx` file) opens, in which the desired ID for the Asset Administration Shell is entered.
+1. **User input:** The user starts the script in NX. A dialog box (defined by the `.dlx` file) opens, in which the desired ID for the AAS is entered.
 
 2. **Validation:** The tool verifies whether an ID has been entered and whether a part is opened and active (Work Part) in NX.
 
@@ -19,15 +19,15 @@ Once the part is saved and, for example, exported as a STEP file (including meta
 
 --- 
 
-## Technical workflow diagram
+## 5.2 Technical workflow diagram
 
-The following SVG file shows a **flowchart** that describes the technical functionality of the implemented process.
+The following Diagram shows a **flowchart** that describes the technical functionality of the implemented process.
 
 ![Technical flowchart of the AASX-to-NX import workflow](bilder/Workflow_ADD_ID.drawio.svg)
 
 ---
 
-## Code structure and the individual functions
+## 5.3 Code structure and the individual functions
 
 The code is based on the standard template of the NX Block UI Styler. Below is a detailed description of the key functions in `add_PartID.cs`:
 
@@ -58,7 +58,7 @@ Defines how the program is handled in NX memory after execution. Here, `Session.
 
 ---
 
-## The User Interface (`add_PartID.dlx`)
+## 5.4 The User Interface (`add_PartID.dlx`)
 
 The included XML file (`.dlx`) defines the visual appearance of the NX dialog. It includes:
 * The window title: **"Add Part ID"**
@@ -67,7 +67,7 @@ The included XML file (`.dlx`) defines the visual appearance of the NX dialog. I
 
 ---
 
-## Installation & Execution in NX
+## 5.5 Installation & Execution in NX
 
 1. Download the files `add_PartID.cs` and `add_PartID.dlx`
 2. Ensure that both files are located in the same directory or placed according to the NX environment variables (e.g., in the `application` folder under `UGII_USER_DIR`)
@@ -76,7 +76,7 @@ The included XML file (`.dlx`) defines the visual appearance of the NX dialog. I
 
 ---
 
-## Troubleshooting
+## 5.6 Troubleshooting
 
 * **Error during startup (dialog cannot be found):** By default, the C# script automatically locates the `add_PartID.dlx` file within the same directory where the script is stored. There is no need to manually adjust the path in the code, as long as the .cs file and the .dlx file remain in the same folder. Alternatively, the `.dlx file` can be placed in a standardized NX directory `($UGII_USER_DIR/application/)` for automatic detection by NX.".
 * **Message "No active part available":** The script was executed without a part being open, or the displayed part is not the "Work Part". Set the part as the Work Part by right-clicking it in the Assembly Navigator and try again.

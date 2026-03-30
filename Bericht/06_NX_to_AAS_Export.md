@@ -1,4 +1,4 @@
-# 06 Attribute Export Skript
+# 7 Attribute Export Skript
 
 This Python script uses the NXOpen Python API to read specific attributes of an open NX part and export them into a CSV file.
 
@@ -12,7 +12,7 @@ The CSV file contains selected mass properties of a part, e.g.:
 The file is automatically saved in the same directory as the NX part.
 
 ---
-# Basic Functionality
+# 7.1 Basic Functionality
 
 The script executes the following process:
 
@@ -33,7 +33,7 @@ The script executes the following process:
 
 ---
 
-# Code Structure and Functions
+# 7.2 Code Structure and Functions
 
 
 ## main()
@@ -77,11 +77,12 @@ The file path of the CSV file is generated automatically
 
 ---
 
-## Sync other Properties
+## 7.3 Sync other Properties
+XXXXX
 
 
 
-## Troubleshooting (Fehlerbehebung)
+## 7.4 Troubleshooting
 No CSV file is generated
 Possible causes:
 - No active work part is available
