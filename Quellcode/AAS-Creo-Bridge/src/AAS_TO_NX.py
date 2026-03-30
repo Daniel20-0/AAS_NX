@@ -4,8 +4,8 @@ import os
 import tkinter as tk
 from tkinter import filedialog, simpledialog
 
-from aas_creo_bridge.adapters.aasx.aasx_importer import import_aasx
-from aas_creo_bridge.adapters.aasx.get_models import get_models_from_aas
+from aas_adapter import importer
+from aas_adapter import extractor
 
 
 # Defines the temporary file path where the extracted STEP file will be stored
@@ -62,14 +62,14 @@ def extract_step_from_aasx_by_name(aasx_path: Path, wanted_name: str):
     # Searches the AASX for a STEP file whose filename
     # (without extension) matches the desired name, and saves it temporarily.
     print("Importing AASX...")
-    result = import_aasx(aasx_path)
+    result = importer.import_aasx(aasx_path)
 
     print("Found AAS:", result.shells)
 
     wanted_name_lower = wanted_name.lower()
 
     for aas_id in result.shells:
-        models = get_models_from_aas(result, aas_id)
+        models = extractor.get_models_from_aas(result, aas_id)
 
         for model in models:
             for meta in model.metadata:

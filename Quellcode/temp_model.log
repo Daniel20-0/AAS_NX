@@ -1,5 +1,5 @@
 ﻿*** C:\Users\chris\Documents\EntwicklungsPorjekt_AAS_Master\Entwicklungsprojekt_AAS\AAS_NX\Quellcode\temp_model.log
-*** system log created by chris on Tue Mar 24 21:01:00 2026 Mitteleuropäische Zeit
+*** system log created by chris on Mon Mar 30 12:49:50 2026 Mitteleuropäische Sommerzeit
 
 Node Name    :- pc-chris
 Machine type :- AuthenticAMD Family 15 Model 1 Stepping 2, AMD Ryzen 7 7800X3D 8-Core Processor           
@@ -10,8 +10,8 @@ OS           :- Windows NT (x64) 6.3 Windows 10 Pro (Build 26200)
              :- cache L1 512Kb / L2 8192Kb / L3 98304Kb
 Memory       :- 64653Mb
 Total Swap   :- 68749Mb
-Free  Swap   :- 25864Mb
-Process ID   :- 19720
+Free  Swap   :- 46927Mb
+Process ID   :- 38964
 Machine supports 8TB address space
 Running customer environment
 Session is running in codeset 1252 17
@@ -134,7 +134,7 @@ MDP state changed from 1 to 0 (reason MDP_DISABLE_REASON_NO_UI_SUPPORT: added)
 Multiple Displayed Parts capability is disabled
 Multiple Displayed Parts: Maximum allowed number of displayed parts in session: 1
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libattr.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libattr.dll 7ff9196b0000 f2000 53f4899f-4ec37552-60d4ada3-f646ae31-1=libattr___163184592664 version = 1996.2800.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libattr.dll 7ffdd5150000 f2000 53f4899f-4ec37552-60d4ada3-f646ae31-1=libattr___163184592664 version = 1996.2800.0.0
 3D DCM version 570001002
 Threaded compress ON decompress ON compression level 1
 FR_PSMARK: system page size = 4096, ram block size = 1024, disk file threshold =32769, buffer size = 16384
@@ -239,7 +239,7 @@ CMOD update: predefined, fail-on-missing-refs option is <OFF>
 Descriptive Part Names set to $FILENAME
 Assemblies: Model reference set defined to be MODEL.
 Lightweight Customer Defaults: Smart is enabled, Remove All
-Command line: C:\Program Files\Siemens\NX1980\translators\step242\\step242.exe d=C:\Users\chris\AppData\Local\Temp\chriCBFC6652f62y.def a=ANALYTICS_UGRAF 
+Command line: C:\Program Files\Siemens\NX1980\translators\step242\\step242.exe d=C:\Users\chris\AppData\Local\Temp\chri6B006FA3pkpx.def a=ANALYTICS_UGRAF 
 Current directory: C:\Program Files\Siemens\NX1980\UGII
 A master env file has not been loaded
  **************  Locked NX Configuration Variables  **************
@@ -698,305 +698,305 @@ NX_VERSION=1980.2801
 =====================
 Versions of DLLs are:
 =====================
-    c:\program files\siemens\nx1980\nxbin\dbghelp.dll 6.11.1.404       57c60000 169000 3678414c-4cb6b373-ddc11881-91f03434-1 14-May-2021 15:20
-    c:\program files\siemens\nx1980\nxbin\libmfgviewmakerinit.dll 1996.2611.0.0    7ff9c9320000 11000 f44e06f0-4bf124e8-537eca0-346904c9-1=libmfgviewmakerinit___163115060264 08-Sep-2021 21:41
-    c:\program files\siemens\nx1980\nxbin\san.dll    2.8.2.7911       7ff9197b0000 b2000 0-0-0-0-0 14-May-2021 15:58
-    c:\program files\siemens\nx1980\nxbin\libmbdjalocator.dll 1980.1700.0.0    7ff9ca360000 7000 18f5ec4-479afac6-49f215ae-8b0b8e66-1=libmbdjalocator___1621299492cyp 19-May-2021 11:59
-    c:\program files\siemens\nx1980\nxbin\libdmujalocator.dll 1980.1700.0.0    7ff9ca370000 7000 c082e3f6-473e3962-ac40e3bf-34ad96bf-1=libdmujalocator___1621299537cyp 19-May-2021 12:09
-    c:\program files\siemens\nx1980\nxbin\libstagemodeljalocator.dll 1980.1700.0.0    7ff9ca380000 9000 a27df7ee-45ce425b-db8fe9b4-a5074c3d-1=libstagemodeljalocator___1621299534cyp 19-May-2021 12:06
-    c:\program files\siemens\nx1980\nxbin\libcoatingsjalocator.dll 1980.1700.0.0    7ff9ca620000 9000 3924e915-48c9cc67-83290591-a3ddae9-1=libcoatingsjalocator___1621299758cyp 19-May-2021 11:46
-    c:\program files\siemens\nx1980\nxbin\libamejalocator.dll 1980.1700.0.0    7ff9ca630000 15000 27b6ea44-4ad99dc6-69f8e7af-160b8392-1=libamejalocator___1621299242cyp 19-May-2021 12:13
-    c:\program files\siemens\nx1980\nxbin\liblinedesignerjalocator.dll 1980.1700.0.0    7ff9ca650000 c000 a188b756-477edaa1-28306c83-d76b99f9-1=liblinedesignerjalocator___1621299379cyp 19-May-2021 11:54
-    c:\program files\siemens\nx1980\nxbin\libjalocator_join.dll 1980.1700.0.0    7ff9cbaf0000 9000 4573a8be-4b4a1e27-668d29d-f07e44d-1=libjalocator_join___1621299449cyp 19-May-2021 11:45
-    c:\program files\siemens\nx1980\nxbin\libtooldesignerjalocator.dll 1980.1700.0.0    7ff9cbb00000 9000 552d981c-4833b856-65215fb0-8d59d28-1=libtooldesignerjalocator___1621299467cyp 19-May-2021 11:48
-    c:\program files\siemens\nx1980\nxbin\libcldkinjalocator.dll 1988.2009.0.0    7ff9cbb10000 7000 4189ac92-40f4e732-bbf9086-cc14fc86-1=libcldkinjalocator___162670326264 19-Jul-2021 10:10
-    c:\program files\siemens\nx1980\nxbin\libjaclasslocator_alp.dll 1988.2009.0.0    7ff9cbd40000 9000 9a88dae4-45d86918-6ae47bb0-f99a0e7a-1=libjaclasslocator_alp___162670330564 19-Jul-2021 10:09
-    c:\program files\siemens\nx1980\nxbin\libpidjalocator.dll 1980.1700.0.0    7ff9cbd50000 9000 5d870d87-49a8b527-3597af9c-6ae55d1e-1=libpidjalocator___1621299244cyp 19-May-2021 11:47
-    c:\program files\siemens\nx1980\nxbin\libjalocator_mfgam.dll 1980.1700.0.0    7ff9cbd60000 9000 605ad665-4164fe57-f0459ea4-a78d54e2-1=libjalocator_mfgam___1621299231cyp 19-May-2021 11:56
-    c:\program files\siemens\nx1980\nxbin\libcldcommonjalocator.dll 1980.1700.0.0    7ff9cbd70000 7000 6c9ec868-43a0d4aa-6b9129aa-f9b8b996-1=libcldcommonjalocator___1621299492cyp 19-May-2021 11:46
-    c:\program files\siemens\nx1980\nxbin\libjalocator_moldcooling.dll 1980.1700.0.0    7ff9cdf30000 8000 33b17ff1-47871977-a550a887-577a786c-1=libjalocator_moldcooling___1621299597cyp 19-May-2021 12:03
-    c:\program files\siemens\nx1980\nxbin\libtdpjalocator.dll 1980.1700.0.0    7ff9cdf40000 9000 4d71f421-459bd2df-b85d10a3-b760f0a5-1=libtdpjalocator___1621299519cyp 19-May-2021 12:18
-    c:\program files\siemens\nx1980\nxbin\libpresslinesimuljalocator.dll 1980.1700.0.0    7ff9cdf50000 a000 f240a057-47236877-f4af648c-d0c2803e-1=libpresslinesimuljalocator___1621299588cyp 19-May-2021 12:24
-    c:\program files\siemens\nx1980\nxbin\libmpajalocator.dll 1980.1700.0.0    7ff9cf050000 9000 425f126f-43e438ee-a27ea1bb-9a792f52-1=libmpajalocator___1621299352cyp 19-May-2021 12:15
-    c:\program files\siemens\nx1980\nxbin\libmfgmlpjalocator.dll 1980.1700.0.0    7ff9df270000 9000 e89c4365-4b54098d-2d567a80-f201d51b-1=libmfgmlpjalocator___1621299670cyp 19-May-2021 11:49
-    c:\program files\siemens\nx1980\nxbin\librulejalocator.dll 1980.1700.0.0    7ff9e5ca0000 8000 971c7b15-490fc420-57d18c9c-19ee94f4-1=librulejalocator___1621299489cyp 19-May-2021 12:09
-    c:\program files\siemens\nx1980\nxbin\libanimationdesignerjalocator.dll 1980.1700.0.0    7ff9ec250000 c000 5422a02d-4e94abc2-992a54ba-d7ddc2f8-1=libanimationdesignerjalocator___1621299199cyp 19-May-2021 12:04
-    c:\program files\siemens\nx1980\nxbin\libmfgviewmakerjalocator.dll 1980.1700.0.0    7ff9eee10000 7000 b6463931-4eae1c45-df48f19a-2a426ffe-1=libmfgviewmakerjalocator___1621299409cyp 19-May-2021 11:48
-    c:\program files\siemens\nx1980\nxbin\libjaclasslocator.dll 1992.2311.0.0    7ff919870000 155000 c207808-42b9508e-68d43e90-48232159-1=libjaclasslocator___162865189564 10-Aug-2021 23:26
-    c:\program files\siemens\nx1980\nxbin\libmbdschemalocator.dll 1996.2611.0.0    7ff9ef5e0000 f000 60713b4c-49290a2c-64b15cbe-188ffda5-1=libmbdschemalocator___163115059664 08-Sep-2021 21:57
-    c:\program files\siemens\nx1980\nxbin\libdmuschemalocator.dll 1996.2611.0.0    7ff9fb2c0000 9000 7ee832c2-4d30926c-e2cbc583-36b597f2-1=libdmuschemalocator___163115042164 08-Sep-2021 21:37
-    c:\program files\siemens\nx1980\nxbin\libstagemodelschemalocator.dll 1996.2611.0.0    7ff9fb810000 9000 433ea207-4d39ab0c-101660ad-90228326-1=libstagemodelschemalocator___163115013264 08-Sep-2021 21:54
-    c:\program files\siemens\nx1980\nxbin\libcoatingsschemalocator.dll 1996.2611.0.0    7ff9fbb50000 7000 6b08cdee-4986d39d-4b95caa0-4d677ac4-1=libcoatingsschemalocator___163115000264 08-Sep-2021 21:40
-    c:\program files\siemens\nx1980\nxbin\libameschemalocator.dll 1996.2611.0.0    7ff9c0a10000 4a000 2cd775d4-4fe63cdf-44da9b94-1e1a73d4-1=libameschemalocator___163115068064 08-Sep-2021 21:42
-    c:\program files\siemens\nx1980\nxbin\liblinedesignerschemalocator.dll 1996.2611.0.0    7ff9ce460000 16000 9ad3682d-4103b817-d477e4a9-f2adc6da-1=liblinedesignerschemalocator___163115059964 08-Sep-2021 21:46
-    c:\program files\siemens\nx1980\nxbin\libcldkinschemalocator.dll 1996.2800.0.0    7ffa0dd40000 a000 7fa34abb-4e28983a-5479bca4-10fb7eb4-1=libcldkinschemalocator___163184579364 16-Sep-2021 21:24
-    c:\program files\siemens\nx1980\nxbin\libtooldesignerschemalocator.dll 1996.2800.0.0    7ffa0e690000 d000 893f865a-445b4b18-a62672a2-684ae3b0-1=libtooldesignerschemalocator___163184575564 16-Sep-2021 21:17
-    c:\program files\siemens\nx1980\nxbin\libalpschemalocator.dll 1996.2611.0.0    7ffa44700000 a000 55373742-4f910961-6807cdb0-9bf86316-1=libalpschemalocator___163115004964 08-Sep-2021 21:51
-    c:\program files\siemens\nx1980\nxbin\libpidschemalocator.dll 1996.2611.0.0    7ffa448b0000 9000 dc448d62-451f3062-738c61ab-aa32b674-1=libpidschemalocator___163114999364 08-Sep-2021 21:56
-    c:\program files\siemens\nx1980\nxbin\libmfgamschemalocator.dll 1996.2611.0.0    7ffa44ff0000 b000 9d7a93a0-497f777d-6af06fb8-40294df3-1=libmfgamschemalocator___163115003864 08-Sep-2021 21:37
-    c:\program files\siemens\nx1980\nxbin\libtdpschemalocator.dll 1996.2611.0.0    7ffa46970000 9000 8c59b319-48151776-44fa9eb6-9a62742b-1=libtdpschemalocator___163115044864 08-Sep-2021 21:51
-    c:\program files\siemens\nx1980\nxbin\libpresslinesimulschemalocator.dll 1996.2611.0.0    7ffa6ac50000 d000 427b2120-4fe21737-64cf5991-92aa0093-1=libpresslinesimulschemalocator___163115053664 08-Sep-2021 21:48
-    c:\program files\siemens\nx1980\nxbin\libmpaschemalocator.dll 1996.2611.0.0    7ffa6b330000 9000 e0e91a92-44807228-8cb864bf-3c38237a-1=libmpaschemalocator___163115026664 08-Sep-2021 21:56
-    c:\program files\siemens\nx1980\nxbin\libmfgmlpschemalocator.dll 1996.2611.0.0    7ffa6bfa0000 a000 54c8e9a-484a436e-6b98c097-8d0eae97-1=libmfgmlpschemalocator___163115085164 08-Sep-2021 21:37
-    c:\program files\siemens\nx1980\nxbin\libruleschemalocator.dll 1996.2611.0.0    7ffa75010000 e000 46361970-478a0a86-789f749e-8af5e027-1=libruleschemalocator___163115038364 08-Sep-2021 21:50
-    c:\program files\siemens\nx1980\nxbin\libmechatronicsschemalocator.dll 1996.2611.0.0    7ff9dbee0000 1f000 9c68ef59-4b34b9f9-7343b490-8665a024-1=libmechatronicsschemalocator___163115036164 08-Sep-2021 21:48
-    c:\program files\siemens\nx1980\nxbin\libroutingschemalocator.dll 1996.2611.0.0    7ff9dbfa0000 28000 1d27e8fc-471f0cd6-a5ba7e88-148a306e-1=libroutingschemalocator___163115040564 08-Sep-2021 21:54
-    c:\program files\siemens\nx1980\nxbin\libdraftingschemalocator.dll 1996.2611.0.0    7ff9c7b30000 49000 ccff5d0f-48519f18-16a0ccac-2ea8697b-1=libdraftingschemalocator___163115083064 08-Sep-2021 21:50
-    c:\program files\siemens\nx1980\nxbin\libcaeschemalocator.dll 1996.2611.0.0    7ff9199d0000 128000 8c3211eb-44e73146-db554aa3-27a9e427-1=libcaeschemalocator___163115024664 08-Sep-2021 21:50
-    c:\program files\siemens\nx1980\nxbin\libcamschemalocator.dll 1996.2611.0.0    7ff9760f0000 81000 c126ec39-4eb3181a-97fcdf90-c3fa4103-1=libcamschemalocator___163115055664 08-Sep-2021 21:53
-    c:\program files\siemens\nx1980\nxbin\libplatformdraftingschemalocator.dll 1996.2611.0.0    7ff9cbd80000 32000 28283227-4431f7b4-4b8f8bbb-21ad73d7-1=libplatformdraftingschemalocator___163115039864 08-Sep-2021 21:38
-    c:\program files\siemens\nx1980\nxbin\libmfgviewmakerschemalocator.dll 1996.2611.0.0    7ffa751b0000 7000 beb47955-4f3fecfa-ba0a97ae-9d3a2e41-1=libmfgviewmakerschemalocator___163115059264 08-Sep-2021 21:40
-    c:\program files\siemens\nx1980\nxbin\tbbmalloc.dll 2019.9.0.0       22d42b70000 59000 8f69e0b1-405d95c3-541a48a9-238be105-1=tbbmalloc2019u9 14-May-2021 15:22
-    c:\windows\system32\fwpuclnt.dll                 10.0.26100.7920  7ffa8d940000 86000 38662b41-a626e840-941447b9-d37f3083-1 10-Mar-2026 23:13
-    c:\program files\bonjour\mdnsnsp.dll             3.0.0.10         59f80000 26000 176c297a-474fe456-55e38bb5-804a48bd-1 30-Aug-2011 22:05
-    c:\windows\system32\wshbth.dll                   10.0.26100.5074  7ffa8ef50000 16000 84a29f9b-18bc9b93-26a52405-ede2cd7e-1 10-Sep-2025 11:56
-    c:\windows\system32\nlansp_c.dll                 10.0.26100.7309  7ffa22df0000 22000 b9694566-bbc85dae-df2a3ce3-24ce9e48-1 10-Dec-2025 19:06
-    c:\windows\system32\winrnr.dll                   10.0.26100.1882  7ffa3e410000 12000 1a68b309-580a2173-1a87ae9e-9757f044-1 05-Oct-2024 0:22
-    c:\windows\system32\napinsp.dll                  10.0.26100.1150  7ffa529a0000 18000 502a72d2-9ab64bce-aed2d3be-48e6f464-1 05-Oct-2024 0:07
-    c:\windows\system32\icmp.dll                     10.0.26100.1     22d42970000 3000 e18d63f6-1e6e00e5-8dbe96dd-dd222fb1-1 01-Apr-2024 7:22
-    c:\windows\system32\cryptbase.dll                10.0.26100.7623  7ffa955d0000 c000 68ce22a5-d9825bed-fc05cdd7-7a8a92b0-1 15-Jan-2026 18:33
-    c:\windows\system32\rsaenh.dll                   10.0.26100.7705  7ffa95310000 39000 c1cbdcff-da03d39-1fdd1f72-de44f4e5-1 11-Feb-2026 19:45
-    c:\windows\system32\cryptsp.dll                  10.0.26100.7705  7ffa96160000 1b000 9ac926b5-9a429ab6-fa7f6839-6d56c767-1 11-Feb-2026 19:45
-    c:\windows\system32\dnsapi.dll                   10.0.26100.7920  7ffa94400000 12a000 c5ef6ead-6622225a-7513e394-691ae88a-1 10-Mar-2026 23:13
-    c:\windows\system32\dhcpcsvc6.dll                10.0.26100.7920  7ffa8e6e0000 1d000 a9b3de21-66a925ce-93a57d9f-9129cf05-1 10-Mar-2026 23:13
-    c:\windows\system32\nsi.dll                      10.0.26100.7920  7ffa97ba0000 a000 3cfa3ef1-4b142876-e225dcd4-ce10d42d-1 10-Mar-2026 23:13
-    c:\windows\system32\rasadhlp.dll                 10.0.26100.7920  7ffa8ef20000 b000 46810fdd-c3b5ef4a-5992e831-c4ad9f2-1 10-Mar-2026 23:13
-    c:\windows\system32\mswsock.dll                  10.0.26100.7920  7ffa94e50000 6b000 34efd8b8-c5129462-7fc6c186-561cf128-1 10-Mar-2026 23:13
-    c:\programdata\microsoft\windows defender\platform\4.18.26010.5-0\mpoav.dll 4.18.26010.5     7ffa77490000 a2000 e8ea2308-d411e9-649e0089-1ed11b0d-1 10-Feb-2026 14:40
-    c:\windows\system32\profapi.dll                  10.0.26100.7309  7ffa96440000 29000 fec269d4-6e0601d5-87114993-cae289ad-1 10-Dec-2025 19:06
-    c:\windows\system32\userenv.dll                  10.0.26100.7920  7ffa94ec0000 32000 4dc94fd2-494a43f8-939834d2-b58b1ecf-1 10-Mar-2026 23:13
-    c:\windows\system32\amsi.dll                     10.0.26100.7309  7ffa77540000 1d000 92c06f45-895c8eb1-75c83054-4d267b34-1 10-Dec-2025 19:06
-    c:\windows\system32\clbcatq.dll                  2001.12.10941.16384 7ffa99120000 ae000 446e1e16-22585810-c59bcbd7-a5fcb3c5-1 10-Mar-2026 23:13
-    c:\windows\system32\bcryptprimitives.dll         10.0.26100.7623  7ffa96730000 a5000 d8106c25-2ef7839d-90911fe-8de9e582-1 15-Jan-2026 18:33
-    c:\windows\system32\msctf.dll                    10.0.26100.7920  7ffa98ef0000 15d000 92cbf243-899814ca-fb0593f1-e9b17a5a-1 10-Mar-2026 23:13
-    c:\windows\system32\msasn1.dll                   10.0.26100.7623  7ffa95350000 13000 5c75f2cf-109a2423-9481c988-25ff41c4-1 15-Jan-2026 18:33
-    c:\windows\system32\wintrust.dll                 10.0.26100.8036  22d428e0000 81000 f6d2ed90-6175ed31-4861488c-dd2f5309-1 10-Mar-2026 23:13
-    c:\windows\system32\winhttp.dll                  10.0.26100.7920  7ffa8e540000 127000 7b88370d-35dc5e27-4875efeb-21223762-1 10-Mar-2026 23:13
-    c:\windows\system32\dhcpcsvc.dll                 10.0.26100.7920  7ffa8dfa0000 23000 7155d86b-d5138444-15d76480-281769da-1 10-Mar-2026 23:13
-    c:\windows\system32\netapi32.dll                 10.0.26100.7019  7ffa81ef0000 1a000 e643ef0f-321887d9-e9c16cff-80d53899-1 12-Nov-2025 18:24
-    c:\windows\winsxs\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.26100.8037_none_87ebc5097a2f9e52\comctl32.dll 5.82.26100.8037  7ffa71f70000 b4000 15ac5b4-675bbe70-b04bca3f-78dd8091-1=comctl32v582 06-Mar-2026 11:29
-    c:\windows\system32\comdlg32.dll                 10.0.26100.7920  7ffa98620000 ee000 43a6c1fc-74955a94-c36e7184-ffea7e09-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\salt_clt.dll 1.2.1.0          7ff919b00000 1e2000 b4428025-400248d6-9e15daaf-c3a00f6c-1 04-Oct-2021 13:50
-    c:\programdata\a-volute\a-volute.sonicstudio3\modules\scheduledmodules\x64\audiodevprops2.dll 2.6.14.0         7ffa45ec0000 138000 49a38f42-4427c5a8-fda8f792-360d9e3-1 26-Sep-2025 22:13
-    c:\programdata\a-volute\a-volute.28054df1f58b4\modules\scheduledmodules\x64\productinfo.dll 0                7ffa46cc0000 20000 53b53a93-43f673b7-e80e3a83-7254fb60-1 26-Sep-2025 22:13
-    c:\programdata\a-volute\a-volute.28054df1f58b4\modules\scheduledmodules\x64\nahimicosd.dll 2.2.23.0         7ffa46c10000 ae000 1b647199-4bfc3f85-ac74a88d-2318fa57-1 26-Sep-2025 22:13
-    c:\programdata\a-volute\a-volute.28054df1f58b4\modules\scheduledmodules\x64\audiodevprops2.dll 2.6.14.0         7ffa068d0000 138000 49a38f42-4427c5a8-fda8f792-360d9e3-1 26-Sep-2025 22:13
-    c:\windows\system32\uxtheme.dll                  10.0.26100.7920  7ffa8fdf0000 aa000 e09fce51-d0613f34-c1f5bf9f-ed22a21d-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\ugxml.dll  1996.2611.0.0    7ff9defe0000 1c000 14c116a6-4ba2103e-4cbec6a2-c76e69f2-1=ugxml___163115003664 08-Sep-2021 21:46
-    c:\windows\system32\kernel.appcore.dll           10.0.26100.7920  7ffa94940000 1b000 fcc21a36-5bada957-31f6ed24-5208aaeb-1 10-Mar-2026 23:13
-    c:\windows\system32\imm32.dll                    10.0.26100.7309  7ffa97ae0000 31000 b2d8e675-7d28aa20-6f66a134-43d91ba0-1 10-Dec-2025 19:06
-    c:\program files\siemens\nx1980\nxbin\icudt67_x_19.dll 67.1.0.0         22d3ee60000 1b17000 0-0-0-0-0 14-May-2021 16:10
-    c:\windows\system32\dxcore.dll                   10.0.26100.7920  7ffa931f0000 43000 92c2c33a-4583eddc-9e82a8b7-7efecc11-1 10-Mar-2026 23:13
-    c:\windows\system32\glu32.dll                    10.0.26100.1150  7ffa57b70000 2d000 9b300f88-c1f99e33-d29f83cb-d1865fed-1 05-Oct-2024 0:07
-    c:\windows\system32\dpapi.dll                    10.0.26100.1     7ffa96230000 a000 a8e0b91b-c7099d79-372ff83a-92aa77e8-1 01-Apr-2024 7:22
-    c:\windows\system32\opengl32.dll                 10.0.26100.7920  7ffa57be0000 10e000 452a60bf-211026f3-12f08e8d-9dc43179-1 10-Mar-2026 23:13
-    c:\windows\system32\cfgmgr32.dll                 10.0.26100.7309  7ffa96180000 57000 d9fc443-8c7b4d8b-94af552a-64e75a46-1 10-Dec-2025 19:06
-    c:\windows\system32\bcrypt.dll                   10.0.26100.7623  7ffa96410000 2a000 ce517872-76f93400-688b8a8-73513038-1 15-Jan-2026 18:33
-    c:\windows\system32\sspicli.dll                  10.0.26100.7920  7ffa94ba0000 49000 f2b08acb-cdc6583a-29cdbbeb-21a5a0cc-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\icuuc67_x_19.dll 67.1.0.0         7ff919cf0000 1cf000 a3aa5eba-4b13da02-9f143eb2-414c7bec-1 14-May-2021 16:10
-    c:\windows\winsxs\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.26100.8036_none_6ef439583dc61568\gdiplus.dll 10.0.26100.8036  7ffa73060000 1d8000 22888d93-8cbb7955-1509a9c8-f85537fa-1 06-Mar-2026 13:44
-    c:\program files\siemens\nx1980\nxbin\libpartmodule.dll 1996.2800.0.0    7ff95e4f0000 14b000 ae43c889-4b53c644-f1c6279f-619f7d3d-1=libpartmodule___163184564064 16-Sep-2021 21:21
-    c:\program files\siemens\nx1980\nxbin\libschemalocator.dll 1996.2611.0.0    7ff923d20000 24c000 0-0-0-0-0 08-Sep-2021 21:56
+    c:\program files\siemens\nx1980\nxbin\dbghelp.dll 6.11.1.404       72680000 169000 3678414c-4cb6b373-ddc11881-91f03434-1 14-May-2021 15:20
+    c:\program files\siemens\nx1980\nxbin\libmfgviewmakerinit.dll 1996.2611.0.0    7ffdd5250000 11000 f44e06f0-4bf124e8-537eca0-346904c9-1=libmfgviewmakerinit___163115060264 08-Sep-2021 21:41
+    c:\program files\siemens\nx1980\nxbin\san.dll    2.8.2.7911       7ffdd5270000 b2000 0-0-0-0-0 14-May-2021 15:58
+    c:\program files\siemens\nx1980\nxbin\libmbdjalocator.dll 1980.1700.0.0    7ffdd5330000 7000 18f5ec4-479afac6-49f215ae-8b0b8e66-1=libmbdjalocator___1621299492cyp 19-May-2021 11:59
+    c:\program files\siemens\nx1980\nxbin\libdmujalocator.dll 1980.1700.0.0    7ffdd5340000 7000 c082e3f6-473e3962-ac40e3bf-34ad96bf-1=libdmujalocator___1621299537cyp 19-May-2021 12:09
+    c:\program files\siemens\nx1980\nxbin\libstagemodeljalocator.dll 1980.1700.0.0    7ffdd5350000 9000 a27df7ee-45ce425b-db8fe9b4-a5074c3d-1=libstagemodeljalocator___1621299534cyp 19-May-2021 12:06
+    c:\program files\siemens\nx1980\nxbin\libcoatingsjalocator.dll 1980.1700.0.0    7ffdd5360000 9000 3924e915-48c9cc67-83290591-a3ddae9-1=libcoatingsjalocator___1621299758cyp 19-May-2021 11:46
+    c:\program files\siemens\nx1980\nxbin\libamejalocator.dll 1980.1700.0.0    7ffdd5370000 15000 27b6ea44-4ad99dc6-69f8e7af-160b8392-1=libamejalocator___1621299242cyp 19-May-2021 12:13
+    c:\program files\siemens\nx1980\nxbin\liblinedesignerjalocator.dll 1980.1700.0.0    7ffdd5390000 c000 a188b756-477edaa1-28306c83-d76b99f9-1=liblinedesignerjalocator___1621299379cyp 19-May-2021 11:54
+    c:\program files\siemens\nx1980\nxbin\libjalocator_join.dll 1980.1700.0.0    7ffdd53a0000 9000 4573a8be-4b4a1e27-668d29d-f07e44d-1=libjalocator_join___1621299449cyp 19-May-2021 11:45
+    c:\program files\siemens\nx1980\nxbin\libtooldesignerjalocator.dll 1980.1700.0.0    7ffdd53b0000 9000 552d981c-4833b856-65215fb0-8d59d28-1=libtooldesignerjalocator___1621299467cyp 19-May-2021 11:48
+    c:\program files\siemens\nx1980\nxbin\libcldkinjalocator.dll 1988.2009.0.0    7ffdd53c0000 7000 4189ac92-40f4e732-bbf9086-cc14fc86-1=libcldkinjalocator___162670326264 19-Jul-2021 10:10
+    c:\program files\siemens\nx1980\nxbin\libjaclasslocator_alp.dll 1988.2009.0.0    7ffdd53d0000 9000 9a88dae4-45d86918-6ae47bb0-f99a0e7a-1=libjaclasslocator_alp___162670330564 19-Jul-2021 10:09
+    c:\program files\siemens\nx1980\nxbin\libpidjalocator.dll 1980.1700.0.0    7ffdd53e0000 9000 5d870d87-49a8b527-3597af9c-6ae55d1e-1=libpidjalocator___1621299244cyp 19-May-2021 11:47
+    c:\program files\siemens\nx1980\nxbin\libjalocator_mfgam.dll 1980.1700.0.0    7ffdd53f0000 9000 605ad665-4164fe57-f0459ea4-a78d54e2-1=libjalocator_mfgam___1621299231cyp 19-May-2021 11:56
+    c:\program files\siemens\nx1980\nxbin\libcldcommonjalocator.dll 1980.1700.0.0    7ffdd5400000 7000 6c9ec868-43a0d4aa-6b9129aa-f9b8b996-1=libcldcommonjalocator___1621299492cyp 19-May-2021 11:46
+    c:\program files\siemens\nx1980\nxbin\libjalocator_moldcooling.dll 1980.1700.0.0    7ffdd5410000 8000 33b17ff1-47871977-a550a887-577a786c-1=libjalocator_moldcooling___1621299597cyp 19-May-2021 12:03
+    c:\program files\siemens\nx1980\nxbin\libtdpjalocator.dll 1980.1700.0.0    7ffdd5420000 9000 4d71f421-459bd2df-b85d10a3-b760f0a5-1=libtdpjalocator___1621299519cyp 19-May-2021 12:18
+    c:\program files\siemens\nx1980\nxbin\libpresslinesimuljalocator.dll 1980.1700.0.0    7ffdd5430000 a000 f240a057-47236877-f4af648c-d0c2803e-1=libpresslinesimuljalocator___1621299588cyp 19-May-2021 12:24
+    c:\program files\siemens\nx1980\nxbin\libmpajalocator.dll 1980.1700.0.0    7ffdd5440000 9000 425f126f-43e438ee-a27ea1bb-9a792f52-1=libmpajalocator___1621299352cyp 19-May-2021 12:15
+    c:\program files\siemens\nx1980\nxbin\libmfgmlpjalocator.dll 1980.1700.0.0    7ffdd5450000 9000 e89c4365-4b54098d-2d567a80-f201d51b-1=libmfgmlpjalocator___1621299670cyp 19-May-2021 11:49
+    c:\program files\siemens\nx1980\nxbin\librulejalocator.dll 1980.1700.0.0    7ffdd5460000 8000 971c7b15-490fc420-57d18c9c-19ee94f4-1=librulejalocator___1621299489cyp 19-May-2021 12:09
+    c:\program files\siemens\nx1980\nxbin\libanimationdesignerjalocator.dll 1980.1700.0.0    7ffdd5470000 c000 5422a02d-4e94abc2-992a54ba-d7ddc2f8-1=libanimationdesignerjalocator___1621299199cyp 19-May-2021 12:04
+    c:\program files\siemens\nx1980\nxbin\libmfgviewmakerjalocator.dll 1980.1700.0.0    7ffec8e60000 7000 b6463931-4eae1c45-df48f19a-2a426ffe-1=libmfgviewmakerjalocator___1621299409cyp 19-May-2021 11:48
+    c:\program files\siemens\nx1980\nxbin\libjaclasslocator.dll 1992.2311.0.0    7ffdd5480000 155000 c207808-42b9508e-68d43e90-48232159-1=libjaclasslocator___162865189564 10-Aug-2021 23:26
+    c:\program files\siemens\nx1980\nxbin\libmbdschemalocator.dll 1996.2611.0.0    7ffde8c40000 f000 60713b4c-49290a2c-64b15cbe-188ffda5-1=libmbdschemalocator___163115059664 08-Sep-2021 21:57
+    c:\program files\siemens\nx1980\nxbin\libdmuschemalocator.dll 1996.2611.0.0    7ffdeace0000 9000 7ee832c2-4d30926c-e2cbc583-36b597f2-1=libdmuschemalocator___163115042164 08-Sep-2021 21:37
+    c:\program files\siemens\nx1980\nxbin\libstagemodelschemalocator.dll 1996.2611.0.0    7ffded780000 9000 433ea207-4d39ab0c-101660ad-90228326-1=libstagemodelschemalocator___163115013264 08-Sep-2021 21:54
+    c:\program files\siemens\nx1980\nxbin\libcoatingsschemalocator.dll 1996.2611.0.0    7ffdf6b60000 7000 6b08cdee-4986d39d-4b95caa0-4d677ac4-1=libcoatingsschemalocator___163115000264 08-Sep-2021 21:40
+    c:\program files\siemens\nx1980\nxbin\libameschemalocator.dll 1996.2611.0.0    7ffdd2e30000 4a000 2cd775d4-4fe63cdf-44da9b94-1e1a73d4-1=libameschemalocator___163115068064 08-Sep-2021 21:42
+    c:\program files\siemens\nx1980\nxbin\liblinedesignerschemalocator.dll 1996.2611.0.0    7ffdd2e80000 16000 9ad3682d-4103b817-d477e4a9-f2adc6da-1=liblinedesignerschemalocator___163115059964 08-Sep-2021 21:46
+    c:\program files\siemens\nx1980\nxbin\libcldkinschemalocator.dll 1996.2800.0.0    7ffdf6f20000 a000 7fa34abb-4e28983a-5479bca4-10fb7eb4-1=libcldkinschemalocator___163184579364 16-Sep-2021 21:24
+    c:\program files\siemens\nx1980\nxbin\libtooldesignerschemalocator.dll 1996.2800.0.0    7ffe01330000 d000 893f865a-445b4b18-a62672a2-684ae3b0-1=libtooldesignerschemalocator___163184575564 16-Sep-2021 21:17
+    c:\program files\siemens\nx1980\nxbin\libalpschemalocator.dll 1996.2611.0.0    7ffe37ed0000 a000 55373742-4f910961-6807cdb0-9bf86316-1=libalpschemalocator___163115004964 08-Sep-2021 21:51
+    c:\program files\siemens\nx1980\nxbin\libpidschemalocator.dll 1996.2611.0.0    7ffe3ecf0000 9000 dc448d62-451f3062-738c61ab-aa32b674-1=libpidschemalocator___163114999364 08-Sep-2021 21:56
+    c:\program files\siemens\nx1980\nxbin\libmfgamschemalocator.dll 1996.2611.0.0    7ffe6cae0000 b000 9d7a93a0-497f777d-6af06fb8-40294df3-1=libmfgamschemalocator___163115003864 08-Sep-2021 21:37
+    c:\program files\siemens\nx1980\nxbin\libtdpschemalocator.dll 1996.2611.0.0    7ffe77130000 9000 8c59b319-48151776-44fa9eb6-9a62742b-1=libtdpschemalocator___163115044864 08-Sep-2021 21:51
+    c:\program files\siemens\nx1980\nxbin\libpresslinesimulschemalocator.dll 1996.2611.0.0    7ffe97ff0000 d000 427b2120-4fe21737-64cf5991-92aa0093-1=libpresslinesimulschemalocator___163115053664 08-Sep-2021 21:48
+    c:\program files\siemens\nx1980\nxbin\libmpaschemalocator.dll 1996.2611.0.0    7ffeb4b50000 9000 e0e91a92-44807228-8cb864bf-3c38237a-1=libmpaschemalocator___163115026664 08-Sep-2021 21:56
+    c:\program files\siemens\nx1980\nxbin\libmfgmlpschemalocator.dll 1996.2611.0.0    7ffeb56a0000 a000 54c8e9a-484a436e-6b98c097-8d0eae97-1=libmfgmlpschemalocator___163115085164 08-Sep-2021 21:37
+    c:\program files\siemens\nx1980\nxbin\libruleschemalocator.dll 1996.2611.0.0    7ffeb9ee0000 e000 46361970-478a0a86-789f749e-8af5e027-1=libruleschemalocator___163115038364 08-Sep-2021 21:50
+    c:\program files\siemens\nx1980\nxbin\libmechatronicsschemalocator.dll 1996.2611.0.0    7ffdd2ea0000 1f000 9c68ef59-4b34b9f9-7343b490-8665a024-1=libmechatronicsschemalocator___163115036164 08-Sep-2021 21:48
+    c:\program files\siemens\nx1980\nxbin\libroutingschemalocator.dll 1996.2611.0.0    7ffdd2ec0000 28000 1d27e8fc-471f0cd6-a5ba7e88-148a306e-1=libroutingschemalocator___163115040564 08-Sep-2021 21:54
+    c:\program files\siemens\nx1980\nxbin\libdraftingschemalocator.dll 1996.2611.0.0    7ffdd2ef0000 49000 ccff5d0f-48519f18-16a0ccac-2ea8697b-1=libdraftingschemalocator___163115083064 08-Sep-2021 21:50
+    c:\program files\siemens\nx1980\nxbin\libcaeschemalocator.dll 1996.2611.0.0    7ffdd2f40000 128000 8c3211eb-44e73146-db554aa3-27a9e427-1=libcaeschemalocator___163115024664 08-Sep-2021 21:50
+    c:\program files\siemens\nx1980\nxbin\libcamschemalocator.dll 1996.2611.0.0    7ffdd3070000 81000 c126ec39-4eb3181a-97fcdf90-c3fa4103-1=libcamschemalocator___163115055664 08-Sep-2021 21:53
+    c:\program files\siemens\nx1980\nxbin\libplatformdraftingschemalocator.dll 1996.2611.0.0    7ffdd3100000 32000 28283227-4431f7b4-4b8f8bbb-21ad73d7-1=libplatformdraftingschemalocator___163115039864 08-Sep-2021 21:38
+    c:\program files\siemens\nx1980\nxbin\libmfgviewmakerschemalocator.dll 1996.2611.0.0    7ffebde10000 7000 beb47955-4f3fecfa-ba0a97ae-9d3a2e41-1=libmfgviewmakerschemalocator___163115059264 08-Sep-2021 21:40
+    c:\program files\siemens\nx1980\nxbin\tbbmalloc.dll 2019.9.0.0       17038d20000 59000 8f69e0b1-405d95c3-541a48a9-238be105-1=tbbmalloc2019u9 14-May-2021 15:22
+    c:\windows\system32\fwpuclnt.dll                 10.0.26100.7920  7fff21520000 86000 38662b41-a626e840-941447b9-d37f3083-1 10-Mar-2026 23:13
+    c:\program files\bonjour\mdnsnsp.dll             3.0.0.10         75ae0000 26000 176c297a-474fe456-55e38bb5-804a48bd-1 30-Aug-2011 22:05
+    c:\windows\system32\wshbth.dll                   10.0.26100.5074  7fff224f0000 16000 84a29f9b-18bc9b93-26a52405-ede2cd7e-1 10-Sep-2025 11:56
+    c:\windows\system32\nlansp_c.dll                 10.0.26100.7309  7ffecb170000 22000 b9694566-bbc85dae-df2a3ce3-24ce9e48-1 10-Dec-2025 19:06
+    c:\windows\system32\winrnr.dll                   10.0.26100.1882  7ffed3f20000 12000 1a68b309-580a2173-1a87ae9e-9757f044-1 05-Oct-2024 0:22
+    c:\windows\system32\napinsp.dll                  10.0.26100.1150  7ffed3f40000 18000 502a72d2-9ab64bce-aed2d3be-48e6f464-1 05-Oct-2024 0:07
+    c:\windows\system32\icmp.dll                     10.0.26100.1     17038600000 3000 e18d63f6-1e6e00e5-8dbe96dd-dd222fb1-1 01-Apr-2024 7:22
+    c:\windows\system32\cryptbase.dll                10.0.26100.7623  7fff28b60000 c000 68ce22a5-d9825bed-fc05cdd7-7a8a92b0-1 15-Jan-2026 18:33
+    c:\windows\system32\rsaenh.dll                   10.0.26100.7705  7fff28310000 39000 c1cbdcff-da03d39-1fdd1f72-de44f4e5-1 11-Feb-2026 19:45
+    c:\windows\system32\cryptsp.dll                  10.0.26100.7705  7fff28d00000 1b000 9ac926b5-9a429ab6-fa7f6839-6d56c767-1 11-Feb-2026 19:45
+    c:\windows\system32\dnsapi.dll                   10.0.26100.7920  7fff27e30000 12a000 c5ef6ead-6622225a-7513e394-691ae88a-1 10-Mar-2026 23:13
+    c:\windows\system32\dhcpcsvc6.dll                10.0.26100.7920  7fff223f0000 1d000 a9b3de21-66a925ce-93a57d9f-9129cf05-1 10-Mar-2026 23:13
+    c:\windows\system32\nsi.dll                      10.0.26100.7920  7fff2cb30000 a000 3cfa3ef1-4b142876-e225dcd4-ce10d42d-1 10-Mar-2026 23:13
+    c:\windows\system32\rasadhlp.dll                 10.0.26100.7920  7fff1c3d0000 b000 46810fdd-c3b5ef4a-5992e831-c4ad9f2-1 10-Mar-2026 23:13
+    c:\windows\system32\mswsock.dll                  10.0.26100.7920  7fff28900000 6b000 34efd8b8-c5129462-7fc6c186-561cf128-1 10-Mar-2026 23:13
+    c:\programdata\microsoft\windows defender\platform\4.18.26020.6-0\mpoav.dll 4.18.26020.6     7fff0fc00000 a2000 4321f65-4a34d63c-d6fb5a2a-930c8560-1 26-Mar-2026 19:26
+    c:\windows\system32\profapi.dll                  10.0.26100.7309  7fff29580000 29000 fec269d4-6e0601d5-87114993-cae289ad-1 10-Dec-2025 19:06
+    c:\windows\system32\userenv.dll                  10.0.26100.7920  7fff289b0000 32000 4dc94fd2-494a43f8-939834d2-b58b1ecf-1 10-Mar-2026 23:13
+    c:\windows\system32\amsi.dll                     10.0.26100.7309  7fff0fcb0000 1d000 92c06f45-895c8eb1-75c83054-4d267b34-1 10-Dec-2025 19:06
+    c:\windows\system32\clbcatq.dll                  2001.12.10941.16384 7fff2c330000 ae000 446e1e16-22585810-c59bcbd7-a5fcb3c5-1 10-Mar-2026 23:13
+    c:\windows\system32\bcryptprimitives.dll         10.0.26100.7623  17038a00000 a5000 d8106c25-2ef7839d-90911fe-8de9e582-1 15-Jan-2026 18:33
+    c:\windows\system32\msasn1.dll                   10.0.26100.7623  7fff28d60000 13000 5c75f2cf-109a2423-9481c988-25ff41c4-1 15-Jan-2026 18:33
+    c:\windows\system32\winhttp.dll                  10.0.26100.7920  7fff21cb0000 127000 7b88370d-35dc5e27-4875efeb-21223762-1 10-Mar-2026 23:13
+    c:\windows\system32\dhcpcsvc.dll                 10.0.26100.7920  7fff220d0000 23000 7155d86b-d5138444-15d76480-281769da-1 10-Mar-2026 23:13
+    c:\windows\system32\wintrust.dll                 10.0.26100.8036  7fff2aa90000 81000 f6d2ed90-6175ed31-4861488c-dd2f5309-1 10-Mar-2026 23:13
+    c:\windows\system32\netapi32.dll                 10.0.26100.7019  7fff0f510000 1a000 e643ef0f-321887d9-e9c16cff-80d53899-1 12-Nov-2025 18:24
+    c:\windows\winsxs\amd64_microsoft.windows.common-controls_6595b64144ccf1df_5.82.26100.8037_none_87ebc5097a2f9e52\comctl32.dll 5.82.26100.8037  7fff06360000 b4000 15ac5b4-675bbe70-b04bca3f-78dd8091-1=comctl32v582 06-Mar-2026 11:29
+    c:\windows\system32\comdlg32.dll                 10.0.26100.7920  7fff2c3f0000 ee000 43a6c1fc-74955a94-c36e7184-ffea7e09-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\salt_clt.dll 1.2.1.0          7ffdd5610000 1e2000 b4428025-400248d6-9e15daaf-c3a00f6c-1 04-Oct-2021 13:50
+    c:\windows\system32\msctf.dll                    10.0.26100.7920  7fff2c130000 15d000 92cbf243-899814ca-fb0593f1-e9b17a5a-1 10-Mar-2026 23:13
+    c:\programdata\a-volute\a-volute.sonicstudio3\modules\scheduledmodules\x64\audiodevprops2.dll 2.6.14.0         7ffe9de00000 138000 49a38f42-4427c5a8-fda8f792-360d9e3-1 26-Sep-2025 22:13
+    c:\programdata\a-volute\a-volute.28054df1f58b4\modules\scheduledmodules\x64\productinfo.dll 0                7ffe8e750000 20000 53b53a93-43f673b7-e80e3a83-7254fb60-1 26-Sep-2025 22:13
+    c:\programdata\a-volute\a-volute.28054df1f58b4\modules\scheduledmodules\x64\nahimicosd.dll 2.2.23.0         7ffe8e6a0000 ae000 1b647199-4bfc3f85-ac74a88d-2318fa57-1 26-Sep-2025 22:13
+    c:\programdata\a-volute\a-volute.28054df1f58b4\modules\scheduledmodules\x64\audiodevprops2.dll 2.6.14.0         7ffef1a60000 138000 49a38f42-4427c5a8-fda8f792-360d9e3-1 26-Sep-2025 22:13
+    c:\windows\system32\uxtheme.dll                  10.0.26100.7920  7fff231b0000 aa000 e09fce51-d0613f34-c1f5bf9f-ed22a21d-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\ugxml.dll  1996.2611.0.0    7ffdd5800000 1c000 14c116a6-4ba2103e-4cbec6a2-c76e69f2-1=ugxml___163115003664 08-Sep-2021 21:46
+    c:\windows\system32\kernel.appcore.dll           10.0.26100.7920  7fff283b0000 1b000 fcc21a36-5bada957-31f6ed24-5208aaeb-1 10-Mar-2026 23:13
+    c:\windows\system32\imm32.dll                    10.0.26100.7309  7fff2b9d0000 31000 b2d8e675-7d28aa20-6f66a134-43d91ba0-1 10-Dec-2025 19:06
+    c:\program files\siemens\nx1980\nxbin\icudt67_x_19.dll 67.1.0.0         17034b80000 1b17000 0-0-0-0-0 14-May-2021 16:10
+    c:\windows\system32\dxcore.dll                   10.0.26100.7920  7fff262b0000 43000 92c2c33a-4583eddc-9e82a8b7-7efecc11-1 10-Mar-2026 23:13
+    c:\windows\system32\glu32.dll                    10.0.26100.1150  7fff07c90000 2d000 9b300f88-c1f99e33-d29f83cb-d1865fed-1 05-Oct-2024 0:07
+    c:\windows\system32\dpapi.dll                    10.0.26100.1     7fff29370000 a000 a8e0b91b-c7099d79-372ff83a-92aa77e8-1 01-Apr-2024 7:22
+    c:\windows\system32\opengl32.dll                 10.0.26100.7920  7ffef60a0000 10e000 452a60bf-211026f3-12f08e8d-9dc43179-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\icuuc67_x_19.dll 67.1.0.0         7ffdd5820000 1cf000 a3aa5eba-4b13da02-9f143eb2-414c7bec-1 14-May-2021 16:10
+    c:\windows\system32\cfgmgr32.dll                 10.0.26100.7309  7fff292f0000 57000 d9fc443-8c7b4d8b-94af552a-64e75a46-1 10-Dec-2025 19:06
+    c:\windows\system32\bcrypt.dll                   10.0.26100.7623  7fff29550000 2a000 ce517872-76f93400-688b8a8-73513038-1 15-Jan-2026 18:33
+    c:\windows\system32\sspicli.dll                  10.0.26100.7920  7fff28650000 49000 f2b08acb-cdc6583a-29cdbbeb-21a5a0cc-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libugmrcore.dll 1996.2611.0.0    7ffec9fa0000 b000 630c496a-479e6a3e-8729be94-5da7d582-1=libugmrcore___163115004964 08-Sep-2021 21:44
+    c:\program files\siemens\nx1980\nxbin\libtceng_utils.dll 1996.2611.0.0    7ffedcb10000 9000 943f47fd-4f7f0ae9-2e0e2996-4f3d2238-1=libtceng_utils___163115060764 08-Sep-2021 21:53
+    c:\windows\winsxs\amd64_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.26100.8036_none_6ef439583dc61568\gdiplus.dll 10.0.26100.8036  7fff07520000 1d8000 22888d93-8cbb7955-1509a9c8-f85537fa-1 06-Mar-2026 13:44
+    c:\program files\siemens\nx1980\nxbin\libpartmodule.dll 1996.2800.0.0    7ffe3ed00000 14b000 ae43c889-4b53c644-f1c6279f-619f7d3d-1=libpartmodule___163184564064 16-Sep-2021 21:21
+    c:\program files\siemens\nx1980\nxbin\libschemalocator.dll 1996.2611.0.0    7ffde8dd0000 24c000 0-0-0-0-0 08-Sep-2021 21:56
     c:\program files\siemens\nx1980\nxbin\tbb.dll    2019.9.0.0       180000000 66000 3ef64034-43d983ea-a8e529be-d4dca9ec-1=tbb2019u9 14-May-2021 15:22
-    c:\program files\siemens\nx1980\nxbin\libtceng_utils.dll 1996.2611.0.0    7ffa8ecb0000 9000 943f47fd-4f7f0ae9-2e0e2996-4f3d2238-1=libtceng_utils___163115060764 08-Sep-2021 21:53
-    c:\program files\siemens\nx1980\nxbin\libugmrcore.dll 1996.2611.0.0    7ffa76a50000 b000 630c496a-479e6a3e-8729be94-5da7d582-1=libugmrcore___163115004964 08-Sep-2021 21:44
     c:\program files\siemens\nx1980\nxbin\cggl.dll   2.0.0.15         6a400000 6a000 52b07d0d-4af12be7-319e8fb1-9317c9fe-1 14-May-2021 15:20
     c:\program files\siemens\nx1980\nxbin\cg.dll     2.0.0.15         6a000000 3b2000 c0928e75-4d0c45c6-3f4121ac-414aeafd-1 14-May-2021 15:20
-    c:\program files\siemens\nx1980\nxbin\libpgs.dll 1996.2800.0.0    7ff919ec0000 cd000 3a685a67-461e45a0-7923f0a5-b25ab867-1=libpgs___163184589264 16-Sep-2021 21:17
-    c:\program files\siemens\nx1980\nxbin\libcsfadp.dll 1996.2800.0.0    7ff9cdf60000 51000 8eb6c4b-4951271f-39a2d886-2dc31fbd-1=libcsfadp___163184580564 16-Sep-2021 21:20
-    c:\program files\siemens\nx1980\nxbin\libfeaturerecognition.dll 1980.1700.0.0    7ff9ebd90000 15000 9fd9e39c-4357cde0-d1a95d9b-5156f93a-1=libfeaturerecognition___1621299528cyp 19-May-2021 11:46
-    c:\program files\siemens\nx1980\nxbin\libfeatutils.dll 1996.2800.0.0    7ff9fa570000 105000 a7e743e4-478a4214-9123cfaf-69a2f06e-1=libfeatutils___163184561264 16-Sep-2021 21:22
-    c:\windows\system32\shcore.dll                   10.0.26100.7920  7ffa97bb0000 f7000 4a074cbb-73d18dda-33107341-395cf698-1 10-Mar-2026 23:13
-    c:\windows\system32\prntvpt.dll                  10.0.26100.7920  7ff9ebbf0000 3b000 d49922ed-c88d66d-7198843c-14920ec3-1 10-Mar-2026 23:13
-    c:\windows\system32\winspool.drv                 10.0.26100.7920  7ffa73810000 af000 a3cf8179-892462be-1e4a3a33-14253cae-1 10-Mar-2026 23:13
-    c:\windows\system32\xmllite.dll                  10.0.26100.7309  7ffa820b0000 43000 efaea633-8dd61b2b-a9ca89f9-f19a8c80-1 10-Dec-2025 19:06
-    c:\program files\siemens\nx1980\nxbin\libmqccore.dll 1996.2800.0.0    7ff91a610000 251000 e3a4ae0e-4d8b6778-c8e243a3-1d52fda4-1=libmqccore___163184575964 16-Sep-2021 21:18
-    c:\program files\siemens\nx1980\nxbin\libfasthidden.dll 1996.2611.0.0    7ff91a0f0000 d8000 48ed060b-49770a3f-42ec9fa0-645547c7-1=libfasthidden___163115070964 08-Sep-2021 21:42
-    c:\program files\siemens\nx1980\nxbin\libfacetstore.dll 1996.2611.0.0    7ff9df020000 56000 d12c9817-4fea58ee-ef0e66ac-487fd2a-1=libfacetstore___163115032064 08-Sep-2021 21:49
-    c:\windows\system32\iphlpapi.dll                 10.0.26100.7920  7ffa94370000 33000 8cf813a7-3f8e042d-66264cb4-bf2e6a8e-1 10-Mar-2026 23:13
-    c:\windows\system32\version.dll                  10.0.26100.1150  7ffa901a0000 b000 440dd63b-21f8e2b0-8ec7d00f-f2ceaef0-1 05-Oct-2024 0:08
-    c:\windows\system32\wininet.dll                  11.0.26100.7920  7ffa7b430000 288000 2567c8fd-39394fbb-f42cb114-2f06abb-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libjson.dll 1996.2611.0.0    7ffa0e0a0000 2e000 b2ffecfd-4b19a04e-445023bc-817bbd46-1=libjson___163115065064 08-Sep-2021 21:50
-    c:\windows\system32\msi.dll                      5.0.26100.7920   7ffa7c3a0000 34b000 f5aa1120-93208ef3-6e352ad2-62a038a8-1 10-Mar-2026 23:13
-    c:\windows\system32\wtsapi32.dll                 10.0.26100.7920  7ffa93930000 29000 6ea8745e-e3fada62-93523833-25a3e56a-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libnxc.dll 1996.2611.0.0    7ff9e46f0000 26000 35feff7a-464ea380-9881cfab-77366f6a-1=libnxc___163115010764 08-Sep-2021 21:46
-    c:\program files\siemens\nx1980\nxbin\libcsf.dll 1996.2611.0.0    7ff91bed0000 18a000 9752e41f-40af30ac-8e6edd84-846206c1-1=libcsf___163115009764 08-Sep-2021 21:41
-    c:\program files\siemens\nx1980\nxbin\libmodlmath.dll 1996.2611.0.0    7ff9236e0000 572000 7cc36c88-4f185956-966dfe93-5aaac6eb-1=libmodlmath___163115018664 08-Sep-2021 21:46
-    c:\program files\siemens\nx1980\nxbin\libtline.dll 1996.2611.0.0    7ffa4e070000 25000 4d575e30-404cbcc2-d7d41493-d315d3de-1=libtline___163115027964 08-Sep-2021 21:40
-    c:\program files\siemens\nx1980\nxbin\libproptableentity.dll 1996.2800.0.0    7ff919f90000 bb000 48f4d8be-484a1aec-6421688-658a015e-1=libproptableentity___163184565864 16-Sep-2021 21:23
-    c:\windows\system32\odbc32.dll                   10.0.26100.7309  7ffa82950000 c4000 9e8b3ce5-d1e3f0c-fbefba41-45d75410-1 10-Dec-2025 19:06
-    c:\windows\system32\mpr.dll                      10.0.26100.7019  7ffa7a7b0000 21000 9f841b04-7332f37f-75e45acd-23faaa1d-1 12-Nov-2025 18:24
-    c:\program files\siemens\nx1980\nxbin\libcoreblockdata.dll 1996.2800.0.0    7ff922e90000 214000 6abe7b41-4b63574d-4644ce85-ab2f6274-1=libcoreblockdata___163184570964 16-Sep-2021 21:24
-    c:\program files\siemens\nx1980\nxbin\pfkernel.dll 0.33.1.176       7ff9e5a40000 72000 5eaef520-49c71fd8-57128fbe-204f820b-1=pfkernel_33_1_176 14-May-2021 15:22
-    c:\program files\siemens\nx1980\nxbin\libsketchplatform.dll 1996.2611.0.0    7ffa92b30000 9000 54496b68-41b4986f-6b5a5685-75fc5fc7-1=libsketchplatform___163115021864 08-Sep-2021 21:35
-    c:\program files\siemens\nx1980\nxbin\libpmiplatform.dll 1996.2611.0.0    7ffa46980000 1b000 47236eb0-49923117-d56f6a8c-e3cd561d-1=libpmiplatform___163115032464 08-Sep-2021 21:43
-    c:\program files\siemens\nx1980\nxbin\libmbdplatform.dll 1996.2611.0.0    7ffa444d0000 12000 63bf319e-44f42394-9cf08baf-523d2bb3-1=libmbdplatform___163115082864 08-Sep-2021 21:58
-    c:\program files\siemens\nx1980\nxbin\libselext.dll 1996.2611.0.0    7ffa46030000 1f000 6cf20eb-4b4a77f8-c0be258c-43f4828f-1=libselext___163115056564 08-Sep-2021 21:50
-    c:\program files\siemens\nx1980\nxbin\libdraftingcore.dll 1996.2800.0.0    7ff9fa550000 19000 46ba21ec-48ffee7f-79d78cbb-473bb30e-1=libdraftingcore___163184565864 16-Sep-2021 21:18
-    c:\program files\siemens\nx1980\nxbin\xerces322_x_19.dll 3.2.2.0          7ff91a1d0000 2bc000 0-0-0-0-0 14-May-2021 16:10
-    c:\program files\siemens\nx1980\nxbin\libtopology_checksum.dll 1980.1700.0.0    7ff9ef5f0000 1a000 f71dfa70-48c55d28-3cd8bea8-731ed9e9-1=libtopology_checksum___1621299546cyp 19-May-2021 12:04
-    c:\program files\siemens\nx1980\nxbin\libnxpos.dll 1996.2800.0.0    7ff9a8c70000 ff000 206899a9-4a03d2f6-68bac399-5ccb312a-1=libnxpos___163184591864 16-Sep-2021 21:23
-    c:\program files\siemens\nx1980\nxbin\libgenpos.dll 1996.2611.0.0    7ff9ef340000 b2000 5d7656ae-47ef0e2f-1ed42c8d-3280f85c-1=libgenpos___163115075964 08-Sep-2021 21:43
-    c:\program files\siemens\nx1980\nxbin\rose_x64_vc15.dll 18.1.0.0         7ff8ee260000 f1000 0-0-0-0-0 14-May-2021 15:22
-    c:\windows\system32\vcruntime140_1.dll           14.50.35719.0    7ffa7dcf0000 b000 2296809d-cdc2c614-42a875e1-25284447-1=vcruntime140_1.amd64 21-Nov-2025 21:56
-    c:\program files\siemens\nx1980\nxbin\libcxa.dll 1996.2800.0.0    7ff8eed20000 3e000 af21369a-4af2e880-1a469abb-18cee6a3-1=libcxa___163184581264 16-Sep-2021 21:24
-    c:\program files\siemens\nx1980\nxbin\librpo.dll 1996.2800.0.0    7ffa005a0000 58000 51d75d44-467be59d-7d421b83-d1c04557-1=librpo___163184568164 16-Sep-2021 21:22
-    c:\program files\siemens\nx1980\nxbin\libcombinebodies.dll 1996.2800.0.0    7ff91c060000 b4000 1d7f71f3-4f2fa2bb-ace3fe89-113b639c-1=libcombinebodies___163184561264 16-Sep-2021 21:18
-    c:\program files\siemens\nx1980\nxbin\libpartcommon.dll 1996.2611.0.0    7ffa46f80000 11000 fe478dd9-42cbcff5-bbcbe8ac-e9407f25-1=libpartcommon___163115015564 08-Sep-2021 21:50
-    c:\program files\siemens\nx1980\nxbin\libpmi.dll 1996.2800.0.0    7ff920b90000 767000 7e3997d9-4cdac25f-95eb2ebb-a4321f59-1=libpmi___163184573564 16-Sep-2021 21:17
-    c:\program files\siemens\nx1980\nxbin\libgeomutil.dll 1996.2800.0.0    7ff9decb0000 173000 9c24ae10-4eb47b0f-e34573bc-b939f78b-1=libgeomutil___163184576964 16-Sep-2021 21:18
-    c:\program files\siemens\nx1980\nxbin\libtable.dll 1996.2800.0.0    7ff920230000 1a3000 8f61b5b4-42a60b44-f0392994-9609a8e9-1=libtable___163184587564 16-Sep-2021 21:24
-    c:\program files\siemens\nx1980\nxbin\libfields.dll 1996.2800.0.0    7ff91ba30000 491000 e9ee967b-43867892-93496d8d-68efbf71-1=libfields___163184583364 16-Sep-2021 21:19
-    c:\program files\siemens\nx1980\nxbin\libcamsmom.dll 1996.2611.0.0    7ffa449c0000 7c000 5cb516b8-4b1ffab4-24bb8baf-b22f6fbb-1=libcamsmom___163115057664 08-Sep-2021 21:49
-    c:\program files\siemens\nx1980\nxbin\libftfoundation.dll 1996.2800.0.0    7ff991390000 103000 388b55ce-40fd70ae-47151581-c9558455-1=libftfoundation___163184575064 16-Sep-2021 21:20
-    c:\program files\siemens\nx1980\nxbin\libgdt.dll 1996.2800.0.0    7ff922790000 370000 78f6074e-49645272-f88bc5a5-5b193f81-1=libgdt___163184568064 16-Sep-2021 21:19
-    c:\program files\siemens\nx1980\nxbin\libsmdpk.dll 1996.2611.0.0    7ff9ff0a0000 5d000 d44a43c1-4b99a167-6ced8b8b-40230d27-1=libsmdpk___163115088464 08-Sep-2021 21:40
-    c:\program files\siemens\nx1980\nxbin\libsmsputil.dll 1996.2800.0.0    7ffa0e8e0000 43000 a5d2cef6-49f8323e-4508a08d-7d65d974-1=libsmsputil___163184572564 16-Sep-2021 21:19
-    c:\program files\siemens\nx1980\nxbin\pskernel.dll 0.33.1.176       7ff91c120000 3bf5000 18939f69-4eeadd2b-f08ecdb0-5f6463a-1=pskernel_33_1_176 14-May-2021 15:22
-    c:\program files\siemens\nx1980\nxbin\libsmsp.dll 1996.2800.0.0    7ff920480000 19c000 9d48244d-410ed7a3-982b2996-4841d77b-1=libsmsp___163184588064 16-Sep-2021 21:18
-    c:\program files\siemens\nx1980\nxbin\libasmo.dll 1996.2800.0.0    7ff9ec7d0000 14f000 67ea8d8c-4a87f114-1b986aa9-2320953f-1=libasmo___163184590664 16-Sep-2021 21:23
-    c:\program files\siemens\nx1980\nxbin\libpdi.dll 1996.2800.0.0    7ff91a530000 d1000 8bac0c75-4f4e8308-cafa0185-df510dcb-1=libpdi___163184569164 16-Sep-2021 21:20
-    c:\program files\siemens\nx1980\nxbin\libdmcloudapplication.dll 1996.2800.0.0    7ffa92af0000 c000 9f564ae1-48b9e5bf-13604588-5cf111f6-1=libdmcloudapplication___163184581264 16-Sep-2021 21:19
-    c:\program files\siemens\nx1980\nxbin\libdmapplication.dll 1996.2800.0.0    7ff922d30000 15a000 d4ca7d50-464a0b39-63faf2bf-fe9bc55a-1=libdmapplication___163184561364 16-Sep-2021 21:22
-    c:\program files\siemens\nx1980\nxbin\libuginit.dll 1996.2800.0.0    7ffa46050000 61000 f75f6ff2-430a2c25-9dc9828a-653ddbdc-1=libuginit___163184572164 16-Sep-2021 21:23
-    c:\program files\siemens\nx1980\nxbin\libdmservices.dll 1996.2800.0.0    7ff922b00000 230000 3c5185d2-4a851876-96189497-87c929b7-1=libdmservices___163184594564 16-Sep-2021 21:20
-    c:\program files\siemens\nx1980\nxbin\libimage.dll 1996.2611.0.0    7ff9ec760000 6c000 ebc8ad03-48fa7c57-23edcb86-43593b05-1=libimage___163115035664 08-Sep-2021 21:47
-    c:\program files\siemens\nx1980\nxbin\libassybox.dll 1996.2800.0.0    7ffa0e0d0000 b8000 279834a7-4ad1eea1-16384493-cb7656bf-1=libassybox___163184582864 16-Sep-2021 21:21
-    c:\program files\siemens\nx1980\nxbin\libugutils.dll 1996.2801.0.0    7ff9cbfa0000 488000 9098646e-4237d0f9-50bbaaa3-a6a71431-1=libugutils___163338484364 04-Oct-2021 15:41
-    c:\program files\siemens\nx1980\nxbin\libassypos.dll 1996.2800.0.0    7ff91a490000 93000 810dc16e-4935bcb6-975216ad-6144a08a-1=libassypos___163184590264 16-Sep-2021 21:19
-    c:\program files\siemens\nx1980\nxbin\libugmr.dll 1996.2800.0.0    7ff9250d0000 89e000 96b93712-430d88d9-b4931e99-9a1bc284-1=libugmr___163184571664 16-Sep-2021 21:22
-    c:\program files\siemens\nx1980\nxbin\libpartutils.dll 1996.2800.0.0    7ff925e70000 809000 c3284686-4c62840b-624f7fac-ea8c96-1=libpartutils___163184562164 16-Sep-2021 21:20
-    c:\program files\siemens\nx1980\nxbin\libsket.dll 1996.2800.0.0    7ff925970000 4f3000 22a19d4d-41ef6126-30e71c92-4f09de1d-1=libsket___163184578364 16-Sep-2021 21:19
-    c:\program files\siemens\nx1980\nxbin\libpartnav.dll 1996.2611.0.0    7ffa46f60000 16000 b8117fbf-47a8a6e2-4908a28a-f2b355ed-1=libpartnav___163115078364 08-Sep-2021 21:38
-    c:\program files\siemens\nx1980\nxbin\libmodlgeom.dll 1996.2800.0.0    7ff923f70000 d88000 cc65c2a5-43e07614-f7e5eebe-3636d3a1-1=libmodlgeom___163184562464 16-Sep-2021 21:18
-    c:\program files\siemens\nx1980\nxbin\libpartmodl.dll 1996.2801.0.0    7ff926680000 115a000 3de9c2b0-43a9a9bc-6ed6c6bc-ff4c99e1-1=libpartmodl___163338484264 04-Oct-2021 15:40
-    c:\program files\siemens\nx1980\nxbin\libocc.dll 1996.2800.0.0    7ff9289b0000 8e6000 d27bf196-400fb571-ee912fb3-e13186c9-1=libocc___163184564864 16-Sep-2021 21:21
-    c:\program files\siemens\nx1980\nxbin\libmodl.dll 1996.2800.0.0    7ff9292a0000 1279000 d6309a4b-445e5f7e-fc15c8b5-210376d-1=libmodl___163184583864 16-Sep-2021 21:19
-    c:\program files\siemens\nx1980\ugii\libinterop.dll 1996.2611.0.0    7ffa75450000 30000 8a0cd246-405ecb5e-efa82980-620ad105-1=libinterop___163115057664 08-Sep-2021 21:37
-    c:\program files\siemens\nx1980\nxbin\libpkp.dll 1996.2611.0.0    7ff921300000 148000 956b03dd-469edeea-2bde8698-cc6d1117-1=libpkp___163115030664 08-Sep-2021 21:48
-    c:\program files\siemens\nx1980\nxbin\libpartdisp.dll 1996.2800.0.0    7ff9cbe00000 19f000 719c13e1-43678c48-c8b6ecbb-719e5392-1=libpartdisp___163184569364 16-Sep-2021 21:19
-    c:\program files\siemens\nx1980\nxbin\libgeom.dll 1996.2800.0.0    7ff92a520000 6c0000 b75f1527-45886d6d-2843e78c-569b0f69-1=libgeom___163184576064 16-Sep-2021 21:23
-    c:\program files\siemens\nx1980\nxbin\librout.dll 1996.2800.0.0    7ff91ac10000 e1a000 65d58b54-41f56498-5c72f9b5-1c2714b5-1=librout___163184592364 16-Sep-2021 21:23
-    c:\program files\siemens\nx1980\nxbin\libfusion.dll 1996.2800.0.0    7ff91a050000 9a000 ceaf0281-4d4bd2c2-8651948d-9e24a2b-1=libfusion___163184579064 16-Sep-2021 21:18
-    c:\program files\siemens\nx1980\nxbin\libsmd.dll 1996.2800.0.0    7ff920620000 567000 c7a6d3a0-45861678-428b8dbd-eed2f38b-1=libsmd___163184586364 16-Sep-2021 21:18
-    c:\program files\siemens\nx1980\nxbin\libevaluator.dll 1996.2800.0.0    7ff9cdfc0000 347000 aa288bd9-4e0f9dfe-989d4d94-d68f5c44-1=libevaluator___163184594364 16-Sep-2021 21:23
-    c:\program files\siemens\nx1980\nxbin\libfacet.dll 1996.2800.0.0    7ff92abe0000 4b9000 d15e55fd-4e998e65-a2a412b1-61e9f598-1=libfacet___163184574764 16-Sep-2021 21:20
-    c:\program files\siemens\nx1980\nxbin\libptr.dll 1996.2611.0.0    7ffa44960000 5f000 9ad44b61-4af7bf7b-79713f95-c68892da-1=libptr___163115045364 08-Sep-2021 21:39
-    c:\program files\siemens\nx1980\nxbin\liblwks.dll 1996.2800.0.0    7ff921a30000 330000 13689386-481f836f-862c85b2-60270642-1=liblwks___163184575864 16-Sep-2021 21:18
-    c:\windows\system32\oleaut32.dll                 10.0.26100.7920  7ffa98da0000 d7000 9bf5aaad-70075886-d4a323e4-6837a1ef-1 10-Mar-2026 23:13
-    c:\windows\system32\ws2_32.dll                   10.0.26100.7623  7ffa97b20000 74000 e4726bbf-b21ce391-ae343e5f-e33ecc75-1 15-Jan-2026 18:33
-    c:\windows\system32\wintypes.dll                 10.0.26100.7920  7ffa97200000 16a000 47fb6ae-4348731d-2c3e3338-6aade6f6-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libdraw.dll 1996.2800.0.0    7ff92b0a0000 b9a000 fb301ef7-40fa4a00-ba15d6ab-19e9ec99-1=libdraw___163184568964 16-Sep-2021 21:22
-    c:\program files\siemens\nx1980\nxbin\libklo.dll 1996.2800.0.0    7ff9deb90000 11e000 72ea5019-44529ea7-ce97fe92-57586304-1=libklo___163184575164 16-Sep-2021 21:17
-    c:\windows\system32\crypt32.dll                  10.0.26100.7309  7ffa97050000 177000 14fb705a-10e4ebaa-c789c2c0-79b226cd-1 10-Dec-2025 19:06
-    c:\windows\system32\shell32.dll                  10.0.26100.7920  7ffa99210000 75f000 82053fa4-428be555-7324d266-22143625-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libjam.dll 1996.2801.0.0    7ff924d00000 3c7000 2a3f0da6-431465a2-bf54593-38409815-1=libjam___163338882564 04-Oct-2021 15:40
-    c:\windows\system32\windows.storage.dll          10.0.26100.8036  7ffa967e0000 864000 fa3bf070-655c1ebd-1d69b3d7-ac0f13b-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libhidl.dll 1996.2800.0.0    7ffa45420000 56000 83db07f6-4c570794-23e0a981-8b9f05ae-1=libhidl___163184589464 16-Sep-2021 21:23
-    c:\program files\siemens\nx1980\nxbin\libdisp.dll 1996.2801.0.0    7ff92ee80000 b42000 d20cd903-45fc0f18-c219ea8f-350c19c7-1=libdisp___163338886264 04-Oct-2021 15:40
-    c:\windows\system32\shlwapi.dll                  10.0.26100.7920  7ffa99050000 67000 bed020ab-96a5e449-56a0fb62-f5d841cc-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libphymat.dll 1996.2800.0.0    7ff95e640000 151000 20b52454-4b5f0ef1-7f51e89e-3d07a4a5-1=libphymat___163184574564 16-Sep-2021 21:22
-    c:\windows\system32\combase.dll                  10.0.26100.7920  7ffa981c0000 382000 ced1f2d3-33766a03-4ecaf0dc-160e4323-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libdman.dll 1996.2611.0.0    7ffa444f0000 66000 5de638a0-4cb04909-6f032da4-b478b8e7-1=libdman___163115054164 08-Sep-2021 21:55
-    c:\program files\siemens\nx1980\nxbin\libassy.dll 1996.2800.0.0    7ff92c260000 90c000 4be8d466-49b314ec-256952b1-72c75516-1=libassy___163184577864 16-Sep-2021 21:22
-    c:\windows\system32\ole32.dll                    10.0.26100.7920  7ffa98c00000 195000 48426d87-72c4e58c-6ec43631-77347e80-1 10-Mar-2026 23:13
-    c:\windows\system32\msvcp_win.dll                10.0.26100.7623  7ffa97400000 a3000 9b3818ee-f83d7512-880c227c-f1f76736-1 15-Jan-2026 18:33
-    c:\program files\siemens\nx1980\nxbin\libann.dll 1996.2800.0.0    7ff92cb70000 1135000 5dca3737-41a15d53-5ec77ea9-67b54a08-1=libann___163184577664 16-Sep-2021 21:22
-    c:\windows\system32\gdi32full.dll                10.0.26100.8036  7ffa974b0000 12b000 96782693-c5ec5a84-eec211cc-1198baaf-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libcompos.dll 1996.2800.0.0    7ff91a870000 1e8000 59195d7-4e78e888-cc37fa9-d1f4070b-1=libcompos___163184565564 16-Sep-2021 21:22
-    c:\program files\siemens\nx1980\nxbin\libcmod.dll 1996.2800.0.0    7ff92bc40000 614000 7c06550e-443f1a11-60e37fb1-2a4fd120-1=libcmod___163184565664 16-Sep-2021 21:24
-    c:\windows\system32\gdi32.dll                    10.0.26100.8036  7ffa991e0000 2b000 b0c09c5d-5d509991-4eb69f98-d8dcc6ac-1 10-Mar-2026 23:13
-    c:\windows\system32\win32u.dll                   10.0.26100.8036  7ffa971d0000 27000 ac0a34d-e2588dc-a1bb87c8-1e62aa85-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libugmath.dll 1996.2611.0.0    7ffa452c0000 ed000 7e1a68d3-4e03d9ed-fbdefdb7-fb489c34-1=libugmath___163115007864 08-Sep-2021 21:53
-    c:\program files\siemens\nx1980\nxbin\libpman.dll 1996.2611.0.0    7ffa0dd50000 6a000 a733f16d-49161b1e-7036afa0-96b31696-1=libpman___163115065264 08-Sep-2021 21:47
-    c:\windows\system32\user32.dll                   10.0.26100.7920  7ffa99a30000 1c5000 5e38c093-8f82e8ac-1a5a6c9b-1b782233-1 10-Mar-2026 23:13
-    c:\windows\system32\rpcrt4.dll                   10.0.26100.8036  7ffa987e0000 118000 15f09bdb-fcd85e19-6ed5fd8f-3942ca46-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libccov.dll 1996.2611.0.0    7ffa92f20000 c000 5b361a65-4c25069a-123ed096-a7a499c1-1=libccov___163115020464 08-Sep-2021 21:56
-    c:\windows\system32\vcruntime140.dll             14.50.35719.0    7ffa7c2c0000 1e000 724c8ca1-e18145d5-93a86338-9ed3fed4-1=vcruntime140.amd64 21-Nov-2025 21:56
-    c:\windows\system32\msvcp140.dll                 14.50.35719.0    7ffa7c310000 88000 c0ce770d-89ca9fb7-ecfbc0b1-6734145-1=msvcp140.amd64 21-Nov-2025 21:56
-    c:\windows\system32\sechost.dll                  10.0.26100.7920  7ffa979e0000 a7000 44217d2a-a136e286-665dbe7e-852eeb9c-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libstep242.dll 1996.2800.0.0    7ffa75480000 1a000 d3673a2b-43ec525b-7f4ee4af-3ba37e95-1=libstep242___163184571464 16-Sep-2021 21:20
-    c:\windows\system32\msvcrt.dll                   7.0.26100.7623   7ffa99980000 a9000 fc69e3-c27185f6-f30560a8-5b74c1a6-1 15-Jan-2026 18:33
-    c:\windows\system32\advapi32.dll                 10.0.26100.7920  7ffa98720000 bb000 db8a497e-b745f0d3-47851668-4eef6e14-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\nxbin\libufunx.dll 1996.2800.0.0    7ff918d20000 409000 3e4b2b01-47b03e13-85871295-eb120608-1=libufunx___163184576564 16-Sep-2021 21:17
-    c:\program files\siemens\nx1980\ugii\libsyss.dll 1996.2801.0.0    7ff8ee360000 6b0000 b5491e27-41291470-df610aab-bac592fa-1=libsyss___163338483664 04-Oct-2021 15:41
-    c:\program files\siemens\nx1980\nxbin\libpart.dll 1996.2801.0.0    7ff9277e0000 11c4000 43bf5ce4-45489a95-85606485-de76a73-1=libpart___163338883864 04-Oct-2021 15:40
-    c:\program files\siemens\nx1980\nxbin\libcustdef.dll 1996.2611.0.0    7ff9fb8b0000 d2000 cd7d82fd-4796fe95-23064da8-4ce42d2c-1=libcustdef___163115012464 08-Sep-2021 21:47
-    c:\windows\system32\ucrtbase.dll                 10.0.26100.7623  7ffa96520000 14b000 563b3462-e9e4c06d-a396587c-82931ea0-1 15-Jan-2026 18:33
-    c:\windows\system32\kernelbase.dll               10.0.26100.7920  7ffa975e0000 3f1000 92f6993c-db861974-4ddea4f9-b44cfb51-1 10-Mar-2026 23:13
-    c:\windows\system32\kernel32.dll                 10.0.26100.7920  7ffa98550000 c9000 f7b745de-ef1b7a69-c4e08b7c-a110edfd-1 10-Mar-2026 23:13
-    c:\windows\system32\ntdll.dll                    10.0.26100.7920  7ffa99c40000 267000 5a9f4004-6b50db80-6c7bbdbc-47b4155-1 10-Mar-2026 23:13
-    c:\program files\siemens\nx1980\translators\step242\step242.exe 1996.2801.0.0    7ff7c4a70000 d000 c209abc1-45d9b27d-273b2dbb-a640e654-1=step242___163338739564 04-Oct-2021 15:39
+    c:\program files\siemens\nx1980\nxbin\libselext.dll 1996.2611.0.0    7ffecdec0000 1f000 6cf20eb-4b4a77f8-c0be258c-43f4828f-1=libselext___163115056564 08-Sep-2021 21:50
+    c:\program files\siemens\nx1980\nxbin\xerces322_x_19.dll 3.2.2.0          7ffdd5c80000 2bc000 0-0-0-0-0 14-May-2021 16:10
+    c:\program files\siemens\nx1980\nxbin\libpgs.dll 1996.2800.0.0    7ffdd59f0000 cd000 3a685a67-461e45a0-7923f0a5-b25ab867-1=libpgs___163184589264 16-Sep-2021 21:17
+    c:\program files\siemens\nx1980\nxbin\libcsfadp.dll 1996.2800.0.0    7ffdd5ac0000 51000 8eb6c4b-4951271f-39a2d886-2dc31fbd-1=libcsfadp___163184580564 16-Sep-2021 21:20
+    c:\program files\siemens\nx1980\nxbin\libfeaturerecognition.dll 1980.1700.0.0    7ffeb5220000 15000 9fd9e39c-4357cde0-d1a95d9b-5156f93a-1=libfeaturerecognition___1621299528cyp 19-May-2021 11:46
+    c:\program files\siemens\nx1980\nxbin\libfeatutils.dll 1996.2800.0.0    7ffeb5b10000 105000 a7e743e4-478a4214-9123cfaf-69a2f06e-1=libfeatutils___163184561264 16-Sep-2021 21:22
+    c:\program files\siemens\nx1980\nxbin\libdraftingcore.dll 1996.2800.0.0    7ffeb56b0000 19000 46ba21ec-48ffee7f-79d78cbb-473bb30e-1=libdraftingcore___163184565864 16-Sep-2021 21:18
+    c:\program files\siemens\nx1980\nxbin\libfacetstore.dll 1996.2611.0.0    7ffdd6020000 56000 d12c9817-4fea58ee-ef0e66ac-487fd2a-1=libfacetstore___163115032064 08-Sep-2021 21:49
+    c:\program files\siemens\nx1980\nxbin\libfasthidden.dll 1996.2611.0.0    7ffdd5f40000 d8000 48ed060b-49770a3f-42ec9fa0-645547c7-1=libfasthidden___163115070964 08-Sep-2021 21:42
+    c:\program files\siemens\nx1980\nxbin\libmbdplatform.dll 1996.2611.0.0    7ffebbf40000 12000 63bf319e-44f42394-9cf08baf-523d2bb3-1=libmbdplatform___163115082864 08-Sep-2021 21:58
+    c:\program files\siemens\nx1980\nxbin\libpmiplatform.dll 1996.2611.0.0    7ffedcb20000 1b000 47236eb0-49923117-d56f6a8c-e3cd561d-1=libpmiplatform___163115032464 08-Sep-2021 21:43
+    c:\program files\siemens\nx1980\nxbin\libcsf.dll 1996.2611.0.0    7ffdd74f0000 18a000 9752e41f-40af30ac-8e6edd84-846206c1-1=libcsf___163115009764 08-Sep-2021 21:41
+    c:\program files\siemens\nx1980\nxbin\libmodlmath.dll 1996.2611.0.0    7ffddffc0000 572000 7cc36c88-4f185956-966dfe93-5aaac6eb-1=libmodlmath___163115018664 08-Sep-2021 21:46
+    c:\program files\siemens\nx1980\nxbin\libtline.dll 1996.2611.0.0    7fff25f90000 25000 4d575e30-404cbcc2-d7d41493-d315d3de-1=libtline___163115027964 08-Sep-2021 21:40
+    c:\program files\siemens\nx1980\nxbin\libsketchplatform.dll 1996.2611.0.0    7ffee5be0000 9000 54496b68-41b4986f-6b5a5685-75fc5fc7-1=libsketchplatform___163115021864 08-Sep-2021 21:35
+    c:\windows\system32\shcore.dll                   10.0.26100.7920  7fff2cbc0000 f7000 4a074cbb-73d18dda-33107341-395cf698-1 10-Mar-2026 23:13
+    c:\windows\system32\prntvpt.dll                  10.0.26100.7920  7ffeb4b60000 3b000 d49922ed-c88d66d-7198843c-14920ec3-1 10-Mar-2026 23:13
+    c:\windows\system32\xmllite.dll                  10.0.26100.7309  7fff22c40000 43000 efaea633-8dd61b2b-a9ca89f9-f19a8c80-1 10-Dec-2025 19:06
+    c:\windows\system32\winspool.drv                 10.0.26100.7920  7ffeffcc0000 af000 a3cf8179-892462be-1e4a3a33-14253cae-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libmqccore.dll 1996.2800.0.0    7ffdd7760000 251000 e3a4ae0e-4d8b6778-c8e243a3-1d52fda4-1=libmqccore___163184575964 16-Sep-2021 21:18
+    c:\program files\siemens\nx1980\nxbin\libcoreblockdata.dll 1996.2800.0.0    7ffdde880000 214000 6abe7b41-4b63574d-4644ce85-ab2f6274-1=libcoreblockdata___163184570964 16-Sep-2021 21:24
+    c:\windows\system32\version.dll                  10.0.26100.1150  7fff23260000 b000 440dd63b-21f8e2b0-8ec7d00f-f2ceaef0-1 05-Oct-2024 0:08
+    c:\windows\system32\iphlpapi.dll                 10.0.26100.7920  7fff27cc0000 33000 8cf813a7-3f8e042d-66264cb4-bf2e6a8e-1 10-Mar-2026 23:13
+    c:\windows\system32\wininet.dll                  11.0.26100.7920  7fff0e350000 288000 2567c8fd-39394fbb-f42cb114-2f06abb-1 10-Mar-2026 23:13
+    c:\windows\system32\mpr.dll                      10.0.26100.7019  7fff0ddb0000 21000 9f841b04-7332f37f-75e45acd-23faaa1d-1 12-Nov-2025 18:24
+    c:\windows\system32\odbc32.dll                   10.0.26100.7309  7fff15b70000 c4000 9e8b3ce5-d1e3f0c-fbefba41-45d75410-1 10-Dec-2025 19:06
+    c:\windows\system32\msi.dll                      5.0.26100.7920   7fff0d280000 34b000 f5aa1120-93208ef3-6e352ad2-62a038a8-1 10-Mar-2026 23:13
+    c:\windows\system32\wtsapi32.dll                 10.0.26100.7920  7fff261c0000 29000 6ea8745e-e3fada62-93523833-25a3e56a-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libjson.dll 1996.2611.0.0    7ffeb57f0000 2e000 b2ffecfd-4b19a04e-445023bc-817bbd46-1=libjson___163115065064 08-Sep-2021 21:50
+    c:\program files\siemens\nx1980\nxbin\libnxc.dll 1996.2611.0.0    7ffded790000 26000 35feff7a-464ea380-9881cfab-77366f6a-1=libnxc___163115010764 08-Sep-2021 21:46
+    c:\program files\siemens\nx1980\nxbin\libproptableentity.dll 1996.2800.0.0    7ffdd5b20000 bb000 48f4d8be-484a1aec-6421688-658a015e-1=libproptableentity___163184565864 16-Sep-2021 21:23
+    c:\program files\siemens\nx1980\nxbin\libtopology_checksum.dll 1980.1700.0.0    7ffeba0b0000 1a000 f71dfa70-48c55d28-3cd8bea8-731ed9e9-1=libtopology_checksum___1621299546cyp 19-May-2021 12:04
+    c:\program files\siemens\nx1980\nxbin\pfkernel.dll 0.33.1.176       7ffeb56d0000 72000 5eaef520-49c71fd8-57128fbe-204f820b-1=pfkernel_33_1_176 14-May-2021 15:22
+    c:\program files\siemens\nx1980\nxbin\libnxpos.dll 1996.2800.0.0    7ffe6caf0000 ff000 206899a9-4a03d2f6-68bac399-5ccb312a-1=libnxpos___163184591864 16-Sep-2021 21:23
+    c:\program files\siemens\nx1980\nxbin\libgenpos.dll 1996.2611.0.0    7ffeb5820000 b2000 5d7656ae-47ef0e2f-1ed42c8d-3280f85c-1=libgenpos___163115075964 08-Sep-2021 21:43
+    c:\windows\system32\vcruntime140_1.dll           14.50.35719.0    7fff0f470000 b000 2296809d-cdc2c614-42a875e1-25284447-1=vcruntime140_1.amd64 21-Nov-2025 21:56
+    c:\program files\siemens\nx1980\nxbin\rose_x64_vc15.dll 18.1.0.0         7ffdaff10000 f1000 0-0-0-0-0 14-May-2021 15:22
+    c:\program files\siemens\nx1980\nxbin\libcxa.dll 1996.2800.0.0    7ffdb0010000 3e000 af21369a-4af2e880-1a469abb-18cee6a3-1=libcxa___163184581264 16-Sep-2021 21:24
+    c:\program files\siemens\nx1980\nxbin\libcombinebodies.dll 1996.2800.0.0    7ffdd7f10000 b4000 1d7f71f3-4f2fa2bb-ace3fe89-113b639c-1=libcombinebodies___163184561264 16-Sep-2021 21:18
+    c:\program files\siemens\nx1980\nxbin\librpo.dll 1996.2800.0.0    7ffded320000 58000 51d75d44-467be59d-7d421b83-d1c04557-1=librpo___163184568164 16-Sep-2021 21:22
+    c:\program files\siemens\nx1980\nxbin\libfields.dll 1996.2800.0.0    7ffdd6230000 491000 e9ee967b-43867892-93496d8d-68efbf71-1=libfields___163184583364 16-Sep-2021 21:19
+    c:\program files\siemens\nx1980\nxbin\libpartcommon.dll 1996.2611.0.0    7fff23de0000 11000 fe478dd9-42cbcff5-bbcbe8ac-e9407f25-1=libpartcommon___163115015564 08-Sep-2021 21:50
+    c:\program files\siemens\nx1980\nxbin\libftfoundation.dll 1996.2800.0.0    7ffde8cc0000 103000 388b55ce-40fd70ae-47151581-c9558455-1=libftfoundation___163184575064 16-Sep-2021 21:20
+    c:\program files\siemens\nx1980\nxbin\libsmdpk.dll 1996.2611.0.0    7ffde8980000 5d000 d44a43c1-4b99a167-6ced8b8b-40230d27-1=libsmdpk___163115088464 08-Sep-2021 21:40
+    c:\program files\siemens\nx1980\nxbin\pskernel.dll 0.33.1.176       7ffdd7fd0000 3bf5000 18939f69-4eeadd2b-f08ecdb0-5f6463a-1=pskernel_33_1_176 14-May-2021 15:22
+    c:\program files\siemens\nx1980\nxbin\libdmcloudapplication.dll 1996.2800.0.0    7ffee2a60000 c000 9f564ae1-48b9e5bf-13604588-5cf111f6-1=libdmcloudapplication___163184581264 16-Sep-2021 21:19
+    c:\program files\siemens\nx1980\nxbin\libpmi.dll 1996.2800.0.0    7ffddc170000 767000 7e3997d9-4cdac25f-95eb2ebb-a4321f59-1=libpmi___163184573564 16-Sep-2021 21:17
+    c:\program files\siemens\nx1980\nxbin\libdmapplication.dll 1996.2800.0.0    7ffddeaa0000 15a000 d4ca7d50-464a0b39-63faf2bf-fe9bc55a-1=libdmapplication___163184561364 16-Sep-2021 21:22
+    c:\program files\siemens\nx1980\nxbin\libgeomutil.dll 1996.2800.0.0    7ffe9d0c0000 173000 9c24ae10-4eb47b0f-e34573bc-b939f78b-1=libgeomutil___163184576964 16-Sep-2021 21:18
+    c:\program files\siemens\nx1980\nxbin\libdmservices.dll 1996.2800.0.0    7ffdde420000 230000 3c5185d2-4a851876-96189497-87c929b7-1=libdmservices___163184594564 16-Sep-2021 21:20
+    c:\program files\siemens\nx1980\nxbin\libtable.dll 1996.2800.0.0    7ffddbd80000 1a3000 8f61b5b4-42a60b44-f0392994-9609a8e9-1=libtable___163184587564 16-Sep-2021 21:24
+    c:\program files\siemens\nx1980\nxbin\libimage.dll 1996.2611.0.0    7ffde8c50000 6c000 ebc8ad03-48fa7c57-23edcb86-43593b05-1=libimage___163115035664 08-Sep-2021 21:47
+    c:\program files\siemens\nx1980\nxbin\libcamsmom.dll 1996.2611.0.0    7ffec9fd0000 7c000 5cb516b8-4b1ffab4-24bb8baf-b22f6fbb-1=libcamsmom___163115057664 08-Sep-2021 21:49
+    c:\program files\siemens\nx1980\nxbin\libgdt.dll 1996.2800.0.0    7ffdddf00000 370000 78f6074e-49645272-f88bc5a5-5b193f81-1=libgdt___163184568064 16-Sep-2021 21:19
+    c:\program files\siemens\nx1980\nxbin\libsmsputil.dll 1996.2800.0.0    7ffeb5150000 43000 a5d2cef6-49f8323e-4508a08d-7d65d974-1=libsmsputil___163184572564 16-Sep-2021 21:19
+    c:\program files\siemens\nx1980\nxbin\libsmsp.dll 1996.2800.0.0    7ffddbfd0000 19c000 9d48244d-410ed7a3-982b2996-4841d77b-1=libsmsp___163184588064 16-Sep-2021 21:18
+    c:\program files\siemens\nx1980\nxbin\libasmo.dll 1996.2800.0.0    7ffeca050000 14f000 67ea8d8c-4a87f114-1b986aa9-2320953f-1=libasmo___163184590664 16-Sep-2021 21:23
+    c:\program files\siemens\nx1980\nxbin\libpartnav.dll 1996.2611.0.0    7fff09cf0000 16000 b8117fbf-47a8a6e2-4908a28a-f2b355ed-1=libpartnav___163115078364 08-Sep-2021 21:38
+    c:\program files\siemens\nx1980\nxbin\libpdi.dll 1996.2800.0.0    7ffdd7680000 d1000 8bac0c75-4f4e8308-cafa0185-df510dcb-1=libpdi___163184569164 16-Sep-2021 21:20
+    c:\program files\siemens\nx1980\nxbin\libugutils.dll 1996.2801.0.0    7ffeca1a0000 488000 9098646e-4237d0f9-50bbaaa3-a6a71431-1=libugutils___163338484364 04-Oct-2021 15:41
+    c:\program files\siemens\nx1980\ugii\libinterop.dll 1996.2611.0.0    7ffdd2d50000 30000 8a0cd246-405ecb5e-efa82980-620ad105-1=libinterop___163115057664 08-Sep-2021 21:37
+    c:\program files\siemens\nx1980\nxbin\libpkp.dll 1996.2611.0.0    7ffddce50000 148000 956b03dd-469edeea-2bde8698-cc6d1117-1=libpkp___163115030664 08-Sep-2021 21:48
+    c:\program files\siemens\nx1980\nxbin\libfusion.dll 1996.2800.0.0    7ffdd5be0000 9a000 ceaf0281-4d4bd2c2-8651948d-9e24a2b-1=libfusion___163184579064 16-Sep-2021 21:18
+    c:\program files\siemens\nx1980\nxbin\libugmr.dll 1996.2800.0.0    7ffde16a0000 89e000 96b93712-430d88d9-b4931e99-9a1bc284-1=libugmr___163184571664 16-Sep-2021 21:22
+    c:\program files\siemens\nx1980\nxbin\libuginit.dll 1996.2800.0.0    7ffee2a70000 61000 f75f6ff2-430a2c25-9dc9828a-653ddbdc-1=libuginit___163184572164 16-Sep-2021 21:23
+    c:\program files\siemens\nx1980\nxbin\libassybox.dll 1996.2800.0.0    7ffeb6610000 b8000 279834a7-4ad1eea1-16384493-cb7656bf-1=libassybox___163184582864 16-Sep-2021 21:21
+    c:\program files\siemens\nx1980\nxbin\libfacet.dll 1996.2800.0.0    7ffde6bf0000 4b9000 d15e55fd-4e998e65-a2a412b1-61e9f598-1=libfacet___163184574764 16-Sep-2021 21:20
+    c:\program files\siemens\nx1980\nxbin\libassypos.dll 1996.2800.0.0    7ffeb5750000 93000 810dc16e-4935bcb6-975216ad-6144a08a-1=libassypos___163184590264 16-Sep-2021 21:19
+    c:\program files\siemens\nx1980\nxbin\libocc.dll 1996.2800.0.0    7ffde50a0000 8e6000 d27bf196-400fb571-ee912fb3-e13186c9-1=libocc___163184564864 16-Sep-2021 21:21
+    c:\program files\siemens\nx1980\nxbin\libsket.dll 1996.2800.0.0    7ffde2750000 4f3000 22a19d4d-41ef6126-30e71c92-4f09de1d-1=libsket___163184578364 16-Sep-2021 21:19
+    c:\program files\siemens\nx1980\nxbin\libann.dll 1996.2800.0.0    7ffde70b0000 1135000 5dca3737-41a15d53-5ec77ea9-67b54a08-1=libann___163184577664 16-Sep-2021 21:22
+    c:\program files\siemens\nx1980\nxbin\libpartutils.dll 1996.2800.0.0    7ffde1f40000 809000 c3284686-4c62840b-624f7fac-ea8c96-1=libpartutils___163184562164 16-Sep-2021 21:20
+    c:\program files\siemens\nx1980\nxbin\libpartmodl.dll 1996.2801.0.0    7ffde0540000 115a000 3de9c2b0-43a9a9bc-6ed6c6bc-ff4c99e1-1=libpartmodl___163338484264 04-Oct-2021 15:40
+    c:\program files\siemens\nx1980\nxbin\libmodlgeom.dll 1996.2800.0.0    7ffddec00000 d88000 cc65c2a5-43e07614-f7e5eebe-3636d3a1-1=libmodlgeom___163184562464 16-Sep-2021 21:18
+    c:\program files\siemens\nx1980\nxbin\libpman.dll 1996.2611.0.0    7ffeb5a40000 6a000 a733f16d-49161b1e-7036afa0-96b31696-1=libpman___163115065264 08-Sep-2021 21:47
+    c:\program files\siemens\nx1980\nxbin\libugmath.dll 1996.2611.0.0    7ffecdee0000 ed000 7e1a68d3-4e03d9ed-fbdefdb7-fb489c34-1=libugmath___163115007864 08-Sep-2021 21:53
+    c:\program files\siemens\nx1980\nxbin\libmodl.dll 1996.2800.0.0    7ffde2c50000 1279000 d6309a4b-445e5f7e-fc15c8b5-210376d-1=libmodl___163184583864 16-Sep-2021 21:19
+    c:\program files\siemens\nx1980\nxbin\libgeom.dll 1996.2800.0.0    7ffde5990000 6c0000 b75f1527-45886d6d-2843e78c-569b0f69-1=libgeom___163184576064 16-Sep-2021 21:23
+    c:\program files\siemens\nx1980\nxbin\libevaluator.dll 1996.2800.0.0    7ffe98000000 347000 aa288bd9-4e0f9dfe-989d4d94-d68f5c44-1=libevaluator___163184594364 16-Sep-2021 21:23
+    c:\program files\siemens\nx1980\nxbin\libdraw.dll 1996.2800.0.0    7ffde6050000 b9a000 fb301ef7-40fa4a00-ba15d6ab-19e9ec99-1=libdraw___163184568964 16-Sep-2021 21:22
+    c:\program files\siemens\nx1980\nxbin\libdisp.dll 1996.2801.0.0    7ffeb73a0000 b42000 d20cd903-45fc0f18-c219ea8f-350c19c7-1=libdisp___163338886264 04-Oct-2021 15:40
+    c:\program files\siemens\nx1980\nxbin\libassy.dll 1996.2800.0.0    7ffeb5d00000 90c000 4be8d466-49b314ec-256952b1-72c75516-1=libassy___163184577864 16-Sep-2021 21:22
+    c:\program files\siemens\nx1980\nxbin\libpartdisp.dll 1996.2800.0.0    7ffe6cbf0000 19f000 719c13e1-43678c48-c8b6ecbb-719e5392-1=libpartdisp___163184569364 16-Sep-2021 21:19
+    c:\program files\siemens\nx1980\nxbin\librout.dll 1996.2800.0.0    7ffdd66d0000 e1a000 65d58b54-41f56498-5c72f9b5-1c2714b5-1=librout___163184592364 16-Sep-2021 21:23
+    c:\program files\siemens\nx1980\nxbin\libsmd.dll 1996.2800.0.0    7ffddc8e0000 567000 c7a6d3a0-45861678-428b8dbd-eed2f38b-1=libsmd___163184586364 16-Sep-2021 21:18
+    c:\windows\system32\wintypes.dll                 10.0.26100.7920  7fff2a3f0000 16a000 47fb6ae-4348731d-2c3e3338-6aade6f6-1 10-Mar-2026 23:13
+    c:\windows\system32\shell32.dll                  10.0.26100.7920  7fff2b100000 75f000 82053fa4-428be555-7324d266-22143625-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libptr.dll 1996.2611.0.0    7ffe01340000 5f000 9ad44b61-4af7bf7b-79713f95-c68892da-1=libptr___163115045364 08-Sep-2021 21:39
+    c:\windows\system32\oleaut32.dll                 10.0.26100.7920  7fff2b8f0000 d7000 9bf5aaad-70075886-d4a323e4-6837a1ef-1 10-Mar-2026 23:13
+    c:\windows\system32\windows.storage.dll          10.0.26100.8036  7fff298c0000 864000 fa3bf070-655c1ebd-1d69b3d7-ac0f13b-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\liblwks.dll 1996.2800.0.0    7ffddda90000 330000 13689386-481f836f-862c85b2-60270642-1=liblwks___163184575864 16-Sep-2021 21:18
+    c:\windows\system32\ws2_32.dll                   10.0.26100.7623  7fff2ccc0000 74000 e4726bbf-b21ce391-ae343e5f-e33ecc75-1 15-Jan-2026 18:33
+    c:\windows\system32\shlwapi.dll                  10.0.26100.7920  7fff2b870000 67000 bed020ab-96a5e449-56a0fb62-f5d841cc-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libklo.dll 1996.2800.0.0    7ffeb5240000 11e000 72ea5019-44529ea7-ce97fe92-57586304-1=libklo___163184575164 16-Sep-2021 21:17
+    c:\windows\system32\crypt32.dll                  10.0.26100.7309  7fff29740000 177000 14fb705a-10e4ebaa-c789c2c0-79b226cd-1 10-Dec-2025 19:06
+    c:\windows\system32\combase.dll                  10.0.26100.7920  7fff2ba10000 382000 ced1f2d3-33766a03-4ecaf0dc-160e4323-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libjam.dll 1996.2801.0.0    7ffdead20000 3c7000 2a3f0da6-431465a2-bf54593-38409815-1=libjam___163338882564 04-Oct-2021 15:40
+    c:\program files\siemens\nx1980\nxbin\libhidl.dll 1996.2800.0.0    7ffeb5ab0000 56000 83db07f6-4c570794-23e0a981-8b9f05ae-1=libhidl___163184589464 16-Sep-2021 21:23
+    c:\windows\system32\ole32.dll                    10.0.26100.7920  7fff2bda0000 195000 48426d87-72c4e58c-6ec43631-77347e80-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libphymat.dll 1996.2800.0.0    7ffe77140000 151000 20b52454-4b5f0ef1-7f51e89e-3d07a4a5-1=libphymat___163184574564 16-Sep-2021 21:22
+    c:\windows\system32\msvcp_win.dll                10.0.26100.7623  7fff29690000 a3000 9b3818ee-f83d7512-880c227c-f1f76736-1 15-Jan-2026 18:33
+    c:\windows\system32\gdi32full.dll                10.0.26100.8036  7fff2a960000 12b000 96782693-c5ec5a84-eec211cc-1198baaf-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libdman.dll 1996.2611.0.0    7ffec8e70000 66000 5de638a0-4cb04909-6f032da4-b478b8e7-1=libdman___163115054164 08-Sep-2021 21:55
+    c:\windows\system32\gdi32.dll                    10.0.26100.8036  7fff2afb0000 2b000 b0c09c5d-5d509991-4eb69f98-d8dcc6ac-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libcmod.dll 1996.2800.0.0    7ffde81f0000 614000 7c06550e-443f1a11-60e37fb1-2a4fd120-1=libcmod___163184565664 16-Sep-2021 21:24
+    c:\program files\siemens\nx1980\nxbin\libcompos.dll 1996.2800.0.0    7ffdd79c0000 1e8000 59195d7-4e78e888-cc37fa9-d1f4070b-1=libcompos___163184565564 16-Sep-2021 21:22
+    c:\windows\system32\win32u.dll                   10.0.26100.8036  7fff29660000 27000 ac0a34d-e2588dc-a1bb87c8-1e62aa85-1 10-Mar-2026 23:13
+    c:\windows\system32\user32.dll                   10.0.26100.7920  7fff2c7b0000 1c5000 5e38c093-8f82e8ac-1a5a6c9b-1b782233-1 10-Mar-2026 23:13
+    c:\windows\system32\vcruntime140.dll             14.50.35719.0    7fff0f450000 1e000 724c8ca1-e18145d5-93a86338-9ed3fed4-1=vcruntime140.amd64 21-Nov-2025 21:56
+    c:\program files\siemens\nx1980\ugii\libsyss.dll 1996.2801.0.0    7ffdb0050000 6b0000 b5491e27-41291470-df610aab-bac592fa-1=libsyss___163338483664 04-Oct-2021 15:41
+    c:\windows\system32\msvcp140.dll                 14.50.35719.0    7fff0f360000 88000 c0ce770d-89ca9fb7-ecfbc0b1-6734145-1=msvcp140.amd64 21-Nov-2025 21:56
+    c:\windows\system32\rpcrt4.dll                   10.0.26100.8036  7fff2c010000 118000 15f09bdb-fcd85e19-6ed5fd8f-3942ca46-1 10-Mar-2026 23:13
+    c:\windows\system32\sechost.dll                  10.0.26100.7920  7fff2c9a0000 a7000 44217d2a-a136e286-665dbe7e-852eeb9c-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libccov.dll 1996.2611.0.0    7fff260d0000 c000 5b361a65-4c25069a-123ed096-a7a499c1-1=libccov___163115020464 08-Sep-2021 21:56
+    c:\windows\system32\msvcrt.dll                   7.0.26100.7623   7fff2c520000 a9000 fc69e3-c27185f6-f30560a8-5b74c1a6-1 15-Jan-2026 18:33
+    c:\program files\siemens\nx1980\nxbin\libstep242.dll 1996.2800.0.0    7ffdd2d80000 1a000 d3673a2b-43ec525b-7f4ee4af-3ba37e95-1=libstep242___163184571464 16-Sep-2021 21:20
+    c:\windows\system32\advapi32.dll                 10.0.26100.7920  7fff2afe0000 bb000 db8a497e-b745f0d3-47851668-4eef6e14-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\nxbin\libcustdef.dll 1996.2611.0.0    7ffeb5c20000 d2000 cd7d82fd-4796fe95-23064da8-4ce42d2c-1=libcustdef___163115012464 08-Sep-2021 21:47
+    c:\program files\siemens\nx1980\nxbin\libpart.dll 1996.2801.0.0    7ffde3ed0000 11c4000 43bf5ce4-45489a95-85606485-de76a73-1=libpart___163338883864 04-Oct-2021 15:40
+    c:\program files\siemens\nx1980\nxbin\libufunx.dll 1996.2800.0.0    7ffdd4530000 409000 3e4b2b01-47b03e13-85871295-eb120608-1=libufunx___163184576564 16-Sep-2021 21:17
+    c:\windows\system32\ucrtbase.dll                 10.0.26100.7623  7fff2a2a0000 14b000 563b3462-e9e4c06d-a396587c-82931ea0-1 15-Jan-2026 18:33
+    c:\windows\system32\kernelbase.dll               10.0.26100.7920  7fff2a560000 3f1000 92f6993c-db861974-4ddea4f9-b44cfb51-1 10-Mar-2026 23:13
+    c:\windows\system32\kernel32.dll                 10.0.26100.7920  7fff2bf40000 c9000 f7b745de-ef1b7a69-c4e08b7c-a110edfd-1 10-Mar-2026 23:13
+    c:\windows\system32\ntdll.dll                    10.0.26100.7920  7fff2cd80000 267000 5a9f4004-6b50db80-6c7bbdbc-47b4155-1 10-Mar-2026 23:13
+    c:\program files\siemens\nx1980\translators\step242\step242.exe 1996.2801.0.0    7ff6f8c10000 d000 c209abc1-45d9b27d-273b2dbb-a640e654-1=step242___163338739564 04-Oct-2021 15:39
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libautomotiveinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libautomotiveinit.dll 7ff9ca350000 c000 f7436ecd-4c03f9bb-c6f3349b-4f711071-1=libautomotiveinit___163115087764 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libautomotiveinit.dll 7ffe9c610000 c000 f7436ecd-4c03f9bb-c6f3349b-4f711071-1=libautomotiveinit___163115087764 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libvdvinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libvdvinit.dll 7ff9c9310000 8000 821e56c7-46404086-f6af4088-48304f5b-1=libvdvinit___163115078664 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libvdvinit.dll 7ffe9c600000 8000 821e56c7-46404086-f6af4088-48304f5b-1=libvdvinit___163115078664 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libcablerouterinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libcablerouterinit.dll 7ff9c7b20000 7000 a6b5cd2c-44cb9d61-231804ad-daa4df43-1=libcablerouterinit___163114996864 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libcablerouterinit.dll 7ffe9c5f0000 7000 a6b5cd2c-44cb9d61-231804ad-daa4df43-1=libcablerouterinit___163114996864 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libdesigntoolsinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libdesigntoolsinit.dll 7ff9c7b10000 9000 55cec16-455abac7-a77f668f-f315d39b-1=libdesigntoolsinit___163115001164 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libdesigntoolsinit.dll 7ffe9c5e0000 9000 55cec16-455abac7-a77f668f-f315d39b-1=libdesigntoolsinit___163115001164 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libcaminit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libcaminit.dll 7ff9c09f0000 12000 ee58ef7f-45ac3e8c-552feb94-4bd20921-1=libcaminit___163184570264 version = 1996.2800.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libcaminit.dll 7ffe9c5c0000 12000 ee58ef7f-45ac3e8c-552feb94-4bd20921-1=libcaminit___163184570264 version = 1996.2800.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libmotiondesignerinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libmotiondesignerinit.dll 7ff9c7b00000 a000 dca134cb-4580c7f3-2b260fbe-15d7c9d9-1=libmotiondesignerinit___163115022264 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libmotiondesignerinit.dll 7ffe9c5b0000 a000 dca134cb-4580c7f3-2b260fbe-15d7c9d9-1=libmotiondesignerinit___163115022264 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libruleinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libruleinit.dll 7ff9c09e0000 8000 30e730e2-4cfdd8d3-6575c486-7d86b805-1=libruleinit___163114995764 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libruleinit.dll 7ffe9c5a0000 8000 30e730e2-4cfdd8d3-6575c486-7d86b805-1=libruleinit___163114995764 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libstructuredesigninit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libstructuredesigninit.dll 7ff9bf220000 10000 2cbbcc8a-44b854f6-fa884ab0-82fabc40-1=libstructuredesigninit___163115023664 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libstructuredesigninit.dll 7ffe9c590000 10000 2cbbcc8a-44b854f6-fa884ab0-82fabc40-1=libstructuredesigninit___163115023664 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libroutinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libroutinit.dll 7ff9bf210000 8000 dd98a23e-42d40678-4dd8d9b7-3da2ff53-1=libroutinit___163115061064 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libroutinit.dll 7ffe9c580000 8000 dd98a23e-42d40678-4dd8d9b7-3da2ff53-1=libroutinit___163115061064 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libmfgmlpinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libmfgmlpinit.dll 7ff9bf1f0000 14000 43f5fb6f-42da3bbe-6dd2a59b-73b1bec1-1=libmfgmlpinit___163114993564 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libmfgmlpinit.dll 7ffe9c560000 14000 43f5fb6f-42da3bbe-6dd2a59b-73b1bec1-1=libmfgmlpinit___163114993564 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libmpainit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libmpainit.dll 7ff9a93b0000 12000 7a63fc9f-461b58fb-9eff8db7-532fb1ea-1=libmpainit___163184572864 version = 1996.2800.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libmpainit.dll 7ffe9c540000 12000 7a63fc9f-461b58fb-9eff8db7-532fb1ea-1=libmpainit___163184572864 version = 1996.2800.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libpresslinesimulinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libpresslinesimulinit.dll 7ff9a9390000 1b000 f1c2addb-4ccee666-9b137fb7-2ac8e8f6-1=libpresslinesimulinit___163115048464 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libpresslinesimulinit.dll 7ffe9c520000 1b000 f1c2addb-4ccee666-9b137fb7-2ac8e8f6-1=libpresslinesimulinit___163115048464 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libtdpinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libtdpinit.dll 7ff9a8c50000 11000 982a6179-48441fca-4dc88388-e5f919a6-1=libtdpinit___163115044764 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libtdpinit.dll 7ffe9c500000 11000 982a6179-48441fca-4dc88388-e5f919a6-1=libtdpinit___163115044764 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libmfgaminit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libmfgaminit.dll 7ff9a8050000 1d000 f5a25066-43ecbb47-8abc10ae-8bc91638-1=libmfgaminit___163115068964 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libmfgaminit.dll 7ffe9c4e0000 1d000 f5a25066-43ecbb47-8abc10ae-8bc91638-1=libmfgaminit___163115068964 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\liblayout2dinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\liblayout2dinit.dll 7ff9a9380000 10000 39861de3-485c9e3f-c866e18b-c55d82e3-1=liblayout2dinit___163115029964 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\liblayout2dinit.dll 7ffe9c4d0000 10000 39861de3-485c9e3f-c866e18b-c55d82e3-1=liblayout2dinit___163115029964 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libpidinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libpidinit.dll 7ff9a8030000 1b000 f3689109-4c257269-5b3bf790-2d221ad0-1=libpidinit___163115080564 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libpidinit.dll 7ffe9c4b0000 1b000 f3689109-4c257269-5b3bf790-2d221ad0-1=libpidinit___163115080564 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libdraftinginit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libdraftinginit.dll 7ff9a8c40000 9000 13f88a31-4b0ece04-e70208f-acea1965-1=libdraftinginit___163115042464 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libdraftinginit.dll 7ffe9c4a0000 9000 13f88a31-4b0ece04-e70208f-acea1965-1=libdraftinginit___163115042464 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libalpinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libalpinit.dll 7ff9a8020000 f000 f78a68b0-498d4f47-6e8ce085-1625ad00-1=libalpinit___163115087164 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libalpinit.dll 7ffe9c490000 f000 f78a68b0-498d4f47-6e8ce085-1625ad00-1=libalpinit___163115087164 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libshipinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libshipinit.dll 7ff9a8000000 1f000 897e4f2b-46be92f5-858b25bc-c9baf36-1=libshipinit___163115054464 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libshipinit.dll 7ffdd5130000 1f000 897e4f2b-46be92f5-858b25bc-c9baf36-1=libshipinit___163115054464 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libclouddmcore.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libclouddmcore.dll 7ff9869e0000 55000 7196b384-46e3fcb6-e90a0bb8-fdcba76f-1=libclouddmcore___163184562464 version = 1996.2800.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libclouddmcore.dll 7ffdd50d0000 55000 7196b384-46e3fcb6-e90a0bb8-fdcba76f-1=libclouddmcore___163184562464 version = 1996.2800.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libhminit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libhminit.dll 7ff9a7ff0000 8000 c31811dd-48d15d93-379650a2-7631f0c7-1=libhminit___163115012464 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libhminit.dll 7ffdd50c0000 8000 c31811dd-48d15d93-379650a2-7631f0c7-1=libhminit___163115012464 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libcaeinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libcaeinit.dll 7ff991270000 1a000 4b2abedf-4217e9dd-964f3594-ec8523e1-1=libcaeinit___163184576464 version = 1996.2800.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libcaeinit.dll 7ffdd50a0000 1a000 4b2abedf-4217e9dd-964f3594-ec8523e1-1=libcaeinit___163184576464 version = 1996.2800.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libtooldesignerinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libtooldesignerinit.dll 7ff9756a0000 11000 441293d9-4b41bd00-30fa2d99-bb0924bd-1=libtooldesignerinit___163115035164 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libtooldesignerinit.dll 7ffdd5080000 11000 441293d9-4b41bd00-30fa2d99-bb0924bd-1=libtooldesignerinit___163115035164 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libjoininit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libjoininit.dll 7ff991380000 8000 70a03a79-4f5a2296-906dd68d-f0bfc32d-1=libjoininit___163114983764 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libjoininit.dll 7ffdd5070000 8000 70a03a79-4f5a2296-906dd68d-f0bfc32d-1=libjoininit___163114983764 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libschematicinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libschematicinit.dll 7ff95f300000 12000 eb4deed3-415cf125-6515dda2-1c9237f-1=libschematicinit___163115056264 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libschematicinit.dll 7ffdd5050000 12000 eb4deed3-415cf125-6515dda2-1c9237f-1=libschematicinit___163115056264 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libautomatedtestinginit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libautomatedtestinginit.dll 7ff991260000 9000 31599524-472ba88e-907c7ebd-39042c7a-1=libautomatedtestinginit___163115054464 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libautomatedtestinginit.dll 7ffdd5040000 9000 31599524-472ba88e-907c7ebd-39042c7a-1=libautomatedtestinginit___163115054464 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\liblinedesignerinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\liblinedesignerinit.dll 7ff95f2e0000 1e000 4baa6e2d-410a3e6f-851a3e8f-18dbdbf3-1=liblinedesignerinit___163184580464 version = 1996.2800.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\liblinedesignerinit.dll 7ffdd5020000 1e000 4baa6e2d-410a3e6f-851a3e8f-18dbdbf3-1=liblinedesignerinit___163184580464 version = 1996.2800.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libamecoreinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libamecoreinit.dll 7ff95dd60000 51000 9b7c7271-4d3234a9-322a81bf-d9b75c5-1=libamecoreinit___163115034664 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libamecoreinit.dll 7ffdd4fc0000 51000 9b7c7271-4d3234a9-322a81bf-d9b75c5-1=libamecoreinit___163115034664 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libsbsminit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libsbsminit.dll 7ff95f2c0000 12000 57452348-4d82f40c-a96fa1a8-c8abfc9d-1=libsbsminit___163115022864 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libsbsminit.dll 7ffdd4fa0000 12000 57452348-4d82f40c-a96fa1a8-c8abfc9d-1=libsbsminit___163115022864 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libdiagramminglibauthorinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libdiagramminglibauthorinit.dll 7ff9869d0000 8000 59fc1174-4b990c7f-4e863a87-652f6639-1=libdiagramminglibauthorinit___163114989164 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libdiagramminglibauthorinit.dll 7ffdd4f90000 8000 59fc1174-4b990c7f-4e863a87-652f6639-1=libdiagramminglibauthorinit___163114989164 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libaerostructinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libaerostructinit.dll 7ff95e440000 7000 b595e0a3-4208c915-6fb0db97-785a7d7f-1=libaerostructinit___163115045364 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libaerostructinit.dll 7ffdd4f80000 7000 b595e0a3-4208c915-6fb0db97-785a7d7f-1=libaerostructinit___163115045364 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libcoatingsinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libcoatingsinit.dll 7ff95dd50000 9000 95688168-48f8d241-1a473a89-f811e3dd-1=libcoatingsinit___163115085164 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libcoatingsinit.dll 7ffdd4f70000 9000 95688168-48f8d241-1a473a89-f811e3dd-1=libcoatingsinit___163115085164 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libstagemodelinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libstagemodelinit.dll 7ff95dd40000 a000 721f454e-426e85ae-baba34a9-f09e487e-1=libstagemodelinit___163115034564 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libstagemodelinit.dll 7ffdd4f60000 a000 721f454e-426e85ae-baba34a9-f09e487e-1=libstagemodelinit___163115034564 version = 1996.2611.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libdmuinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libdmuinit.dll 7ff942420000 13000 454e4440-438e2b39-67103cb1-b988b39c-1=libdmuinit___163184575864 version = 1996.2800.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libdmuinit.dll 7ffdd4f40000 13000 454e4440-438e2b39-67103cb1-b988b39c-1=libdmuinit___163184575864 version = 1996.2800.0.0
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\libmbdinit.dll
-Loaded module c:\program files\siemens\nx1980\nxbin\libmbdinit.dll 7ff923d10000 9000 3f4c8237-412d1c55-21bd2fb0-22fde145-1=libmbdinit___163114990964 version = 1996.2611.0.0
+Loaded module c:\program files\siemens\nx1980\nxbin\libmbdinit.dll 7ffdd4f30000 9000 3f4c8237-412d1c55-21bd2fb0-22fde145-1=libmbdinit___163114990964 version = 1996.2611.0.0
 Processing C:\Program Files\Siemens\NX1980\AUTOMATION_DESIGNER\localization\german\AME_FileNewTemplate_german.pax for File New Templates
 
 	Added template: 'Projekt', application: 'AME_FileNewTemplate', units: 'Metric', file: 'C:\Program Files\Siemens\NX1980\AUTOMATION_DESIGNER\templates\AME_FileNewTemplate.prt'
@@ -1890,53 +1890,53 @@ Processing C:\Program Files\Siemens\NX1980\UGII\localization\german\ugs_model_te
 	Added template: 'FPCD', application: 'FlexPCDSheetMetalTemplate', units: 'Metric', file: 'C:\Program Files\Siemens\NX1980\UGII\templates\fpcd-mm-template.prt'
 Skipping UFUNC_EXECUTE check
 Successfully loaded dynamic module C:\Program Files\Siemens\NX1980\nxbin\ugplmxml.dll
-Loaded module c:\windows\system32\wsock32.dll 7ffa7bdc0000 a000 b2f154df-336a919f-e5d0ab8f-aa9cff01-1 version = 10.0.26100.1
-Loaded module c:\program files\siemens\nx1980\nxbin\plmxmlsdk.dll 7ff8f02d0000 e70000 0-0-0-0-0 version = 7.0.12.98
-Loaded module c:\program files\siemens\nx1980\nxbin\plmxmlextensions.dll 7ff8f1140000 183000 0-0-0-0-0 version = 7.0.11.21
-Loaded module c:\program files\siemens\nx1980\nxbin\ugplmxml.dll 7ff8f12d0000 1fe000 b161b7e-45e4a2d2-2458bdb3-c52f0f31-1=ugplmxml___163184573764 version = 1996.2800.0.0
-Loaded module c:\windows\system32\winnsi.dll 7ffa8feb0000 e000 4d9196eb-511364f9-c65294c5-91004a84-1 version = 10.0.26100.7920
-Loaded module c:\windows\system32\webio.dll 7ffa7d780000 ca000 d8375a0-59bbc1d1-47c58941-7c651c6f-1 version = 10.0.26100.7920
+Loaded module c:\windows\system32\wsock32.dll 7fff0d920000 a000 b2f154df-336a919f-e5d0ab8f-aa9cff01-1 version = 10.0.26100.1
+Loaded module c:\program files\siemens\nx1980\nxbin\plmxmlextensions.dll 7ffdb1ed0000 183000 0-0-0-0-0 version = 7.0.11.21
+Loaded module c:\program files\siemens\nx1980\nxbin\plmxmlsdk.dll 7ffdb1060000 e70000 0-0-0-0-0 version = 7.0.12.98
+Loaded module c:\program files\siemens\nx1980\nxbin\ugplmxml.dll 7ffdb2060000 1fe000 b161b7e-45e4a2d2-2458bdb3-c52f0f31-1=ugplmxml___163184573764 version = 1996.2800.0.0
+Loaded module c:\windows\system32\winnsi.dll 7fff23140000 e000 4d9196eb-511364f9-c65294c5-91004a84-1 version = 10.0.26100.7920
+Loaded module c:\windows\system32\webio.dll 7fff1c300000 ca000 d8375a0-59bbc1d1-47c58941-7c651c6f-1 version = 10.0.26100.7920
 Retrieve of C:\Users\chris\Documents\EntwicklungsPorjekt_AAS_Master\Entwicklungsprojekt_AAS\AAS_NX\Quellcode\temp_model.step failed with status -1
-*** EXCEPTION: O/S ERROR: signal  11 in line 2891 of o:\nx1980\ip1700\src\syss\error\ind\error.cxx at Tue Mar 24 21:01:03 2026 Mitteleuropäische Zeit
+*** EXCEPTION: O/S ERROR: signal  11 in line 2891 of o:\nx1980\ip1700\src\syss\error\ind\error.cxx at Mon Mar 30 12:49:53 2026 Mitteleuropäische Sommerzeit
 +++ General Fault Exception
 +++ Invalid read from 0000000000000000
-    rsp:       8b5fbff700, rip:     7ff7c4a7295c, rbp:       8b5fbff800
+    rsp:       1b7c3ffa60, rip:     7ff6f8c1295c, rbp:       1b7c3ffb60
     rsi:                0, rdi:         ffffffff
-    rax:                0, rbx:     7ff447678b40, rcx:      22d3ecb5900, rdx:      22d3ea80000
-    r8:  7ffffffffffffffc, r9:                 0, r10:                0, r11:       8b5fbff620
+    rax:                0, rbx:     7ff4f8718b40, rcx:      170348eea00, rdx:      170347a0000
+    r8:  7ffffffffffffffc, r9:                 0, r10:                0, r11:       1b7c3ff980
     r12:                0, r13:                0, r14:                0, r15:                0
-[ 1] 7FF7C4A7295C                                                              (step242) 
-[ 2] 7FF8EE4A9941                                                              (libsyss) 
-[ 3] 7FF7C4A72FE9                                                              (step242) 
-[ 4] 7FF7C4A73DF8                                                              (step242) 
-[ 5] 7FFA9857E8D7                                                              (KERNEL32) 
-[ 6] 7FFA99CCC48C                                                              (ntdll) 
-*** COLLAPSE:: in line 1885 of o:\nx1980\ip1700\src\syss\error\ind\error.cxx at Tue Mar 24 21:01:14 2026 Mitteleuropäische Zeit
+[ 1] 7FF6F8C1295C                                                              (step242) 
+[ 2] 7FFDB0199941                                                              (libsyss) 
+[ 3] 7FF6F8C12FE9                                                              (step242) 
+[ 4] 7FF6F8C13DF8                                                              (step242) 
+[ 5] 7FFF2BF6E8D7                                                              (KERNEL32) 
+[ 6] 7FFF2CE0C48C                                                              (ntdll) 
+*** COLLAPSE:: in line 1885 of o:\nx1980\ip1700\src\syss\error\ind\error.cxx at Mon Mar 30 12:50:03 2026 Mitteleuropäische Sommerzeit
 +++ Terminating due to uncaught exception
-Loaded module c:\windows\system32\ncryptsslp.dll 7ffa6ad00000 42000 f1542aa2-85303329-b8ad3a11-f463ca81-1 version = 10.0.26100.5074
-Loaded module c:\windows\system32\ntasn1.dll 7ffa95540000 3f000 5858845a-e5f0c890-30f204cb-3e8bd73d-1 version = 10.0.26100.1882
-Loaded module c:\windows\system32\ncrypt.dll 7ffa95590000 30000 e72975ee-459e75da-71112bce-6fa53a92-1 version = 10.0.26100.7705
-Loaded module c:\windows\system32\schannel.dll 7ffa947c0000 c4000 adaf1cf5-f600cd2c-c61615b6-56fdd73f-1 version = 10.0.26100.7920
-[ 1] 7FF8EE5075C7                                                              (libsyss) 
-[ 2] 7FF8EE4AA357                                                              (libsyss) 
-[ 3] 7FF8EE4A8A68                                                              (libsyss) 
-[ 4] 7FF8EE4ABB38                                                              (libsyss) 
-[ 5] 7FFA965E19D7                                                              (ucrtbase) 
-[ 6] 7FF7C4A742DF                                                              (step242) 
-[ 7] 7FFA976F5703                                                              (KERNELBASE) 
-[ 8] 7FFA99DAA4D3                                                              (ntdll) 
-[ 9] 7FFA99D618D3                                                              (ntdll) 
-[10] 7FFA99DA61CF                                                              (ntdll) 
-[11] 7FFA99C523A7                                                              (ntdll) 
-[12] 7FFA99C4A961                                                              (ntdll) 
-[13] 7FFA976A73FA                                                              (KERNELBASE) 
-[14] 7FFA7C2C5277                                                              (VCRUNTIME140) 
-[15] 7FF8EE5080D5                                                              (libsyss) 
-[16] 7FF8EE508170                                                              (libsyss) 
-[17] 7FF8EE508198                                                              (libsyss) 
-[18] 7FF8EE4AABB8                                                              (libsyss) 
-[19] 7FF8EE4A8EF7                                                              (libsyss) 
-[20] 7FF8EE64D796                                                              (libsyss) 
-[21] 7FFA7C2CF55D                                                              (VCRUNTIME140) 
-[22] 7FFA99DA61CF                                                              (ntdll) 
-@@@ End of session Tue Mar 24 21:01:14 2026 Mitteleuropäische Zeit
+Loaded module c:\windows\system32\ncryptsslp.dll 7fff0a530000 42000 f1542aa2-85303329-b8ad3a11-f463ca81-1 version = 10.0.26100.5074
+Loaded module c:\windows\system32\ntasn1.dll 7fff28e80000 3f000 5858845a-e5f0c890-30f204cb-3e8bd73d-1 version = 10.0.26100.1882
+Loaded module c:\windows\system32\ncrypt.dll 7fff28ed0000 30000 e72975ee-459e75da-71112bce-6fa53a92-1 version = 10.0.26100.7705
+Loaded module c:\windows\system32\schannel.dll 7fff281f0000 c4000 adaf1cf5-f600cd2c-c61615b6-56fdd73f-1 version = 10.0.26100.7920
+[ 1] 7FFDB01F75C7                                                              (libsyss) 
+[ 2] 7FFDB019A357                                                              (libsyss) 
+[ 3] 7FFDB0198A68                                                              (libsyss) 
+[ 4] 7FFDB019BB38                                                              (libsyss) 
+[ 5] 7FFF2A3619D7                                                              (ucrtbase) 
+[ 6] 7FF6F8C142DF                                                              (step242) 
+[ 7] 7FFF2A675703                                                              (KERNELBASE) 
+[ 8] 7FFF2CEEA4D3                                                              (ntdll) 
+[ 9] 7FFF2CEA18D3                                                              (ntdll) 
+[10] 7FFF2CEE61CF                                                              (ntdll) 
+[11] 7FFF2CD923A7                                                              (ntdll) 
+[12] 7FFF2CD8A961                                                              (ntdll) 
+[13] 7FFF2A6273FA                                                              (KERNELBASE) 
+[14] 7FFF0F455277                                                              (VCRUNTIME140) 
+[15] 7FFDB01F80D5                                                              (libsyss) 
+[16] 7FFDB01F8170                                                              (libsyss) 
+[17] 7FFDB01F8198                                                              (libsyss) 
+[18] 7FFDB019ABB8                                                              (libsyss) 
+[19] 7FFDB0198EF7                                                              (libsyss) 
+[20] 7FFDB033D796                                                              (libsyss) 
+[21] 7FFF0F45F55D                                                              (VCRUNTIME140) 
+[22] 7FFF2CEE61CF                                                              (ntdll) 
+@@@ End of session Mon Mar 30 12:50:03 2026 Mitteleuropäische Sommerzeit
