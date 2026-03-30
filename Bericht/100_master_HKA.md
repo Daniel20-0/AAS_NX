@@ -1,4 +1,3 @@
-# test
 @import "01_Einleitung_HKA.md" 
 @import "02_Einleitung_GitHub.md"
 @import "09_Prerequisites.md"
