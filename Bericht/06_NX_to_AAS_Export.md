@@ -78,9 +78,14 @@ The file path of the CSV file is generated automatically
 ---
 
 ## 7.3 Sync other Properties
-XXXXX
 
+In addition to the standard and user-defined attributes, the script also supports attributes that were added using the **"NX Add Attributes"** functionality.
 
+These attributes are automatically detected during runtime and included in the export process without requiring any additional configuration or mapping.
+
+This ensures that all relevant attribute data—whether originally defined in the part or subsequently added via NX—is consistently captured and exported to the CSV file.
+
+---
 
 ## 7.4 Troubleshooting
 No CSV file is generated
