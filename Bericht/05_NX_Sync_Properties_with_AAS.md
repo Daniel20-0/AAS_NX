@@ -27,14 +27,6 @@ This allows flexible enrichment of NX parts with metadata for downstream process
 
 ---
 
-## 6.2 Technical workflow diagram
-
-The following SVG file shows a **flowchart** that describes the technical functionality of the implemented process.
-
-![Technical flowchart of the attribute assignment workflow](bilder/Workflow_Add_Attributes.drawio.svg)
-
----
-
 ## 6.3 Code structure and the individual functions
 
 The code is based on the standard template of the NX Block UI Styler. Below is a detailed description of the key functions in `Add_Attributes.py`:
