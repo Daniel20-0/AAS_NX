@@ -8,7 +8,6 @@
 @import "06_NX_to_AAS_Export.md"
 @import "20_NX_Werkzeugkasten.md"
 @import "08_CAD_Systems_Comparison.md"
-@import "09_Prerequisites.md"
 @import "10_integration_into_siemens_nx.md"
 @import "80_Fazit_Ausblick_HKA.md"
 @import "99_Hilfsmittel_Quellen_HKA.md"
