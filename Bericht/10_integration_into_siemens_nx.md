@@ -1,4 +1,4 @@
-## 9 Execution and Integration in Siemens NX
+## 10 Execution and Integration in Siemens NX
 
 This section describes how the developed scripts are integrated and executed within the Siemens NX environment.
 
@@ -6,7 +6,7 @@ The mechanisms described here apply globally to the entire project and are not r
 
 ---
 
-## 9.1 Execution Methods in Siemens NX
+## 10.1 Execution Methods in Siemens NX
 
 There are multiple ways to execute the NX launcher script inside Siemens NX.
 
@@ -36,7 +36,7 @@ This approach is recommended for productive workflows.
 
 ---
 
-## 9.2 File Path Dependencies
+## 10.2 File Path Dependencies
 
 Scripts in Siemens NX are referenced via **absolute or relative file paths**.
 
@@ -51,7 +51,7 @@ Incorrect paths will prevent execution.
 
 ---
 
-## 9.3 External Script Execution
+## 10.3 External Script Execution
 
 The NX launcher automatically executes the external script:
 
@@ -64,7 +64,7 @@ The NX launcher automatically executes the external script:
 
 ---
 
-## 9.4 UI Styler Integration (Optional)
+## 10.4 UI Styler Integration (Optional)
 
 If a graphical interface is created using **NX UI Styler**, additional integration is possible.
 
@@ -92,7 +92,7 @@ This allows seamless integration into NX workflows.
 
 ---
 
-## 9.5 Workflow Overview
+## 10.5 Workflow Overview
 
 The following diagram illustrates the interaction between:
 
