@@ -1,4 +1,4 @@
-# 01 Introduction HKA: Integration of Digital Twins (AAS) and CAD (Siemens NX)
+# 1 Introduction HKA: Integration of Digital Twins (AAS) and CAD (Siemens NX)
 
 Within the scope of this development project, the informational and conceptual bridge between the Asset Administration Shell (AAS) and the CAD system Siemens NX is built. 
 
@@ -8,7 +8,7 @@ The goal is to enable working with Digital Twins across system boundaries and to
 
 Methodologically, the project is divided into two consecutive phases:
 
-## Phase 1: Fundamentals and Application Scenarios in the Product Lifecycle
+## 1.1 Phase 1: Fundamentals and Application Scenarios in the Product Lifecycle
 
 In the first phase of the project, the theoretical fundamentals of the AAS were developed, and the specific added value and application scenarios offered by connecting a CAD system to the administration shell were evaluated. 
 
@@ -27,7 +27,7 @@ The considered lifecycle encompasses the following six phases:
 
 ![Product lifecycle of a dishwasher](bilder/Eng_AAS_CAD_Lifecycle.drawio.svg)
 
-## Phase 2: Technical Implementation and Interface Functions
+## 1.2 Phase 2: Technical Implementation and Interface Functions
 
 Based on the conceptual preliminary work of the first phase, the focus of the second project phase was on the technical implementation. Here, the central core functions required for practical work with AASX data packages and the CAD program Siemens NX were identified and developed. 
 
@@ -38,24 +38,24 @@ Based on the conceptual preliminary work of the first phase, the focus of the se
 
 ---
 
-## 3. Scenario: Production (Manufacturing)
+## 1.3 Scenario 3: Production (Manufacturing)
 
-### 3.1 Detailed description of the scenario
+### 1.3.1 Detailed description of the scenario
 Lena Müller works as a production planner and assembly manager in final assembly. She is responsible for the correct execution of the assembly processes as well as for the quality assurance of the assembled modules. Lena checks the tightening torques of the individual screw connections and assembles the corresponding sheet metal components. In doing so, she ensures that all assembly specifications are strictly adhered to in order to guarantee the functionality, safety, and quality of the product. 
 
-The relevant assembly information is provided to Lena digitally. An assembly drawing, linked to the respective physical asset via the Asset Administration Shell (AAS), is stored in the CAD model. Using a digital device (e.g., an industrial tablet or HMI), Lena can access this information in context.
+The relevant assembly information is provided to Lena digitally. An assembly drawing, linked to the respective physical asset via the AAS, is stored in the CAD model. Using a digital device (e.g., an industrial tablet or HMI), Lena can access this information in context.
 
-### 3.2 Process flow description
+### 1.3.2 Process flow description
 
 * **Product / Asset Identification:** Lena identifies the product to be assembled using a serial number or a QR code.
-* **Calling up the AAS:** The corresponding Asset Administration Shell is loaded via the manufacturing system.
+* **Calling up the AAS:** The corresponding AAS is loaded via the manufacturing system.
 * **Accessing assembly information:** The AAS points to the linked CAD model and the corresponding assembly drawing.
 * **Display of assembly steps:** The individual assembly steps are presented sequentially, including the required tools.
 * **Checking tightening torques:** The target torques for each screw connection are displayed and verified with the torque tool in use.
 * **Assembly of sheet metal components:** Lena assembles the sheet metal components according to the drawing and the defined process steps.
 * **Documentation and feedback:** The completed assembly and the verified torques are documented in the system and, if necessary, reported back to higher-level systems.
 
-### 3.3 Required files and resources
+### 1.3.3 Required files and resources
 * **CAD models** (e.g., STEP, JT, native CAD formats)
 * **Assembly drawings** (2D/3D, e.g., PDF or directly in CAD)
 * **Torque specifications** (e.g., tables or metadata)
@@ -64,10 +64,10 @@ The relevant assembly information is provided to Lena digitally. An assembly dra
 * **Torque tools** (ideally with a digital interface)
 * **MES/PLM systems** for data management
 
-### 3.4 Technical implementation
+### 1.4 Technical implementation
 
-#### 3.4.1 Implementation in the Asset Administration Shell (AAS)
-The Asset Administration Shell serves as a central data hub for assembly- and quality-relevant information. Technically, the implementation is carried out via clearly defined `SubmodelElements` that standardize assembly knowledge, CAD references, and torque specifications.
+#### 1.4.1 Implementation in the Asset Administration Shell
+The AAS serves as a central data hub for assembly- and quality-relevant information. Technically, the implementation is carried out via clearly defined `SubmodelElements` that standardize assembly knowledge, CAD references, and torque specifications.
 
 **Assembly and torque data**
 * **Submodel "AssemblyInformation":** Contains the complete description of the assembly steps as structured `SubmodelElements` (e.g., `Operation`, `Sequence`, `StepNumber`).
@@ -79,7 +79,7 @@ The Asset Administration Shell serves as a central data hub for assembly- and qu
 
 > **Example:** The screw connection of the side panel has the attribute `TorqueNominal = 12 Nm`, `TorqueTolerance = ±1.2 Nm`.
 
-#### 3.4.2 Implementation in the CAD environment
+#### 1.4.2 Implementation in the CAD environment
 The CAD environment (viewer or assembly frontend at Lena's workstation) acts as a visual and interactive interface between the worker and the digital product twin.
 
 * Each component and screw connection in the CAD model is linked to the `InstanceId` of the corresponding AAS component.
@@ -95,16 +95,16 @@ These reports are stored as an `Event` or `Annotation` directly in the AAS and a
 
 ---
 
-## 6. Scenario: Recycling (End-of-Life)
+## 1.5 Scenario 6: Recycling (End-of-Life)
 
-### 6.1 Detailed description of the scenario
-In 2026, the linear economy ("take, make, dispose") was legally ended by the *Ecodesign for Sustainable Products Regulation* (ESPR). Every dishwasher sold in the EU must now have a Digital Product Passport (DPP), which is technically implemented as an Asset Administration Shell (AAS). 
+### 1.5.1 Detailed description of the scenario
+In 2026, the linear economy ("take, make, dispose") was legally ended by the *Ecodesign for Sustainable Products Regulation* (ESPR). Every dishwasher sold in the EU must now have a Digital Product Passport (DPP), which is technically implemented as an AAS. 
 
 Markus Mustermann, a specialized employee in a certified dismantling center, faces a challenge: A modern dishwasher consists of over 150 different materials, including valuable stainless steel, copper-bearing motors, electronics with rare earths, and problematic bitumen insulation mats.
 
 Without the AAS, the dishwasher would be a "black box" for Markus. He would have to shred it, which severely degrades material purity. Thanks to the AAS, Markus becomes an Urban Miner: He accesses the digital twin, which tells him not only what is installed but also how to separate it non-destructively to maximize recycling yields.
 
-### 6.2 Process flow description
+### 1.5.2 Process flow description
 The workflow is divided into five phases:
 
 1.  **Capture & Initialization:** Markus scans the QR code lasered onto the housing frame. The AAS opens the corresponding model for this.
@@ -115,7 +115,7 @@ The workflow is divided into five phases:
     * *Step 2:* Disconnect the wiring harness.
     * *Step 3:* Remove the insulation.
 
-### 6.3 Required files and resources
+### 1.5.3 Required files and resources
 The following items are required for the implementation:
 
 * **The AASX container file:** Contains the logical structure and all references.
@@ -125,17 +125,17 @@ The following items are required for the implementation:
 * **TechnicalProperties:** Material data sheets per component, provided by the respective manufacturers and merged into the dishwasher's AAS.
 * **CAD resources:** Dismantling drawings and 3D model for disassembly.
 
-### 6.4 Technical implementation
+### 1.6 Technical implementation
 
-#### 6.4.1 Implementation in the Asset Administration Shell (AAS)
+#### 1.6.1 Implementation in the Asset Administration Shell (AAS)
 The AAS serves as a data hub. All installed components have their properties stored by the respective manufacturers, and these are assembled into a dishwasher.
 
 * **Material Identification:** Every component in the dishwasher receives a `Property` element with the material ID.
     * *Example:* The cladding elements receive the attribute `Material: V2A (Stainless Steel)`.
 * **API Interface:** The AAS provides a REST API through which the recycling software makes queries (e.g., `GET /submodels/MaterialComposition/submodel-elements/CopperWeight`).
 
-#### 6.4.2 Implementation in the CAD environment
-The CAD environment serves as the central data source for creating the Asset Administration Shell (AAS). The process is structured as follows:
+#### 1.6.2 Implementation in the CAD environment
+The CAD environment serves as the central data source for creating the AAS. The process is structured as follows:
 
 * **Provision of documents:** Dismantling drawings in PDF format are generated directly from the CAD system and made available to the AAS.
 * **Material flow analysis:** An automated list is generated that records all components, including their volumes and materials. From this, the exact masses of the different raw materials can be derived. 
@@ -145,20 +145,20 @@ The CAD environment serves as the central data source for creating the Asset Adm
 * **Visualization:** Given high system complexity, an additional 3D model can be provided to the recycler.
 * **Additional visualization:** The system calculates the recycling priority based on the stored material properties. Components containing pollutants are displayed flashing red.
 
-### 6.5 Regulations and Legal Guidelines (Additional Requirements)
+### 1.6.5 Regulations and Legal Guidelines (Additional Requirements)
 
 1.  **ESPR (Ecodesign for Sustainable Products Regulation)**
     * **Standard tools & dismantlability:** The existing Regulation (EU) 2019/2022 for dishwashers already stipulates that certain parts (such as pumps or motors) must be replaceable with "commonly available tools" and without causing permanent damage to the appliance.
-    * **Dismantling time:** The new ESPR (Regulation (EU) 2024/1781) allows the EU to set explicit performance requirements in product-specific "delegated acts". For the revision of the dishwasher rules (planned from 2026), discussions are underway to include dismantling time as a metric for recyclability. [2], [3]
+    * **Dismantling time:** The new ESPR (Regulation (EU) 2024/1781) allows the EU to set explicit performance requirements in product-specific "delegated acts". For the revision of the dishwasher rules (planned from 2026), discussions are underway to include dismantling time as a metric for recyclability [2], [3].
 2.  **EU Battery Regulation (2023/1542)**
     * **Removability:** From February 18, 2027, portable batteries must be designed so that they can be easily removed and replaced by the end user or qualified personnel.
-    * **Battery passport:** While the full "battery passport" primarily applies to industrial (>2 kWh) and traction batteries, information on chemical composition and safe removal for small batteries must be stored in the Digital Product Passport (DPP) of the main device (here, the dishwasher's AAS). [4]
+    * **Battery passport:** While the full "battery passport" primarily applies to industrial (>2 kWh) and traction batteries, information on chemical composition and safe removal for small batteries must be stored in the Digital Product Passport (DPP) of the main device (here, the dishwasher's AAS) [4].
 3.  **WEEE Directive (Waste Electrical and Electronic Equipment)**
     * WEEE regulates the handling of electronic waste after use. 
     * **Collection and recovery targets:** For large appliances (Category 1), which include dishwashers, the directive prescribes a recovery target of 85% and a target for preparation for reuse and recycling of 80%. 
-    * **Role of the AAS:** The AAS is the tool to guarantee "material hygiene". These high targets can only be achieved economically through single-origin separation (e.g., grade 1.4301 stainless steel instead of mixed scrap). [5]
+    * **Role of the AAS:** The AAS is a tool to guarantee "material hygiene". These high targets can only be achieved economically through single-origin separation (e.g., grade 1.4301 stainless steel instead of mixed scrap) [5].
 4.  **Substances of Concern (REACH & SCIP)**
     * **Information obligation:** Since January 2021, manufacturers must submit information on Substances of Very High Concern (SVHC) to the ECHA SCIP database if the concentration exceeds 0.1%.
-    * **AAS Integration:** The AAS serves as an interface to make this complex chemical data directly visualizable for Markus Mustermann at his workstation (e.g., warning label for bitumen mats or flame retardants in circuit boards), without him having to search manually in databases. [6], [7]
+    * **AAS Integration:** The AAS serves as an interface to make this complex chemical data directly visualizable for Markus Mustermann at his workstation (e.g., warning label for bitumen mats or flame retardants in circuit boards), without him having to search manually in databases [6], [7].
 
 ---
