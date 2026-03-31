@@ -1,4 +1,4 @@
-@import "01_Einleitung_HKA.md" 
+@import "01_Einleitung_HKA.md"
 @import "02_Einleitung_GitHub.md"
 @import "09_Prerequisites.md"
 @import "03_AAS_to_NX_Part_import.md"

@@ -55,7 +55,7 @@ class Add_Attributes:
             self.theSession = NXOpen.Session.GetSession()
             self.theUI = NXOpen.UI.GetUI()
             script_dir = os.path.dirname(os.path.abspath(__file__))
-            self.theDlxFileName = os.path.join(script_dir, "Add_Attributes.dlx")
+            self.theDlxFileName = os.path.join(script_dir, "NX Add Attributes Tool.dlx")
             self.theDialog = self.theUI.CreateDialog(self.theDlxFileName)
             self.theDialog.AddApplyHandler(self.apply_cb)
             self.theDialog.AddOkHandler(self.ok_cb)

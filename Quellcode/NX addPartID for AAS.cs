@@ -66,7 +66,7 @@ public class add_PartID
             string journalPath = theSession.ExecutingJournal; 
             string assemblyDir = Path.GetDirectoryName(journalPath);
 
-            theDlxFileName = Path.Combine(assemblyDir, "add_PartID.dlx");
+            theDlxFileName = Path.Combine(assemblyDir, "NX addPartID for AAS.dlx");
             theDialog = theUI.CreateDialog(theDlxFileName);
             theDialog.AddApplyHandler(new NXOpen.BlockStyler.BlockDialog.Apply(apply_cb));
             theDialog.AddOkHandler(new NXOpen.BlockStyler.BlockDialog.Ok(ok_cb));
