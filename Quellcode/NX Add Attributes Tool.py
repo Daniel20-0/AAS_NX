@@ -130,7 +130,7 @@ class Add_Attributes:
 
             target_obj = selected_objects[0]
 
-            # Attribut direkt auf das ausgewählte Objekt schreiben
+            # Write the attribute directly to the selected object
             target_obj.SetUserAttribute(
                 attr_name,
                 -1,
