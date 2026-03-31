@@ -218,15 +218,15 @@ def main():
     lw.Open()
     current_dir = Path(__file__).resolve().parent
 
-    script_path = current_dir / "AAS-Creo-Bridge" / "src" / "AAS_TO_NX.py"
+    script_path = current_dir / "AAS-Bridge" / "src" / "AAS_TO_NX.py"
     lw.WriteLine("NX Launcher started")
 
     python_exe = "python"
    
     BASE_DIR = Path(__file__).resolve().parent
 
-    step_path_1 = BASE_DIR / "AAS-Creo-Bridge" / "temp_model.step"
-    step_path_2 = BASE_DIR / "temp_model.step"
+    step_path_1 = BASE_DIR / "AAS-Bridge" / "temp_model.step"
+    step_path_2 = BASE_DIR / "AAS-Bridge" / "temp_model.step"
 
     try:
         lw.WriteLine("Starte externes Skript...")
