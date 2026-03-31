@@ -27,7 +27,7 @@ This allows flexible enrichment of NX parts with metadata for downstream process
 
 ---
 
-## 6.3 Code structure and the individual functions
+## 6.2 Code structure and the individual functions
 
 The code is based on the standard template of the NX Block UI Styler. Below is a detailed description of the key functions in `Add_Attributes.py`:
 
@@ -136,7 +136,7 @@ The UI is intentionally minimalistic to allow fast and flexible attribute entry.
 
 ---
 
-## 6.4 Installation & Execution in NX
+## 6.3 Installation & Execution in NX
 
 1. Download the files `Add_Attributes.py` and `Add_Attributes.dlx`
 2. Ensure both files are located in the same directory  
@@ -148,7 +148,7 @@ The UI is intentionally minimalistic to allow fast and flexible attribute entry.
 
 ---
 
-## 6.7 Troubleshooting
+## 6.4 Troubleshooting
 
 * **Dialog cannot be found:**  
   Ensure that the `.dlx` file is located in the same directory as the Python script. The script automatically resolves the path based on its own location.
