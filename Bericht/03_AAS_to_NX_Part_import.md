@@ -218,7 +218,8 @@ This function is currently available in the launcher code but is not used by `ma
 
 ---
 
-## `add_prt_as_component(target_part, prt_path, component_name, x=0.0, y=0.0, z=0.0, axis="X", angle_deg=0.0)`
+## add_prt_as_component
+
 
 Adds a `.prt` file as a component to the target assembly.
 
@@ -246,7 +247,8 @@ The component orientation is currently always the identity matrix.
 
 ---
 
-## `import_step_into_nx_as_component(step_path, x=0.0, y=0.0, z=0.0, axis="X", angle_deg=0.0, component_name=None)`
+## import_step_into_nx_as_component
+
 
 Central import helper for NX-side processing.
 

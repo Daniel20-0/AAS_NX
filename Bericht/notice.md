@@ -1,6 +1,6 @@
 # NOTICE
 
-**Anbindung CAD an Digitale Zwillinge** Copyright 2026 [XXX]
+**Anbindung CAD an Digitale Zwillinge** Copyright 2026 [Christopher Wyrobek, Daniel Mohn]
 
 This product includes software developed at  
 The Apache Software Foundation (http://www.apache.org/).

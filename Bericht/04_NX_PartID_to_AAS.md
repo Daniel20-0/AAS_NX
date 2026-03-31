@@ -19,15 +19,7 @@ Once the part is saved and, for example, exported as a STEP file (including meta
 
 --- 
 
-## 5.2 Technical workflow diagram
-
-The following Diagram shows a **flowchart** that describes the technical functionality of the implemented process.
-
-![Technical flowchart of the AASX-to-NX import workflow](bilder/Workflow_ADD_ID.svg)
-
----
-
-## 5.3 Code structure and the individual functions
+## 5.2 Code structure and the individual functions
 
 The code is based on the standard template of the NX Block UI Styler. Below is a detailed description of the key functions in `add_PartID.cs`:
 
@@ -58,7 +50,7 @@ Defines how the program is handled in NX memory after execution. Here, `Session.
 
 ---
 
-## 5.4 The User Interface (`add_PartID.dlx`)
+## 5.3 The User Interface (`add_PartID.dlx`)
 
 The included XML file (`.dlx`) defines the visual appearance of the NX dialog. It includes:
 * The window title: **"Add Part ID"**
@@ -66,6 +58,17 @@ The included XML file (`.dlx`) defines the visual appearance of the NX dialog. I
 * The essential text input field (`string0`) labeled **"Enter Part ID"**.
 
 ---
+ <div style="page-break-after: always;"></div>
+
+## 5.4 Technical workflow diagram
+
+The following Diagram shows a **flowchart** that describes the technical functionality of the implemented process.
+
+<img src="bilder/Workflow_ADD_ID.svg" width="70%"> 
+
+---
+
+
 
 ## 5.5 Installation & Execution in NX
 

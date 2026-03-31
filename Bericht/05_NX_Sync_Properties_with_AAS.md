@@ -37,7 +37,8 @@ An instance of the `Add_Attributes` class is created, and the dialog is displaye
 
 ---
 
-### `__init__()`
+### `_init_()` {#custom-init}
+
 *(Constructor)*  
 Initializes the NX session and UI, loads the `.dlx` dialog file, and registers all callback functions:
 - Apply
