@@ -23,6 +23,8 @@ The considered lifecycle encompasses the following six phases:
 5.  Service / After-Sales
 6.  **Recycling (End-of-Life)**
 
+ <div style="page-break-after: always;"></div>
+
 *As shown in the following diagram, these phases form a continuous cycle. Within the scope of this project, the **Production** and **Recycling** phases, in particular, were elaborated in depth. The detailed elaboration of these use cases is the subject of the following chapters.*
 
 ![Product lifecycle of a dishwasher](bilder/Eng_AAS_CAD_Lifecycle.drawio.svg)
@@ -37,6 +39,8 @@ Based on the conceptual preliminary work of the first phase, the focus of the se
 > Since research and work on this repository will continue in the future, this documentation is designed directly as the structure for the GitHub repository (`README.md` and linked Markdown files). Redundant, separately maintained documentation was deliberately avoided. This ensures that code changes and documentation always remain synchronous, transparently versioned, and accessible in a central location for future developers.
 
 ---
+
+ <div style="page-break-after: always;"></div>
 
 ## 1.3 Scenario 3: Production (Manufacturing)
 
@@ -162,3 +166,5 @@ The CAD environment serves as the central data source for creating the AAS. The 
     * **AAS Integration:** The AAS serves as an interface to make this complex chemical data directly visualizable for Markus Mustermann at his workstation (e.g., warning label for bitumen mats or flame retardants in circuit boards), without him having to search manually in databases [6], [7].
 
 ---
+
+ <div style="page-break-after: always;"></div>

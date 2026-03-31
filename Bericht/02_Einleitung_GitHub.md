@@ -11,6 +11,7 @@ In this project, we are working on enabling the Asset Administration Shell (AAS)
 The current state of the art is: 3D models reside in CAD, and the digital twin lives completely isolated from it in its own software environment. However, if we want to implement use cases like intelligent recycling or seamless material tracking, these two worlds must talk to each other. This repository collects scripts and plug-ins to build exactly this bridge.
 
 ---
+ <div style="page-break-after: always;"></div>
 
 ## 2.2 Core Features Overview
 

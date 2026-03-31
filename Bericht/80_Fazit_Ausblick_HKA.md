@@ -22,3 +22,5 @@ The created interfaces form a solid foundation. To completely close the data loo
 * **Direct AASX export:** The current workaround using CSV files should be eliminated. In the future, material and geometry data from the CAD system should be written directly into the standardized AASX format so that it can be used in the AAS without intermediate steps.
 
 Once this bidirectional workflow is fully established in Siemens NX, our methodology can serve as a blueprint. The concepts developed here can then be easily transferred to other CAD systems to achieve true, cross-system interoperability.
+
+ <div style="page-break-after: always;"></div>

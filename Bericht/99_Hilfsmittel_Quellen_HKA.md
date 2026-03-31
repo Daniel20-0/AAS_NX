@@ -30,3 +30,5 @@ The theoretical and technical basis of this project relies on the following docu
 [7] European Parliament and Council of the European Union, "Regulation (EC) No 1907/2006 of 18 December 2006 concerning the Registration, Evaluation, Authorisation and Restriction of Chemicals (REACH)," *Official Journal of the European Union*, L 396, pp. 1-849, Dec. 2006.
 
 [8] Siemens Digital Industries Software, *NX Open Programmer's Guide: Block UI Styler and Journaling*, Siemens PLM Software Inc., Plano, TX, USA. [Online]. Available at: https://support.sw.siemens.com/
+
+ <div style="page-break-after: always;"></div>

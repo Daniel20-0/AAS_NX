@@ -21,3 +21,5 @@ The following core functions and workflows are made possible by this integration
 * **NX Block UI Styler:** Native graphical user interfaces (dialog boxes) can be created directly in NX. For example, the user can enter IDs via a convenient text field while validation checks run in the background (e.g., whether an active part is open).
 * **Seamless integration:** The NX user interface can be customized by adding scripts as interactive buttons directly to the NX menu bar (ribbon). This ensures a high level of user-friendliness.
 * **Limitless extensibility:** Since NX can act both as a launcher for external Python scripts and execute internal C#/Python logic, there are virtually no technical limitations for automation and data linking with the Digital Twin.
+
+ <div style="page-break-after: always;"></div>
